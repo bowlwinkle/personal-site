@@ -1,0 +1,116 @@
+@import-normalize;
+
+#root {
+  height: 100vh;
+  width: 100vw;
+
+  // background-color: #1a3f5f;
+  // background-color: #2b1616;
+  // background-color: #1a1a1a;
+  background-image: url('./assets/background.svg');
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.info {
+  font-family: 'TheGirlNextDoor';
+
+  .greeting {
+    font-size: 36pt;
+  }
+
+  span {
+    font-size: 22pt;
+  }
+}
+
+.desktopContainer {
+  &.ui.vertical.segment {
+    border-bottom: none;
+  }
+
+  .logoPNG {
+    display: none;
+  }
+}
+
+.topNavLayout {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  row-gap: 15px;
+
+  grid-template-areas: 'nav' 'content';
+
+  .topNav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+
+    .navItem {
+      font-size: x-large;
+      line-height: 0%;
+
+      a {
+        // color: #353535;
+        color: whitesmoke;
+      }
+
+      .active {
+        text-decoration: underline;
+      }
+    }
+
+    .logo {
+      height: max-content;
+    }
+  }
+
+  .content {
+    grid-area: content;
+  }
+}
+
+.cartoonPicture {
+  border-radius: 30px;
+  filter: saturate(0.5);
+}
+
+.weirdDiv,
+.weirdDiv2 {
+  width: 400vh;
+  height: 400vw;
+  background-color: #80cead;
+  position: fixed;
+  transform: rotate(24deg) translateX(5%);
+  // filter: blur(5px);
+  opacity: 0.75;
+  z-index: 0;
+}
+
+.weirdDiv2 {
+  transform: rotate(67deg);
+  // filter: blur(5px);
+  background-color: purple;
+  opacity: 0.3;
+}
+
+.spinner {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@font-face {
+  font-family: 'TheGirlNextDoor';
+  src:
+    local('TheGirlNextDoor'),
+    url(./fonts/TheGirlNextDoor-Regular.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                              'embedded-opentype', and 'svg' */
+}

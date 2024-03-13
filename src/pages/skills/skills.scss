@@ -1,0 +1,15 @@
+.skills {
+  .ui.tab {
+    background: rgba($color: white, $alpha: 0.6);
+    // border: none;
+  }
+
+  .technicalSkills {
+    width: auto;
+    height: 750px;
+
+    .recharts-default-legend {
+      display: none;
+    }
+  }
+}
