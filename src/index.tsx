@@ -1,3 +1,5 @@
+import 'semantic-ui-css/semantic.min.css'
+
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
@@ -5,7 +7,6 @@ import reportWebVitals from './reportWebVitals'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './router'
 import Spinner from './components/spinner'
-import 'semantic-ui-css/semantic.min.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(

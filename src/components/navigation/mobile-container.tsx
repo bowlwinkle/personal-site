@@ -1,6 +1,6 @@
 import { Sidebar, Menu, Segment, Container, Icon } from 'semantic-ui-react'
 import { Media } from '../media'
-import { ReactNode, useMemo, useState } from 'react'
+import { Key, ReactNode, useMemo, useState } from 'react'
 import { NavbarItem } from './sidebar'
 import { NavLink } from 'react-router-dom'
 
@@ -15,7 +15,7 @@ export function MobileContainer({ children, routes }: MobileContainerProps) {
   const menuItems = useMemo(
     () =>
       routes.map((route: NavbarItem) => (
-        <Menu.Item as={NavLink} to={route.to}>
+        <Menu.Item as={NavLink} to={route.to} key={route.to as Key}>
           {route.label}
         </Menu.Item>
       )),
@@ -24,7 +24,7 @@ export function MobileContainer({ children, routes }: MobileContainerProps) {
 
   return (
     <Media at="mobile">
-      <Sidebar.Pushable>
+      <Sidebar.Pushable style={{ height: '100vh' }}>
         <Sidebar
           as={Menu}
           animation="overlay"

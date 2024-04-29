@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, useMemo } from 'react'
+import { ReactElement, ReactNode, useMemo, Key } from 'react'
 import { Media } from '../media'
 import { useInView } from 'react-intersection-observer'
 import { Menu, Container, Segment } from 'semantic-ui-react'
@@ -21,23 +21,10 @@ export function DesktopContainer({
     threshold: 0,
   })
 
-  const activeCSSHandler = ({
-    isActive,
-    isPending,
-  }: {
-    isActive: boolean
-    isPending: boolean
-  }): string => (isPending ? 'pending' : isActive ? 'active' : '')
-
   const menuItems = useMemo(
     () =>
       routes.map((route: NavbarItem) => (
-        <Menu.Item
-          as={NavLink}
-          // @ts-expect-error We are composing the NavLink so className accepts a func
-          className={activeCSSHandler}
-          to={route.to}
-        >
+        <Menu.Item as={NavLink} to={route.to} key={route.to as Key}>
           {route.label}
         </Menu.Item>
       )),
@@ -46,22 +33,24 @@ export function DesktopContainer({
 
   return (
     <Media greaterThan="mobile">
-      <Segment vertical className="desktopContainer" ref={ref}>
-        <Menu
-          fixed={inView ? 'top' : undefined} // This enables the menu to stick
-          // inverted={!inView}
-          pointing={!inView}
-          secondary={!inView}
-          size="large"
-        >
-          <Container>
-            <Menu.Item position="left" className="logoPNG">
-              <LogoPNG size="tiny" />
-            </Menu.Item>
-            {menuItems}
-          </Container>
-        </Menu>
-      </Segment>
+      <div ref={ref}>
+        <Segment vertical className="desktopContainer">
+          <Menu
+            fixed={inView ? undefined : 'top'} // This enables the menu to stick
+            inverted={!inView}
+            pointing={inView}
+            secondary={inView}
+            size="large"
+          >
+            <Container>
+              <Menu.Item position="left" className="logoPNG">
+                <LogoPNG size="tiny" />
+              </Menu.Item>
+              {menuItems}
+            </Container>
+          </Menu>
+        </Segment>
+      </div>
       {children}
     </Media>
   )

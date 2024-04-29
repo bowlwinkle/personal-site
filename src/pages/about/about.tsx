@@ -9,6 +9,7 @@ import {
 } from 'semantic-ui-react'
 import { useState } from 'react'
 import { FAQ } from '../../data/about'
+import { GeneralInfo } from './general-info'
 
 export function About() {
   const [activeIndex, setActiveIndex] = useState(-1)
@@ -22,7 +23,7 @@ export function About() {
 
   const meFactsNodes = FAQ.map((fact, i) => {
     return (
-      <>
+      <div key={`accordion-item-${i}`}>
         <Accordion.Title
           active={activeIndex === i}
           index={i}
@@ -37,20 +38,26 @@ export function About() {
             {fact.additionalContent}
           </div>
         </Accordion.Content>
-      </>
+      </div>
     )
   })
 
   return (
     <Container>
       <Grid>
-        <Grid.Column>
+        <Grid.Row>
+          <Grid.Column>
+            <GeneralInfo />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
           <Header size="large">THINGS ABOUT ME</Header>
-          {/* <Header size="large">Things about me</Header> */}
+        </Grid.Row>
+        <Grid.Row>
           <Accordion className="about" styled width="100%">
             {meFactsNodes}
           </Accordion>
-        </Grid.Column>
+        </Grid.Row>
       </Grid>
     </Container>
   )

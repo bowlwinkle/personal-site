@@ -1,18 +1,17 @@
-@import-normalize;
+// @import-normalize;
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 #root {
   height: 100vh;
   width: 100vw;
+}
 
-  // background-color: #1a3f5f;
-  // background-color: #2b1616;
-  // background-color: #1a1a1a;
-  background-image: url('./assets/background.svg');
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.ubuntu {
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+.title {
+  font-size: 8vw !important;
 }
 
 .info {
@@ -25,6 +24,13 @@
   span {
     font-size: 22pt;
   }
+}
+
+.staticMountain {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: revert;
 }
 
 .desktopContainer {
@@ -76,25 +82,6 @@
 .cartoonPicture {
   border-radius: 30px;
   filter: saturate(0.5);
-}
-
-.weirdDiv,
-.weirdDiv2 {
-  width: 400vh;
-  height: 400vw;
-  background-color: #80cead;
-  position: fixed;
-  transform: rotate(24deg) translateX(5%);
-  // filter: blur(5px);
-  opacity: 0.75;
-  z-index: 0;
-}
-
-.weirdDiv2 {
-  transform: rotate(67deg);
-  // filter: blur(5px);
-  background-color: purple;
-  opacity: 0.3;
 }
 
 .spinner {

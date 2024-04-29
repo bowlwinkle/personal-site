@@ -1,10 +1,10 @@
 .skills {
   .ui.tab {
     background: rgba($color: white, $alpha: 0.6);
-    // border: none;
   }
 
-  .technicalSkills {
+  .technicalSkills,
+  .scatterChart {
     width: auto;
     height: 750px;
 

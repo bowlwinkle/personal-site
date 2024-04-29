@@ -23,7 +23,7 @@ function TechnicalSkills({ data, fullMark = 100 }: TechnicalSkillsProps) {
           <PolarAngleAxis dataKey="subject" />
           <PolarRadiusAxis angle={30} domain={[0, fullMark]} />
           <Radar
-            dataKey="A"
+            dataKey="value"
             stroke="#8884d8"
             fill="#8884d8"
             fillOpacity={0.3}
