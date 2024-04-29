@@ -1,6 +1,5 @@
 import {
   Card,
-  CardGroup,
   Container,
   Grid,
   Header,
@@ -21,10 +20,11 @@ function getYears(specificDate: Date) {
   return Math.abs(new Date(calculatedDifference).getUTCFullYear() - 1970)
 }
 
-function Home() {
+export function Home() {
   const totalWorkExp = getYears(new Date(joinedIndustry))
   const engManagerWorkExp = getYears(new Date(engManagerBeginning))
   const sweWorkExp = totalWorkExp - engManagerWorkExp
+  console.log(sweWorkExp)
 
   return (
     <>
@@ -62,7 +62,7 @@ function Home() {
           </Grid.Row>
           <Grid.Row>
             <Container>
-              <CardGroup centered>
+              <Card.Group centered>
                 <Card>
                   <Statistic>
                     <StatisticValue>{totalWorkExp}</StatisticValue>
@@ -81,11 +81,11 @@ function Home() {
                     <StatisticLabel>Manager Exp</StatisticLabel>
                   </Statistic>
                 </Card>
-              </CardGroup>
+              </Card.Group>
             </Container>
           </Grid.Row>
           <Grid.Row>
-            <Container text textAlign="left">
+            <Container textAlign="left">
               <p style={{ fontSize: '1.33em' }}>
                 I've been in the tech industry for <b>{totalWorkExp}</b> years
                 and counting. I've been an individual contributor for{' '}
@@ -106,5 +106,3 @@ function Home() {
     </>
   )
 }
-
-export default Home

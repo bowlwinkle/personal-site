@@ -64,7 +64,7 @@ function Skills() {
             There might be a rare case of a true master but an expert in a
             certain language or technology isn't what a developer should be
             striving towards. The ability to learn and apply those techniques or
-            ideas is the ideal skill to have. I am a a Jack of many trades but I
+            ideas is the ideal skill to have. I am a a jack of many trades but I
             am master of none.
           </p>
           <Message>

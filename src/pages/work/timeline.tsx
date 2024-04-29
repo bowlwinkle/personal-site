@@ -2,13 +2,7 @@ import { ReactElement, useEffect, useMemo } from 'react'
 import { TimeLineData } from './timelineData'
 import Markdown from 'react-markdown'
 import anime from 'animejs'
-import {
-  // Grid,
-  Image,
-  Statistic,
-  StatisticLabel,
-  StatisticValue,
-} from 'semantic-ui-react'
+import { Grid, Header, Image } from 'semantic-ui-react'
 
 const config = {
   duration: 1000,
@@ -81,8 +75,6 @@ export function Timeline() {
 
   const timelineData = useMemo(() => {
     return TimeLineData.map((workData, i): ReactElement => {
-      console.log('Initial: ', yInc * i)
-
       // Starting position before animation
       const yCoordinate = calcYCoordinate(i, yInc, cr, yOffset)
       const yLineCoordinate = calcYCoordinate(i - 1, yInc, cr, yOffset)
@@ -116,19 +108,29 @@ export function Timeline() {
           ) : null}
           <foreignObject
             x={`${xCoord + 4}%`}
-            y={yCoordinate}
+            y={yCoordinate - 35}
             width={'70%'}
             height={'25%'}
             style={{ position: 'absolute' }}
           >
-            {/* <Grid> */}
-            <Image src={workData.logo} alt={workData.company} size="tiny" />
-            <Markdown>{workData.markDown}</Markdown>
-            <Statistic>
-              <StatisticValue>5,550</StatisticValue>
-              <StatisticLabel>Downloads</StatisticLabel>
-            </Statistic>
-            {/* </Grid> */}
+            <Grid columns={2} style={{ position: 'absolute', left: '5%' }}>
+              <Grid.Row verticalAlign="bottom">
+                <Grid.Column width={4}>
+                  <Image
+                    src={workData.logo}
+                    alt={workData.company}
+                    size="tiny"
+                  />
+                </Grid.Column>
+                <Grid.Column width={12}>
+                  <Header as="h2">{workData.title}</Header>
+                </Grid.Column>
+              </Grid.Row>
+
+              <Grid.Row>
+                <Markdown>{workData.markDown}</Markdown>
+              </Grid.Row>
+            </Grid>
           </foreignObject>
         </g>
       )
@@ -138,7 +140,7 @@ export function Timeline() {
   return (
     <svg
       id="work-timeline"
-      viewBox="0 0 1000 1000"
+      viewBox="0 0 1000 1250"
       fill="none"
       height="100%"
       width="100%"

@@ -29,6 +29,9 @@ export function GeneralInfo({ className }: GeneralInfoProps) {
               <Grid.Row className="workStory">
                 <Grid.Column>{WelcomeInfo.workOverview}</Grid.Column>
               </Grid.Row>
+              <Grid.Row className="personalTouch">
+                <Grid.Column>{WelcomeInfo.fewPersonalNotes}</Grid.Column>
+              </Grid.Row>
             </Grid>
           </Grid.Column>
           <Grid.Column>

@@ -50,9 +50,7 @@ function MountainSVG({ width, height, className }: MountainSVGProps) {
   return (
     <>
       <Header as="h1"></Header>
-      <h1 style={{ left: '500px', bottom: '363px' }}>
-        THE END GOAL IS UNKNOWN...KEEP CLIMBING
-      </h1>
+      <h1 style={{ left: '500px', bottom: '363px' }}></h1>
       <svg
         id="mountain"
         width={width}

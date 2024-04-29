@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import Skills from './pages/skills/skills'
 import { About } from './pages/about/about'
 import App from './app'
-import Home from './pages/home/home'
+import { Home } from './pages/home/home'
 import { Playground } from './pages/playground/playground'
 import { NavbarItem } from './components/navigation/sidebar'
 import { config } from './config'
@@ -35,6 +35,7 @@ const routeDefinitions = [
     to: '/playground',
     label: 'Playground',
     icon: 'fly',
+    enabled: false,
   },
 ] as NavbarItem[]
 

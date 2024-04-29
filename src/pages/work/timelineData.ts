@@ -15,36 +15,53 @@ export const TimeLineData: Array<WorkExperience> = [
     logo: NikeLogo,
     company: 'Nike',
     title: 'Software Engineering Manager',
-    startDate: 'March 2001',
-    endDate: 'Feb 2024',
-    markDown: `## Howdy
-    asdf
-    ![](./public/lg-logo.png)`,
+    startDate: 'May 2021',
+    endDate: 'March 2024',
+    markDown: `
+* Managed a team of 4 developers.
+* Lead cross-functional engagements
+* Collaborated with designers, developers, teams, product, and program.
+* Developed engineering roadmap as well as team tasks.
+`,
   },
   {
     logo: NikeLogo,
     company: 'Nike',
-    title: 'Software Engineering Manager',
-    startDate: 'March 2001',
-    endDate: 'Feb 2024',
-    markDown: `## Howdy
-    asdf
-    ![](./public/lg-logo.png)`,
+    title: 'Senior Software Engineer III',
+    startDate: 'March 2021',
+    endDate: 'May 2019',
+    markDown: `
+* Built an internal AWS type platform for internal offerings for engineers to leverage.
+* Worked on greenfield projects from design to production.
+* Developed and maintained 5 internal platforms.
+    `,
   },
   {
     logo: IntelLogo,
     company: 'Intel',
-    title: 'Software Engineering Manager',
-    startDate: 'March 2001',
-    endDate: 'Feb 2024',
-    markDown: `## Howdy`,
+    title: 'Senior Software Engineer II',
+    startDate: 'March 2016',
+    endDate: 'May 2019',
+    markDown: `
+* Directed Acyclic Graph (DAG) Scheduler leveraging gRPC for communication,
+    accessed by either API or UI
+* Designed a UI to manage a server rack's physical resources based on workload
+    requirements for compute, storage, and memory requirements.
+    `,
   },
   {
     logo: IntelLogo,
     company: 'Intel',
-    title: 'Software Engineering Manager',
-    startDate: 'March 2001',
-    endDate: 'Feb 2024',
-    markDown: `## Howdy`,
+    title: 'Software Engineer',
+    startDate: 'July 2011',
+    endDate: 'March 2016',
+    markDown: `
+    Software Engineer focused on test automation, validating wireless
+    standards/protocols, wireless certifications, and automation tools team.
+
+  * Worked on internal testing IDE and reporting tools.
+  * Wrapped native Intel wireless libraries using C# .NET for automated testing.
+  * Customer engagements to help leverage wireless features, along with OS integration:
+      Microsoft, HP, Panasonic, and ActionTec`,
   },
 ]
