@@ -10,6 +10,7 @@ import {
   StatisticValue,
 } from 'semantic-ui-react'
 import MountainPic from '../../assets/splash/mountain.jpg'
+import { Media } from '../../components/media'
 
 const joinedIndustry = '2011-06-18T00:00:00'
 const engManagerBeginning = '2021-03-15T00:00:00'
@@ -52,11 +53,16 @@ function Home() {
             >
               Full Stack Developer
             </Header>
-            <Image src={MountainPic} style={{ zIndex: -1 }} rounded />
+            <Media greaterThan="mobile">
+              <Image src={MountainPic} style={{ zIndex: -1 }} rounded />
+            </Media>
+            <Media at="mobile">
+              <Image src={MountainPic} style={{ zIndex: -1 }} />
+            </Media>
           </Grid.Row>
           <Grid.Row>
             <Container>
-              <CardGroup itemsPerRow={3}>
+              <CardGroup centered>
                 <Card>
                   <Statistic>
                     <StatisticValue>{totalWorkExp}</StatisticValue>
