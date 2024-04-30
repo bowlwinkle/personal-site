@@ -1,9 +1,58 @@
 // @import-normalize;
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
+$bgHome: #355d66;
+$bgSkills: #8884d8;
+$bgWork: #000;
+$bgAbout: #798344;
+
+.pointlessBackground,
+.pointlessBackground2 {
+  position: fixed;
+  left: -40%;
+  top: 35%;
+  width: 200%;
+  height: 55%;
+  transform: rotate(-15deg);
+  background-color: $bgHome;
+  opacity: 0.1;
+  z-index: -1;
+  filter: blur(5px);
+
+  &.skills {
+    background-color: $bgSkills;
+  }
+
+  &.work {
+    background-color: $bgWork;
+  }
+
+  &.about {
+    background-color: $bgAbout;
+  }
+}
+
+.pointlessBackground2 {
+  top: 48%;
+  height: 25%;
+  opacity: 0.15;
+  filter: blur(40px);
+}
+
 #root {
   height: 100vh;
   width: 100vw;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    font-family: 'Josefin sans';
+  }
 }
 
 .ubuntu {
@@ -15,8 +64,6 @@
 }
 
 .info {
-  // font-family: 'TheGirlNextDoor';
-
   .greeting {
     font-size: 36pt;
   }
@@ -39,7 +86,32 @@
   }
 
   .logoPNG {
-    display: none;
+    padding-bottom: 12px !important;
+
+    svg {
+      width: 50px;
+    }
+
+    .skills {
+      #face,
+      #face2 {
+        fill: $bgSkills;
+      }
+    }
+
+    .work {
+      #face,
+      #face2 {
+        fill: $bgWork;
+      }
+    }
+
+    .about {
+      #face,
+      #face2 {
+        fill: $bgAbout;
+      }
+    }
   }
 }
 

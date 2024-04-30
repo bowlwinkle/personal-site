@@ -1,3 +1,4 @@
+import './home.scss'
 import {
   Card,
   Container,
@@ -24,40 +25,30 @@ export function Home() {
   const totalWorkExp = getYears(new Date(joinedIndustry))
   const engManagerWorkExp = getYears(new Date(engManagerBeginning))
   const sweWorkExp = totalWorkExp - engManagerWorkExp
-  console.log(sweWorkExp)
 
   return (
     <>
-      <Container>
+      <Container className="home">
         <Grid columns={1}>
           <Grid.Row>
-            <Header
-              as="h1"
-              style={{
-                position: 'absolute',
-                top: '20%',
-                left: '20%',
-                color: 'whitesmoke',
-              }}
-            >
+            <Header as="h1" inverted>
               Lucas Gansberg
             </Header>
             <Header
               as="h3"
+              inverted
               style={{
-                position: 'absolute',
                 top: '22%',
                 left: '25%',
-                color: 'whitesmoke',
               }}
             >
               Full Stack Developer
             </Header>
             <Media greaterThan="mobile">
-              <Image src={MountainPic} style={{ zIndex: -1 }} rounded />
+              <Image src={MountainPic} rounded />
             </Media>
             <Media at="mobile">
-              <Image src={MountainPic} style={{ zIndex: -1 }} />
+              <Image src={MountainPic} />
             </Media>
           </Grid.Row>
           <Grid.Row>
@@ -86,7 +77,7 @@ export function Home() {
           </Grid.Row>
           <Grid.Row>
             <Container textAlign="left">
-              <p style={{ fontSize: '1.33em' }}>
+              <p>
                 I've been in the tech industry for <b>{totalWorkExp}</b> years
                 and counting. I've been an individual contributor for{' '}
                 <b>{sweWorkExp}</b> and was an engineering manager for{' '}
@@ -94,7 +85,7 @@ export function Home() {
                 projects but checkout my resume, skills, and a little bit about
                 me!
               </p>
-              <p style={{ fontSize: '1.33em' }}>
+              <p>
                 I love learning as I go and I love the people that I meet on the
                 way. The end goal for my career is still unknown, but I keep
                 climbing.
