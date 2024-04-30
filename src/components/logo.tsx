@@ -1,5 +1,5 @@
 import anime from 'animejs/lib/anime.es'
-import LGPNG from '../assets/LG.svg'
+import LGPNG from '../assets/lg.svg'
 import { Image, ImageProps } from 'semantic-ui-react'
 import { useEffect } from 'react'
 
@@ -11,20 +11,6 @@ type Logo = {
   className?: string
   animate?: ((id: string) => void) | boolean
 }
-
-// function defaultAnimation() {
-//   anime({
-//     targets: '#LGLogo > path',
-//     strokeDashoffset: [anime.setDashoffset, 0],
-//     easing: 'easeInOutSine',
-//     duration: 1500,
-//     delay: function (el, i) {
-//       return i * 250
-//     },
-//     direction: 'normal',
-//     loop: true,
-//   })
-// }
 
 function LG({ id }: Logo) {
   return (
@@ -135,47 +121,6 @@ function morphAnimation(id: string) {
     loop: true,
   })
 }
-
-// function OriginalLogoSVG({
-//   id,
-//   width = '100%',
-//   height = '100%',
-//   circle = false,
-//   className,
-// }: Logo) {
-//   return (
-//     <svg
-//       id={id}
-//       width={width}
-//       height={height}
-//       viewBox={`0 0 290 290`}
-//       xmlns="http://www.w3.org/2000/svg"
-//       className={className}
-//     >
-//       {circle ? (
-//         <circle cx="145" cy="145" r="143" stroke="#6F6F6F" stroke-width="4" />
-//       ) : null}
-//       <path
-//         d="M244 112V93H155V99.5L244 112Z"
-//         fill="transparent"
-//         stroke="#80CEAD"
-//       />
-//       <path d="M209 197H225V137L209 197Z" fill="transparent" stroke="#80CEAD" />
-//       <path
-//         d="M63 197H46L46 93H53L63 197Z"
-//         fill="transparent"
-//         stroke="#80CEAD"
-//       />
-//       <path d="M72 93H46V197L72 93Z" fill="transparent" stroke="#80CEAD" />
-//       <path d="M172 93H155V197L172 93Z" fill="transparent" stroke="#80CEAD" />
-//       <path d="M155 197H172L155 111V197Z" fill="transparent" stroke="#80CEAD" />
-//       <path d="M155 180V197H244L155 180Z" fill="transparent" stroke="#80CEAD" />
-//       <path d="M238 152V135H194L238 152Z" fill="transparent" stroke="#80CEAD" />
-//       <path d="M46 180V197H135L46 180Z" fill="transparent" stroke="#80CEAD" />
-//       <path d="M46 180V197H135L46 180Z" fill="transparent" stroke="#80CEAD" />
-//     </svg>
-//   )
-// }
 
 export function LogoSVG({ animate = false }: Logo, { ...rest }: Logo) {
   const id = rest.id || 'LGLogo'

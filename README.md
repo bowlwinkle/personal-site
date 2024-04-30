@@ -1,6 +1,9 @@
 # Personal Site
 
-### Common Commands
+Personal site
+
+## Commands
+
 ```shell
 npm run start
 npm run style

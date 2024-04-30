@@ -1,5 +1,5 @@
 import { Segment, Grid, Image, Header } from 'semantic-ui-react'
-import cartoonImage from '../../assets/warm-cartoon.jpg'
+import cartoonImage from '../../assets/me-with-effects.jpg'
 import { WelcomeInfo } from '../../data/about'
 
 type GeneralInfoProps = {
