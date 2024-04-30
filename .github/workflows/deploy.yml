@@ -43,6 +43,14 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build-github-pages
+      - name: Remove deps
+        run: rm -rf node_modules/
+      - name: Remove src
+        run: rm -rf src/
+      - name: Move public files up
+        run: |
+          mv build/index.html .
+          rm -rf public
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -8,9 +8,9 @@
       "type": "image/x-icon"
     },
     {
-      "src": "lg-logo.png",
+      "src": "lg.png",
       "type": "image/png",
-      "sizes": "290x290"
+      "sizes": "63x52"
     }
   ],
   "start_url": ".",
