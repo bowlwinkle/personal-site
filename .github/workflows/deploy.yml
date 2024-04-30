@@ -42,11 +42,11 @@ jobs:
       - name: Install Deps
         run: yarn install
       - name: Build
-        run: yarn build
+        run: yarn build-github-pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build'
+          path: './'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
