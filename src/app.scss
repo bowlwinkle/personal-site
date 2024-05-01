@@ -53,6 +53,16 @@ $bgAbout: #798344;
   a {
     font-family: 'Josefin sans';
   }
+
+  .notFound {
+    height: 100vh;
+    width: 100vh;
+
+    & > div:first-of-type {
+      position: relative;
+      top: 25%;
+    }
+  }
 }
 
 .ubuntu {

@@ -8,6 +8,7 @@ import { Playground } from './pages/playground/playground'
 import { NavbarItem } from './components/navigation/sidebar'
 import { config } from './config'
 import { WorkHistory } from './pages/work/work'
+import { NotFound } from './components/404'
 
 const routeDefinitions = [
   {
@@ -46,7 +47,7 @@ export const routes = routeDefinitions.filter(
 export const router = createBrowserRouter([
   {
     path: '*',
-    element: <span>404 - Not Found</span>,
+    element: <NotFound />,
   },
   {
     path: '/',
