@@ -44,6 +44,30 @@ export const routes = routeDefinitions.filter(
   (route) => route.enabled !== false || config.nav.showAllRoutes
 )
 
+const childrenRoutes = (prefix = '') => [
+  {
+    path: `${prefix}/`,
+    element: <Home />,
+  },
+  {
+    path: `${prefix}/skills`,
+    element: <Skills />,
+  },
+  {
+    path: `${prefix}/work`,
+    element: <WorkHistory />,
+  },
+  {
+    path: `${prefix}/about`,
+    element: <About />,
+  },
+  {
+    path: `${prefix}/playground`,
+    element: <Playground />,
+  },
+]
+
+const personalSiteBasename = '/personal-site'
 export const router = createBrowserRouter([
   {
     path: '*',
@@ -52,27 +76,11 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    children: [
-      {
-        path: '/',
-        element: <Home />,
-      },
-      {
-        path: '/skills',
-        element: <Skills />,
-      },
-      {
-        path: '/work',
-        element: <WorkHistory />,
-      },
-      {
-        path: '/about',
-        element: <About />,
-      },
-      {
-        path: '/playground',
-        element: <Playground />,
-      },
-    ],
+    children: [...childrenRoutes()],
+  },
+  {
+    path: personalSiteBasename,
+    element: <App />,
+    children: [...childrenRoutes(personalSiteBasename)],
   },
 ])
