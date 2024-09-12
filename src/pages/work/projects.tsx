@@ -172,7 +172,11 @@ export function Projects() {
   return (
     <>
       <Message>
-        <p>Some project names have been redacted</p>
+        <p>
+          I hope most understand timeline is a bit tricky here. Once you build,
+          you maintain so there is overlap. Some project names have been
+          redacted.
+        </p>
       </Message>
       <Grid columns={3} verticalAlign="middle" stretched>
         <Grid.Column>

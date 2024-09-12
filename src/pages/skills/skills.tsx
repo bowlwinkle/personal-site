@@ -14,14 +14,12 @@ import {
 } from 'semantic-ui-react'
 import { useSearchParams } from 'react-router-dom'
 import { generateTabParams } from '../helpers'
-import { Done } from '../done'
 
 const panes = [
   {
     menuItem: 'Current Technical Skills',
     render: () => (
       <>
-        <Done />
         <Tab.Pane attached={false}>
           <TechnicalSkills data={technicalData} />
         </Tab.Pane>
@@ -32,7 +30,6 @@ const panes = [
     menuItem: 'Previous Technical Skills',
     render: () => (
       <>
-        <Done />
         <Tab.Pane attached={false}>
           <Message>
             <p>
@@ -50,7 +47,6 @@ const panes = [
     menuItem: 'Skills Over Time',
     render: () => (
       <>
-        <Done />
         <Tab.Pane attached={false}>
           <Message>
             <p>
@@ -67,7 +63,6 @@ const panes = [
     menuItem: 'Used Professionally',
     render: () => (
       <>
-        <Done />
         <Tab.Pane attached={false}>
           <List>
             {Object.values(Skill).map((skill) => {
@@ -90,7 +85,6 @@ function Skills() {
 
   return (
     <>
-      <Done />
       <Grid columns={1}>
         <Grid.Column>
           <Header as="h3">How I see myself as a developer</Header>

@@ -25,10 +25,10 @@ export function Home() {
                 </Grid.Row>
                 <Grid.Row>
                   <p>
-                    While, most people try to have a 5 or 10 year plan, laying
-                    out where exactly they want to be, I'm not sure where I'm
-                    going to end up. I am exploring the life I have as I live
-                    it.
+                    Most people try to have a 5 or 10 year plan, laying out
+                    where exactly they want to be. I'm not sure where I'm going
+                    to end up, but I know it's going to be something I'll love.
+                    I am exploring the life I have, as I live it.
                   </p>
                 </Grid.Row>
                 <Grid.Row>

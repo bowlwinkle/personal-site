@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import anime from 'animejs'
 
 const LOAD_DELAY = 500
-const DELAY: number = 350
+const DELAY: number = 250
 const SM_DURATION = 250
 const MED_DURATION = 650
 const LG_DURATION = 1000
@@ -21,7 +21,7 @@ export function Map({ primaryColor = '#242539' }: { primaryColor?: string }) {
     timeline.add({
       targets: '.ui .container svg circle',
       r: [0, 22.5],
-      duration: MED_DURATION,
+      duration: LG_DURATION,
       easing: 'easeOutBounce',
       delay: LOAD_DELAY,
     })
@@ -29,7 +29,7 @@ export function Map({ primaryColor = '#242539' }: { primaryColor?: string }) {
     timeline.add({
       targets: '.ui .container svg #maskPath1',
       strokeDashoffset: [anime.setDashoffset, 0],
-      duration: LG_DURATION,
+      duration: MED_DURATION,
     })
 
     timeline.add({
@@ -41,7 +41,7 @@ export function Map({ primaryColor = '#242539' }: { primaryColor?: string }) {
     timeline.add({
       targets: '.ui .container svg #maskPath2',
       strokeDashoffset: [anime.setDashoffset, 0],
-      duration: LG_DURATION,
+      duration: MED_DURATION,
     })
 
     timeline.add({

@@ -53,10 +53,11 @@
   bottom: -50%;
   background-repeat: no-repeat;
   background-image: url('./assets/falling-hex.svg');
-  opacity: 0.3;
+  opacity: 0.15;
 
   @media screen and (min-width: 770px) {
     position: fixed;
+    opacity: 0.3;
   }
 }
 
@@ -209,6 +210,7 @@ body {
   mix-blend-mode: multiply;
   pointer-events: none;
   height: 100%;
+  opacity: 0.75;
 }
 
 .testScreen {
