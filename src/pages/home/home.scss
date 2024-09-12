@@ -1,14 +1,20 @@
-.home {
+// Theme later
+// #root {
+//   background-color: rgb(34, 34, 34);
+// }
+
+.ui.container.home {
+  padding-top: 10%;
+
   p {
     font-size: 1.33em;
   }
 
-  h1,
-  h3 {
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    color: whitesmoke;
-    z-index: 1;
+  h1 {
+    font-size: 5em;
+  }
+
+  .homeDetails {
+    margin: 0;
   }
 }

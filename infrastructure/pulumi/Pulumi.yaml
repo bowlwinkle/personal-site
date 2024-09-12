@@ -1,0 +1,7 @@
+name: personal_site
+runtime: nodejs
+description: Personal Website (AWS)
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-typescript

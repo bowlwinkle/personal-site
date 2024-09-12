@@ -11,6 +11,10 @@
 # production
 /build
 
+# icons - not sure if I need any of these
+
+./src/assets/icons
+
 # misc
 .DS_Store
 .env.local
@@ -21,3 +25,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+assume-role-output.txt

@@ -1,15 +1,31 @@
+@import '../../utilities/variables.scss';
+
 .skills {
   .ui.tab {
     background: rgba($color: white, $alpha: 0.6);
   }
+  .ui.message {
+    // color: #10a3a3;
+    color: $bgSkills;
+  }
 
-  .technicalSkills,
-  .scatterChart {
+  .lineChart,
+  .radarChart {
     width: auto;
     height: 750px;
+  }
 
+  .radarChart {
     .recharts-default-legend {
       display: none;
+    }
+
+    .recharts-surface > .recharts-layer {
+      .recharts-radar,
+     .recharts-radar-polygon {
+        stroke: $bgSkills;
+        fill: $bgSkills;
+      }
     }
   }
 }

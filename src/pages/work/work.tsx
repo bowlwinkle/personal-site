@@ -1,28 +1,30 @@
-import {
-  Container,
-  Tab,
-  Message,
-  Statistic,
-  StatisticValue,
-  StatisticLabel,
-  Grid,
-  Divider,
-} from 'semantic-ui-react'
+import './work.scss'
+import { Container, Tab } from 'semantic-ui-react'
 import { Timeline } from './timeline'
 import { useSearchParams } from 'react-router-dom'
 import { generateTabParams } from '../helpers'
+import { Projects } from './projects'
+import { useMemo } from 'react'
+
+// TODO: Update resume and timeline information
+
+enum MENU {
+  PROJECTS = 'Projects',
+  RESUME = 'Resume',
+  TIMELINE = 'Timeline',
+}
 
 const panes = [
   {
-    menuItem: 'Timeline',
+    menuItem: MENU.PROJECTS,
     render: () => (
       <Tab.Pane attached={false}>
-        <Timeline />
+        <Projects />
       </Tab.Pane>
     ),
   },
   {
-    menuItem: 'Resume',
+    menuItem: MENU.RESUME,
     render: () => (
       <Tab.Pane attached={false}>
         <embed
@@ -35,28 +37,10 @@ const panes = [
     ),
   },
   {
-    menuItem: 'Projects',
+    menuItem: MENU.TIMELINE,
     render: () => (
       <Tab.Pane attached={false}>
-        <Container>
-          <Message>
-            <p>
-              Just about all the projects I have worked on are not available to
-              the public, so this section is to provide some more details and
-              some metrics.
-            </p>
-          </Message>
-          <Grid columns={2} textAlign="center">
-            <Divider vertical>Or</Divider>
-            <p>Description</p>
-            <Grid columns={2} stackable textAlign="center">
-              <Statistic>
-                <StatisticValue>5000</StatisticValue>
-                <StatisticLabel>Downloads</StatisticLabel>
-              </Statistic>
-            </Grid>
-          </Grid>
-        </Container>
+        <Timeline />
       </Tab.Pane>
     ),
   },
@@ -65,16 +49,31 @@ const panes = [
 export function WorkHistory() {
   const [queryParams, setQueryParams] = useSearchParams()
   const tabKey = 'tab'
+  const defaultActiveIndex = useMemo(() => {
+    if (!queryParams.get(tabKey)) {
+      setQueryParams(generateTabParams(tabKey, MENU.PROJECTS))
+      return 0
+    } else {
+      return panes.reduce((acc, pane, index) => {
+        if (pane.menuItem === queryParams.get(tabKey)) {
+          return index
+        }
+        return acc
+      }, 0)
+    }
+  }, [queryParams, setQueryParams, tabKey])
 
   return (
     <Container>
       <Tab
-        defaultActiveIndex={String(queryParams.get(tabKey) || 0)}
+        defaultActiveIndex={defaultActiveIndex}
         menu={{ fluid: true, tabular: true }}
         panes={panes}
-        onTabChange={(e, data) =>
-          setQueryParams(generateTabParams(tabKey, data.activeIndex))
-        }
+        onTabChange={(e, data) => {
+          setQueryParams(
+            generateTabParams(tabKey, panes[Number(data.activeIndex)].menuItem)
+          )
+        }}
       />
     </Container>
   )

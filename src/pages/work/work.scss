@@ -1,0 +1,12 @@
+@import '../../utilities/variables.scss';
+
+.ui .buildLabels,
+.ui .workLabels {
+  .label {
+    border-color: $bgWork;
+  }
+}
+
+#work-timeline {
+  font-family: 'Josefin sans';
+}

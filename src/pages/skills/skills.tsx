@@ -1,42 +1,85 @@
 import './skills.scss'
 
 import TechnicalSkills from '../../components/radar-chart'
-import { SkillsOverTimeScatter } from '../../components/scatter-chart'
-import { pastTechData, technicalData } from '../../data/skills'
-import { Container, Grid, Header, Message, Tab } from 'semantic-ui-react'
+import { SkillsOverTime } from '../../components/line-chart'
+import { pastTechData, Skill, technicalData } from '../../data/skills'
+import {
+  Grid,
+  Header,
+  List,
+  ListContent,
+  ListItem,
+  Message,
+  Tab,
+} from 'semantic-ui-react'
 import { useSearchParams } from 'react-router-dom'
 import { generateTabParams } from '../helpers'
+import { Done } from '../done'
 
 const panes = [
   {
     menuItem: 'Current Technical Skills',
     render: () => (
-      <Tab.Pane attached={false}>
-        <TechnicalSkills data={technicalData} />
-      </Tab.Pane>
+      <>
+        <Done />
+        <Tab.Pane attached={false}>
+          <TechnicalSkills data={technicalData} />
+        </Tab.Pane>
+      </>
     ),
   },
   {
     menuItem: 'Previous Technical Skills',
     render: () => (
-      <Tab.Pane attached={false}>
-        <Message>
-          <p>
-            Rated how I viewed myself when actively using them. It's been a
-            while since I've used these, but I pick things back up pretty
-            quickly.
-          </p>
-        </Message>
-        <TechnicalSkills data={pastTechData} />
-      </Tab.Pane>
+      <>
+        <Done />
+        <Tab.Pane attached={false}>
+          <Message>
+            <p>
+              Rated how I viewed myself when actively using them. It's been a
+              while since I've used these, but I pick things back up pretty
+              quickly.
+            </p>
+          </Message>
+          <TechnicalSkills data={pastTechData} />
+        </Tab.Pane>
+      </>
     ),
   },
   {
-    menuItem: 'Skills over time',
+    menuItem: 'Skills Over Time',
     render: () => (
-      <Tab.Pane attached={false}>
-        <SkillsOverTimeScatter />
-      </Tab.Pane>
+      <>
+        <Done />
+        <Tab.Pane attached={false}>
+          <Message>
+            <p>
+              Not everything I've used professionally. Personal opinion on how
+              proficient I am with a boiled down list of skills.
+            </p>
+          </Message>
+          <SkillsOverTime />
+        </Tab.Pane>
+      </>
+    ),
+  },
+  {
+    menuItem: 'Used Professionally',
+    render: () => (
+      <>
+        <Done />
+        <Tab.Pane attached={false}>
+          <List>
+            {Object.values(Skill).map((skill) => {
+              return (
+                <ListItem>
+                  <ListContent>{skill}</ListContent>
+                </ListItem>
+              )
+            })}
+          </List>
+        </Tab.Pane>
+      </>
     ),
   },
 ]
@@ -46,7 +89,8 @@ function Skills() {
   const tabKey = 'tab'
 
   return (
-    <Container>
+    <>
+      <Done />
       <Grid columns={1}>
         <Grid.Column>
           <Header as="h3">How I see myself as a developer</Header>
@@ -87,7 +131,7 @@ function Skills() {
           />
         </Grid.Column>
       </Grid>
-    </Container>
+    </>
   )
 }
 

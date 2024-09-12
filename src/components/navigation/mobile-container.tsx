@@ -23,9 +23,10 @@ export function MobileContainer({ children, routes }: MobileContainerProps) {
   )
 
   return (
-    <Media at="mobile">
+    <Media at="mobile" style={{ position: 'relative' }}>
       <Sidebar.Pushable style={{ height: '100vh' }}>
         <Sidebar
+          id="nav"
           as={Menu}
           animation="overlay"
           inverted
@@ -51,7 +52,9 @@ export function MobileContainer({ children, routes }: MobileContainerProps) {
               </Menu>
             </Container>
           </Segment>
-          {children}
+          <Container id="content" className="fadeIn">
+            {children}
+          </Container>
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     </Media>

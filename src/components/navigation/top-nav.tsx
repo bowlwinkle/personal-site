@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 import { NavbarItem as NavbarItem } from './sidebar'
 import { NavLink } from 'react-router-dom'
-import { ContactInfo } from '../contact'
 import { List, ListItem } from 'semantic-ui-react'
 import { LogoSVG } from '../logo'
 
@@ -35,9 +34,6 @@ export function TopNav({ items }: TopNavProps) {
       <LogoSVG width="75" height="75" />
       <List divided horizontal>
         {navItems}
-        <ListItem className="navItem">
-          <ContactInfo />
-        </ListItem>
       </List>
     </nav>
   )

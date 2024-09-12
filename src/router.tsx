@@ -36,7 +36,7 @@ const routeDefinitions = [
     to: '/playground',
     label: 'Playground',
     icon: 'fly',
-    enabled: false,
+    enabled: true,
   },
 ] as NavbarItem[]
 
@@ -72,7 +72,11 @@ export const router = createBrowserRouter(
   [
     {
       path: '*',
-      element: <NotFound />,
+      element: (
+        <App>
+          <NotFound />
+        </App>
+      ),
     },
     {
       path: '/',

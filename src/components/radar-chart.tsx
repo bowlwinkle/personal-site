@@ -16,7 +16,7 @@ type TechnicalSkillsProps = {
 
 function TechnicalSkills({ data, fullMark = 100 }: TechnicalSkillsProps) {
   return (
-    <div className="technicalSkills">
+    <div className="radarChart">
       <ResponsiveContainer width="100%" height="80%">
         <RadarChart data={data}>
           <PolarGrid />
@@ -24,8 +24,9 @@ function TechnicalSkills({ data, fullMark = 100 }: TechnicalSkillsProps) {
           <PolarRadiusAxis angle={30} domain={[0, fullMark]} />
           <Radar
             dataKey="value"
-            stroke="#8884d8"
-            fill="#8884d8"
+            // Removed to be controlled by CSS and page variable
+            // stroke="#8884d8"
+            // fill="#8884d8"
             fillOpacity={0.3}
           />
           <Legend />

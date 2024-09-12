@@ -1,5 +1,7 @@
-import { NotFound } from '../../components/404'
+import { ContactInfo } from '../../components/contact'
+// import { Contact } from '../contact/contact'
 
 export function Playground() {
-  return <NotFound />
+  return <ContactInfo />
+  // return <Contact /> // Send me an email component
 }

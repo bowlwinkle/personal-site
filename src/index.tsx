@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './router'
 import Spinner from './components/spinner'
+// import { TestScreen } from './pages/playground/playground'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
@@ -16,6 +17,8 @@ root.render(
       fallbackElement={<Spinner />}
       future={{ v7_startTransition: true }}
     />
+    {/* <TestScreen /> */}
+    <div className="inkOverlay" />
   </StrictMode>
 )
 

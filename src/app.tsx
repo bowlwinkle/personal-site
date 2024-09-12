@@ -40,13 +40,15 @@ switch (config.nav.activeNav) {
     break
 
   case Navigation.SemanticTop:
-    App = () => (
+    App = ({ children }) => (
       <MediaContextProvider>
         <DesktopContainer routes={routes}>
           <Outlet />
+          {children}
         </DesktopContainer>
         <MobileContainer routes={routes}>
           <Outlet />
+          {children}
         </MobileContainer>
       </MediaContextProvider>
     )
