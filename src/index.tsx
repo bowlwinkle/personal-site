@@ -7,17 +7,19 @@ import reportWebVitals from './reportWebVitals'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './router'
 import Spinner from './components/spinner'
-// import { TestScreen } from './pages/playground/playground'
+import { Provider } from 'react-redux'
+import { store } from './store/store'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <StrictMode>
-    <RouterProvider
-      router={router}
-      fallbackElement={<Spinner />}
-      future={{ v7_startTransition: true }}
-    />
-    {/* <TestScreen /> */}
+    <Provider store={store}>
+      <RouterProvider
+        router={router}
+        fallbackElement={<Spinner />}
+        future={{ v7_startTransition: true }}
+      />
+    </Provider>
     <div className="inkOverlay" />
   </StrictMode>
 )

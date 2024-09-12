@@ -1,10 +1,13 @@
 import { ReactElement, ReactNode, useMemo, Key } from 'react'
 import { Media } from '../media'
 import { useInView } from 'react-intersection-observer'
-import { Menu, Container, Segment, Radio } from 'semantic-ui-react'
+import { Menu, Container, Segment } from 'semantic-ui-react'
 import { NavbarItem } from './sidebar'
 import { NavLink, useLocation } from 'react-router-dom'
 import { LGSVG } from '../logo'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { RootState } from '../../store/store'
+// import { toggle } from '../../features/theme'
 
 type DesktopContainerProps = {
   routes: NavbarItem[]
@@ -15,6 +18,8 @@ export function DesktopContainer({
   routes,
   children,
 }: DesktopContainerProps): ReactElement {
+  // const themeEnabled = useSelector((state: RootState) => state.theme.darkMode)
+  // const dispatch = useDispatch()
   const location = useLocation()
   const path = location.pathname.replace('/', '')
 
@@ -51,7 +56,11 @@ export function DesktopContainer({
               </Menu.Item>
               {menuItems}
               <Menu.Item position="right">
-                <Radio toggle />
+                {/* <Radio
+                  toggle
+                  checked={themeEnabled}
+                  onChange={() => dispatch(toggle())}
+                /> */}
               </Menu.Item>
             </Container>
           </Menu>

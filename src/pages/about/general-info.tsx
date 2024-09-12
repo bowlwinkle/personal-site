@@ -101,7 +101,7 @@ export function GeneralInfo({ className }: GeneralInfoProps) {
         <Grid stackable relaxed centered className={className}>
           <Grid.Row>
             <Header as="h4">
-              For the scanners, here are some high level quick stats
+              For the scanners, here are some very high level stats
             </Header>
           </Grid.Row>
           <Grid.Row>
