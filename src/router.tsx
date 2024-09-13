@@ -44,6 +44,8 @@ export const routes = routeDefinitions.filter(
   (route) => route.enabled !== false || config.nav.showAllRoutes
 )
 
+console.log('Hit router.tsx')
+
 const childrenRoutes = (prefix = '') => [
   {
     path: `${prefix}/`,
