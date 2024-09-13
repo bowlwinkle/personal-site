@@ -21,6 +21,7 @@ concurrency:
   group: 'pages'
   cancel-in-progress: false
 
+# Hosting location is at root: deploy moves all files to root for hosting
 jobs:
   # Single deploy job since we're just deploying
   deploy:
@@ -49,8 +50,9 @@ jobs:
         run: rm -rf src/
       - name: Move public files up
         run: |
-          mv build/index.html .
+          mv build/* .
           rm -rf public
+          rm -rf build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

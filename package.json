@@ -41,7 +41,7 @@
     "lint": "eslint src --ext .ts,.tsx",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-github-pages": "PUBLIC_URL='build' react-scripts build",
+    "build-github-pages": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

@@ -69,24 +69,18 @@ const childrenRoutes = (prefix = '') => [
   },
 ]
 
-const personalSiteBasename = '/personal-site'
-export const router = createBrowserRouter(
-  [
-    {
-      path: '*',
-      element: (
-        <App>
-          <NotFound />
-        </App>
-      ),
-    },
-    {
-      path: '/',
-      element: <App />,
-      children: [...childrenRoutes()],
-    },
-  ],
+export const router = createBrowserRouter([
   {
-    basename: config.isProd ? personalSiteBasename : undefined,
-  }
-)
+    path: '*',
+    element: (
+      <App>
+        <NotFound />
+      </App>
+    ),
+  },
+  {
+    path: '/',
+    element: <App />,
+    children: [...childrenRoutes()],
+  },
+])
