@@ -4,7 +4,6 @@ import { ContactInfo } from '../../components/contact'
 import { Map } from '../../components/animations/map'
 
 export function Home() {
-  console.log('Hit home.tsx')
   return (
     <>
       <Container className="home">

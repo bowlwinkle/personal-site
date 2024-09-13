@@ -36,15 +36,13 @@ const routeDefinitions = [
     to: '/playground',
     label: 'Playground',
     icon: 'fly',
-    enabled: true,
+    enabled: false,
   },
 ] as NavbarItem[]
 
 export const routes = routeDefinitions.filter(
   (route) => route.enabled !== false || config.nav.showAllRoutes
 )
-
-console.log('Hit router.tsx')
 
 const childrenRoutes = (prefix = '') => [
   {
