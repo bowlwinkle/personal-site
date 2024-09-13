@@ -11,4 +11,9 @@ export const config = {
     activeNav: Navigation.SemanticTop,
   },
   isProd: process.env.NODE_ENV === 'production',
+  breakpoints: {
+    mobile: 0,
+    tablet: 768,
+    computer: 1024,
+  },
 }

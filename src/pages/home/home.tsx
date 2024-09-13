@@ -1,13 +1,32 @@
 import './home.scss'
+import { ReactNode } from 'react'
 import { Container, Grid, Header } from 'semantic-ui-react'
 import { ContactInfo } from '../../components/contact'
 import { Map } from '../../components/animations/map'
+import { Media } from '../../components/media'
+
+function HomeGrid({ children, ...props }: { children: ReactNode }) {
+  return (
+    <>
+      <Media at="mobile">
+        <Grid columns={1} relaxed centered {...props}>
+          {children}
+        </Grid>
+      </Media>
+      <Media greaterThan="mobile">
+        <Grid columns={2} relaxed centered {...props}>
+          {children}
+        </Grid>
+      </Media>
+    </>
+  )
+}
 
 export function Home() {
   return (
     <>
       <Container className="home">
-        <Grid columns={2} relaxed centered>
+        <HomeGrid>
           <Grid.Row centered>
             <Grid.Column>
               <Grid className="homeDetails">
@@ -49,7 +68,7 @@ export function Home() {
               </div>
             </Grid.Column>
           </Grid.Row>
-        </Grid>
+        </HomeGrid>
       </Container>
       <div className="pointlessBackground3" />
     </>

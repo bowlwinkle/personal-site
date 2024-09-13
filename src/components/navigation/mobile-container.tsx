@@ -15,7 +15,12 @@ export function MobileContainer({ children, routes }: MobileContainerProps) {
   const menuItems = useMemo(
     () =>
       routes.map((route: NavbarItem) => (
-        <Menu.Item as={NavLink} to={route.to} key={route.to as Key}>
+        <Menu.Item
+          as={NavLink}
+          to={route.to}
+          key={route.to as Key}
+          onClick={() => toggleSidebar(false)}
+        >
           {route.label}
         </Menu.Item>
       )),
@@ -52,9 +57,7 @@ export function MobileContainer({ children, routes }: MobileContainerProps) {
               </Menu>
             </Container>
           </Segment>
-          <Container id="content" className="fadeIn">
-            {children}
-          </Container>
+          <Container className="mobileContainer fadeIn">{children}</Container>
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     </Media>

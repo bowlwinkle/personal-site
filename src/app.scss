@@ -55,7 +55,7 @@
   background-image: url('./assets/falling-hex.svg');
   opacity: 0.15;
 
-  @media screen and (min-width: 770px) {
+  @media screen and (min-width: 768px) {
     position: fixed;
     opacity: 0.3;
   }
@@ -147,6 +147,15 @@
         fill: $bgAbout;
       }
     }
+  }
+}
+
+.mobileContainer {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  .grid {
+    padding: 10px;
   }
 }
 
