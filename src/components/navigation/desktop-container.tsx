@@ -55,13 +55,13 @@ export function DesktopContainer({
                 <LGSVG className={path} />
               </Menu.Item>
               {menuItems}
-              <Menu.Item position="right">
-                {/* <Radio
+              {/* <Menu.Item position="right">
+                <Radio
                   toggle
                   checked={themeEnabled}
                   onChange={() => dispatch(toggle())}
-                /> */}
-              </Menu.Item>
+                />
+              </Menu.Item> */}
             </Container>
           </Menu>
         </Segment>
