@@ -2,6 +2,7 @@ import anime from 'animejs/lib/anime.es'
 import LGPNG from '../assets/lg.svg'
 import { Image, ImageProps } from 'semantic-ui-react'
 import { useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
 
 type Logo = {
   id?: string
@@ -173,5 +174,9 @@ export function LGSVG({ className }: { className: string }) {
 }
 
 export function LogoPNG(props: ImageProps) {
-  return <Image src={LGPNG} {...props} />
+  return (
+    <NavLink to={'/'}>
+      <Image src={LGPNG} {...props} lazy />
+    </NavLink>
+  )
 }

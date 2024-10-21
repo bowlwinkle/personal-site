@@ -52,7 +52,9 @@ export function DesktopContainer({
           >
             <Container>
               <Menu.Item position="left" className="logoPNG">
-                <LGSVG className={path} />
+                <NavLink to="/">
+                  <LGSVG className={path} />
+                </NavLink>
               </Menu.Item>
               {menuItems}
               {/* <Menu.Item position="right">
@@ -67,8 +69,8 @@ export function DesktopContainer({
         </Segment>
       </div>
       <Container className="fadeIn">{children}</Container>
-      <div className={`pointlessBackground ${path}`} />
-      <div className={`pointlessBackground2 ${path}`} />
+      <div className={`pbg pointlessBackground ${path}`} />
+      <div className={`pbg pointlessBackground2 ${path}`} />
     </Media>
   )
 }

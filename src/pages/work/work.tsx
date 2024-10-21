@@ -1,12 +1,9 @@
 import './work.scss'
 import { Container, Tab } from 'semantic-ui-react'
-import { Timeline } from './timeline'
 import { useSearchParams } from 'react-router-dom'
 import { generateTabParams } from '../helpers'
 import { Projects } from './projects'
 import { useMemo } from 'react'
-
-// TODO: Update resume and timeline information
 
 enum MENU {
   PROJECTS = 'Projects',
@@ -33,14 +30,6 @@ const panes = [
           height="1300px"
           type="application/pdf"
         />
-      </Tab.Pane>
-    ),
-  },
-  {
-    menuItem: MENU.TIMELINE,
-    render: () => (
-      <Tab.Pane attached={false}>
-        <Timeline />
       </Tab.Pane>
     ),
   },

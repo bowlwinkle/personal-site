@@ -37,17 +37,25 @@ export function Home() {
                   <Header as="h3">FULL STACK DEVELOPER</Header>
                 </Grid.Row>
                 <Grid.Row>
+                  <p>I love to build and fix things</p>
+                </Grid.Row>
+                <Grid.Row>
                   <p>
-                    I have a passion to create and deliver quality software
-                    through innovation and exploration.
+                    I am in a new chapter of my life raising a beautiful
+                    daughter and trying to make it in a town I love.
                   </p>
                 </Grid.Row>
                 <Grid.Row>
                   <p>
-                    Most people try to have a 5 or 10 year plan, laying out
-                    where exactly they want to be. I'm not sure where I'm going
-                    to end up, but I know it's going to be something I'll love.
-                    I am exploring the life I have, as I live it.
+                    I am not sure where I'm going to end up, but I know it's
+                    going to be something I love. I am exploring the life I
+                    have, as I live it.
+                  </p>
+                </Grid.Row>
+                <Grid.Row>
+                  <p>
+                    Take a look around and see what I have been up to. Maybe our
+                   paths will cross.
                   </p>
                 </Grid.Row>
                 <Grid.Row>

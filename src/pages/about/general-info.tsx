@@ -92,6 +92,7 @@ export function GeneralInfo({ className }: GeneralInfoProps) {
                 src={cartoonImage}
                 alt="Cartoon Me"
                 className="cartoonPicture"
+                lazy
               />
             </Grid.Column>
           </Grid.Row>

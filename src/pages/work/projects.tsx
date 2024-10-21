@@ -236,14 +236,15 @@ export function Projects() {
                     <TableCell>{project.year}</TableCell>
                     <TableCell>
                       {project.redacted ? (
-                        <Image size="tiny" src={RedactedPNG} />
+                        <Image size="tiny" src={RedactedPNG} lazy />
                       ) : (
                         project.name
                       )}
                     </TableCell>
                     <TableCell>{project.overview}</TableCell>
                     <TableCell>
-                      <b>{project.builtFor}</b>
+                      <b style={{ display: 'none' }}>{project.builtFor}</b>
+                      <Image size="mini" src={project.icon} />
                     </TableCell>
                     <TableCell>
                       <LabelGroup className="buildLabels">

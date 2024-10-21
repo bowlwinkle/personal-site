@@ -120,6 +120,7 @@ export function Timeline() {
                     src={workData.logo}
                     alt={workData.company}
                     size="tiny"
+                    lazy
                   />
                 </Grid.Column>
                 <Grid.Column width={12}>

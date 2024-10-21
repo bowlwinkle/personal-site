@@ -6,7 +6,7 @@ export function NotFound() {
   return (
     <Container text textAlign="center" className="notFound">
       <div>
-        <Image src={NotFoundPNG} size="massive" />
+        <Image src={NotFoundPNG} size="massive" lazy />
         <Header as="h3">
           <NavLink to="/">TAKE ME HOME</NavLink>
         </Header>

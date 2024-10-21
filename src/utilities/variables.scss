@@ -1,6 +1,18 @@
+// $bgDarkMode: #454545;
+$bgDarkMode: #000000d1;
+$textDarkMode: #f5f5f5;
 $bgHome: #355d66;
 $bgSkills: #8884d8;
 // $bgSkills: #10a3a3;
 // $bgSkills: #798344;
 $bgWork: #772626;
 $bgAbout: #798344;
+
+body {
+  --bgDarkMode: #000000d1;
+  --textDarkMode: #f5f5f5;
+  --bgHome: #355d66;
+  --bgSkills: #8884d8;
+  --bgWork: #772626;
+  --bgAbout: #798344;
+}

@@ -1,4 +1,6 @@
 import { Skill } from './skills'
+import NikeIcon from '../assets/company-logos/nike.png'
+import IntelIcon from '../assets/company-logos/intel.png'
 
 export enum Companies {
   Nike = 'Nike',
@@ -19,6 +21,7 @@ export type Project = {
   builtWith: Skill[]
   workType: WorkType[]
   year: string
+  icon: string
 }
 
 export const projects: Project[] = [
@@ -28,6 +31,7 @@ export const projects: Project[] = [
     overview:
       'Internal platform that hosted documentation, and provisioned OAuth applications for internal developers (OAuth 2.0, OpenID Connect)',
     builtFor: Companies.Nike,
+    icon: NikeIcon,
     builtWith: [Skill.React, Skill.Node, Skill.NewRelic],
     workType: [WorkType.FE, WorkType.BE],
     year: "'21-'24",
@@ -38,13 +42,14 @@ export const projects: Project[] = [
     overview: `Built an internal AWS-style console, providing a centralized hub for technical products and documentation.
 Simplified access to critical tools, improving efficiency for the entire organization leveraging a micro-frontend architecture.`,
     builtFor: Companies.Nike,
+    icon: NikeIcon,
     builtWith: [
       Skill.React,
       Skill.GraphQL,
       Skill.Lambda,
       Skill.Dynamo,
       Skill.MicroFrontend,
-      Skill.ClientAWS,
+      Skill.AWS,
     ],
     workType: [WorkType.BE, WorkType.FE],
     year: "'19-'24",
@@ -55,6 +60,7 @@ Simplified access to critical tools, improving efficiency for the entire organiz
     overview: `Stood up an internal schemaless data enrichment metric service, enhancing data quality and decision-making.
 Leveraged active directory and analytics to drive insights.`,
     builtFor: Companies.Nike,
+    icon: NikeIcon,
     builtWith: [
       Skill.APIGateway,
       Skill.Lambda,
@@ -71,6 +77,7 @@ Leveraged active directory and analytics to drive insights.`,
     overview:
       'Delivered a user-friendly DAM (Digital Asset Management) user interface, enabling efficient management of digital assets.  Assisted backend team to increase velocity.',
     builtFor: Companies.Nike,
+    icon: NikeIcon,
     builtWith: [Skill.Mobx, Skill.Node, Skill.Kubernetes],
     workType: [WorkType.FE, WorkType.BE],
     year: '2020',
@@ -81,6 +88,7 @@ Leveraged active directory and analytics to drive insights.`,
     overview:
       'Developed a user interface for an internal managed kafka platform.',
     builtFor: Companies.Nike,
+    icon: NikeIcon,
     builtWith: [Skill.React, Skill.Redux, Skill.Stylus],
     workType: [WorkType.FE, WorkType.BE],
     year: "'19-'21",
@@ -91,6 +99,7 @@ Leveraged active directory and analytics to drive insights.`,
     overview: `Designed a user-friendly UI to manage server rack resources dynamically.
 Optimized resource allocation based on workload requirements (compute, storage, memory).`,
     builtFor: Companies.Intel,
+    icon: IntelIcon,
     builtWith: [Skill.React, Skill.Redux, Skill.Less],
     workType: [WorkType.FE],
     year: '2017',
@@ -101,6 +110,7 @@ Optimized resource allocation based on workload requirements (compute, storage, 
     overview:
       'Directed Acyclic Graph (DAG) Scheduler leveraging gRPC for communication, accessed either by API or UI.',
     builtFor: Companies.Intel,
+    icon: IntelIcon,
     builtWith: [
       Skill.React,
       Skill.Redux,
@@ -114,8 +124,9 @@ Optimized resource allocation based on workload requirements (compute, storage, 
   {
     name: 'Automation Tools Team',
     redacted: false,
-    overview: ``,
+    overview: `Supported an internal IDE, developing new features, maintenance, and a variety of tools for testing automation.`,
     builtFor: Companies.Intel,
+    icon: IntelIcon,
     builtWith: [
       Skill.CSharp,
       Skill.React,
@@ -132,6 +143,7 @@ Optimized resource allocation based on workload requirements (compute, storage, 
     overview: `Developed an application that runs the Microsoft wireless certification on 30 plus machines
       using the WHQL API asynchronously, adapting, and monitoring failures.  Work required a variety of APIs, SDKs, and technology to properly monitor, reset, initialize the platform.`,
     builtFor: Companies.Intel,
+    icon: IntelIcon,
     builtWith: [Skill.CSharp, Skill.WPF, Skill.Other],
     workType: [WorkType.App],
     year: '2014',
@@ -141,6 +153,7 @@ Optimized resource allocation based on workload requirements (compute, storage, 
     redacted: false,
     overview: `Worked with customers to obtain test plans, and automated the test plans to run on Intel hardware before shipping driver updates.`,
     builtFor: Companies.Intel,
+    icon: IntelIcon,
     builtWith: [
       Skill.CSharp,
       Skill.CPlusPlus,
@@ -157,6 +170,7 @@ Optimized resource allocation based on workload requirements (compute, storage, 
     redacted: false,
     overview: `Created an application that runs the Wifi Alliance's Wi-fi Direct certification on Intel hardware, and software.`,
     builtFor: Companies.Intel,
+    icon: IntelIcon,
     builtWith: [
       Skill.CSharp,
       Skill.CPlusPlus,
@@ -171,8 +185,9 @@ Optimized resource allocation based on workload requirements (compute, storage, 
   {
     name: 'Wireless Test Automation',
     redacted: false,
-    overview: ``,
+    overview: `Developed test plans, automated the testing, and provided data to improve wireless quality.`,
     builtFor: Companies.Intel,
+    icon: IntelIcon,
     builtWith: [
       Skill.CSharp,
       Skill.CPlusPlus,

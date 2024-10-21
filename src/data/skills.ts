@@ -144,7 +144,6 @@ export enum Skill {
   WCF = 'WCF',
   Kubernetes = 'Kubernetes',
   Mobx = 'Mobx',
-  ClientAWS = 'Client AWS Services',
   SQL = 'SQL',
   Postgres = 'PostgresSQL',
   BeeGo = 'BeeGo',

@@ -1,0 +1,10 @@
+@import '../../utilities/variables.scss';
+
+.box {
+  --defaultColor: #{$bgHome};
+
+  width: 100px;
+  height: 100px;
+  background-color: var(--defaultColor);
+  border-radius: 20px;
+}

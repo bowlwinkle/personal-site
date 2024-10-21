@@ -2,6 +2,24 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import './utilities/variables.scss';
 
+#root.darkMode {
+  background-color: $bgDarkMode;
+  color: $textDarkMode;
+
+  .fresnel-container,
+  .container,
+  .segment,
+  .table {
+    background-color: $bgDarkMode;
+    color: $textDarkMode;
+  }
+
+  .ui .segment {
+    background-color: $bgDarkMode;
+    color: $textDarkMode;
+  }
+}
+
 .done {
   height: 100vh;
   width: 100vw;
@@ -23,6 +41,7 @@
   background-color: $bgHome;
   opacity: 0.1;
   z-index: -1;
+  border-radius: 25%;
   filter: blur(5px);
 
   &.skills {
@@ -62,9 +81,6 @@
 }
 
 #root {
-  // // should remove
-  // filter: invert(1);
-
   height: 100%;
   width: 100vw;
 
