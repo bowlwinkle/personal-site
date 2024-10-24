@@ -1,6 +1,7 @@
 // Still haven't setup primary and secondary colors, just using default semantic colors but adding for a few sections
 // $primaryColor: #;
 $secondaryColor: #000;
+$testDarkMode1: #333333;
 
 // $bgDarkMode: #454545;
 $bgDarkMode: #000000d1;
@@ -20,3 +21,9 @@ body {
   --bgWork: #772626;
   --bgAbout: #798344;
 }
+
+// playing with colors below
+
+$darkBlue: #171735;
+
+$color: $testDarkMode1;

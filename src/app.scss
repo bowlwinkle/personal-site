@@ -2,18 +2,126 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import './utilities/variables.scss';
 
-#root {
-  z-index: 0;
-}
+#root.darkMode {
+  background-color: $color;
+  color: $textDarkMode;
 
-.pageContent {
-  .ui.segment {
-    background: whitesmoke;
+  .fresnel-container,
+  .container,
+  .segment,
+  .table,
+  .ui .tabular .menu,
+  .ui .segment,
+  .ui .message {
+    color: $textDarkMode;
+    background-color: $color;
+    border-color: rgba($textDarkMode, 0.2);
+  }
+
+  .ui.fluid.tabular.menu {
+    .active.item {
+      background: rgba($textDarkMode, 0.15);
+    }
+  }
+
+  .home svg {
+    filter: invert(0.9);
+  }
+
+  #nav > .ui .secondary .pointing .menu > .ui .container > .item .active {
+    border-bottom-color: $textDarkMode !important;
+  }
+
+  .item {
+    color: $textDarkMode;
+
+    &:hover {
+      color: $textDarkMode;
+    }
+  }
+
+  .workContent {
+    color: $textDarkMode;
+
+    .ui.table {
+      tr:hover {
+        background-color: rgba($bgWork, 0.2);
+      }
+    }
+    .ui.message {
+      background: $bgWork;
+    }
+  }
+
+  .skillsContent {
+    .ui.message {
+      background: $bgSkills;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .contactLink a {
+    color: $textDarkMode;
   }
 }
 
 .contactLink a {
   color: $secondaryColor;
+}
+
+.pointlessBackground,
+.pointlessBackground2 {
+  position: fixed;
+  left: -40%;
+  top: 35%;
+  width: 200%;
+  height: 55%;
+  transform: rotate(-15deg);
+  background-color: $bgHome;
+  opacity: 0.1;
+  z-index: -1;
+  border-radius: 25%;
+  filter: blur(5px);
+
+  &.skills {
+    background-color: $bgSkills;
+  }
+
+  &.work {
+    background-color: $bgWork;
+  }
+
+  &.about {
+    background-color: $bgAbout;
+  }
+}
+
+.pointlessBackground2 {
+  top: 48%;
+  height: 25%;
+  opacity: 0.15;
+  filter: blur(40px);
+}
+
+.pointlessBackground3 {
+  position: absolute;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  bottom: -50%;
+  background-repeat: no-repeat;
+  // background-image: url('./assets/falling-hex.svg');
+  opacity: 0.15;
+
+  @media screen and (min-width: 768px) {
+    position: fixed;
+    opacity: 0.3;
+  }
 }
 
 #root {

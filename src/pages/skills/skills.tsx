@@ -87,7 +87,7 @@ function Skills() {
 
   return (
     <>
-      <Grid columns={1}>
+      <Grid columns={1} className="skillsContent">
         <Grid.Column>
           <Header as="h3">How I see myself as a engineer</Header>
         </Grid.Column>
