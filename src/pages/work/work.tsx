@@ -53,7 +53,7 @@ export function WorkHistory() {
   }, [queryParams, setQueryParams, tabKey])
 
   return (
-    <Container>
+    <Container className="workContent">
       <Tab
         defaultActiveIndex={defaultActiveIndex}
         menu={{ fluid: true, tabular: true }}

@@ -3,19 +3,69 @@
 @import './utilities/variables.scss';
 
 #root.darkMode {
-  background-color: $bgDarkMode;
+  background-color: $color;
   color: $textDarkMode;
 
   .fresnel-container,
   .container,
   .segment,
-  .table {
-    background-color: $bgDarkMode;
+  .table,
+  .ui .tabular .menu,
+  .ui .segment,
+  .ui .message {
     color: $textDarkMode;
+    background-color: $color;
+    border-color: rgba($textDarkMode, 0.2);
   }
 
-  .ui .segment {
-    background-color: $bgDarkMode;
+  .ui.fluid.tabular.menu {
+    .active.item {
+      background: rgba($textDarkMode, 0.15);
+    }
+  }
+
+  .home svg {
+    filter: invert(0.9);
+  }
+
+  #nav > .ui .secondary .pointing .menu > .ui .container > .item .active {
+    border-bottom-color: $textDarkMode !important;
+  }
+
+  .item {
+    color: $textDarkMode;
+
+    &:hover {
+      color: $textDarkMode;
+    }
+  }
+
+  .workContent {
+    color: $textDarkMode;
+
+    .ui.table {
+      tr:hover {
+        background-color: rgba($bgWork, 0.2);
+      }
+    }
+    .ui.message {
+      background: $bgWork;
+    }
+  }
+
+  .skillsContent {
+    .ui.message {
+      background: $bgSkills;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .contactLink a {
     color: $textDarkMode;
   }
 }
@@ -65,7 +115,7 @@
   width: 100%;
   bottom: -50%;
   background-repeat: no-repeat;
-  background-image: url('./assets/falling-hex.svg');
+  // background-image: url('./assets/falling-hex.svg');
   opacity: 0.15;
 
   @media screen and (min-width: 768px) {
