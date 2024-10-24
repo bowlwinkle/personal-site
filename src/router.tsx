@@ -47,23 +47,48 @@ export const routes = routeDefinitions.filter(
 const childrenRoutes = (prefix = '') => [
   {
     path: `${prefix}/`,
-    element: <Home />,
+    element: (
+      <>
+        <title>LG - Home</title>
+        <Home />
+      </>
+    ),
   },
   {
     path: `${prefix}/skills`,
-    element: <Skills />,
+    element: (
+      <>
+        <title>LG - Skills</title>
+        <Skills />
+      </>
+    ),
   },
   {
     path: `${prefix}/work`,
-    element: <WorkHistory />,
+    element: (
+      <>
+        <title>LG - Work</title>
+        <WorkHistory />
+      </>
+    ),
   },
   {
     path: `${prefix}/about`,
-    element: <About />,
+    element: (
+      <>
+        <title>LG - About</title>
+        <About />
+      </>
+    ),
   },
   {
     path: `${prefix}/playground`,
-    element: <Playground />,
+    element: (
+      <>
+        <title>LG - Playground</title>
+        <Playground />
+      </>
+    ),
   },
 ]
 
