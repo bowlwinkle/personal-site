@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 const joinedIndustry = '2011-06-18T00:00:00'
 const engManagerBeginning = '2021-03-15T00:00:00'
 
@@ -17,25 +19,23 @@ export function AboutContent() {
         I'm Lucas and I've been in the tech industry for <b>{totalWorkExp}</b>{' '}
         years and counting. I've been an individual contributor for{' '}
         <b>{sweWorkExp}</b> and was an engineering manager for{' '}
-        <b>{engManagerWorkExp}</b>. I do not have any externally facing projects
-        but checkout my resume, skills, and a little bit about me!
-      </p>
-      <p>
-        I love learning as I go and I love the people that I meet on the way.
-        The end goal for my career is still unknown, but I keep climbing.
+        <b>{engManagerWorkExp}</b>. I do not have any external projects but
+        checkout my <NavLink to="/work?tab=Resume">resume</NavLink>,{' '}
+        <NavLink to="/skills">skills</NavLink>, and a little bit about me!
       </p>
       <p>
         I'm currently unemployed due to the fact that I moved out of the city of
-        Portland during covid to be next to family. I was given the choice to
+        Portland during COVID to be next to family. I was given the choice to
         either move back to Portland or resign and leave the company. I chose to
         resign and leave the company. On June 24th, 2023, my daughter was born
         and I chose to take a little hiatus to spend some time with her before I
-        spend a lot of time looking for the next chapter in my career. It was
-        fun and rewarding, but the time has come to get back to work.
+        land a new position. It was fun and rewarding, but the time has come to
+        get back to work.
       </p>
       <p>
-        I'm looking for a remote position, so if you know of any opportunities,
-        please don't hesitate to reach out!
+        I am preferably looking for a remote position, but so far the hunt has
+        been challenging, therefore I am open to relocate. If you're reading
+        this and have an opportunity, please don't hesitate to reach out!
       </p>
       <p>
         Born in southern Oregon, attended Oregon Institute of Technology,

@@ -34,28 +34,22 @@ export function Home() {
                   <Header as="h1">Lucas Gansberg</Header>
                 </Grid.Row>
                 <Grid.Row>
-                  <Header as="h3">FULL STACK DEVELOPER</Header>
-                </Grid.Row>
-                <Grid.Row>
-                  <p>I love to build and fix things</p>
+                  <div>
+                    <Header as="h3">FULL STACK SW Engineer</Header>
+                    <Header as="h5">13 years experience</Header>
+                  </div>
                 </Grid.Row>
                 <Grid.Row>
                   <p>
-                    I am in a new chapter of my life raising a beautiful
-                    daughter and trying to make it in a town I love.
+                    From automation testing & tools for wireless chips to full
+                    stack application, I've had some amazing opportunities while
+                    meeting great people along the way.
                   </p>
                 </Grid.Row>
                 <Grid.Row>
                   <p>
-                    I am not sure where I'm going to end up, but I know it's
-                    going to be something I love. I am exploring the life I
-                    have, as I live it.
-                  </p>
-                </Grid.Row>
-                <Grid.Row>
-                  <p>
-                    Take a look around and see what I have been up to. Maybe our
-                   paths will cross.
+                    I am actively looking for a new opportunity so please feel
+                    free to reach out!
                   </p>
                 </Grid.Row>
                 <Grid.Row>

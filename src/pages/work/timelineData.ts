@@ -18,9 +18,9 @@ export const TimeLineData: Array<WorkExperience> = [
     startDate: 'May 2021',
     endDate: 'March 2024',
     markDown: `
-* Managed a team of 4 developers.
+* Managed a team of 4 engineers.
 * Lead cross-functional engagements
-* Collaborated with designers, developers, teams, product, and program.
+* Collaborated with designers, engineers, teams, product, and program.
 * Developed engineering roadmap as well as team tasks.
 `,
   },

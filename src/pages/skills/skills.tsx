@@ -87,29 +87,20 @@ function Skills() {
     <>
       <Grid columns={1}>
         <Grid.Column>
-          <Header as="h3">How I see myself as a developer</Header>
+          <Header as="h3">How I see myself as a engineer</Header>
         </Grid.Column>
         <Grid.Column>
           <p>
-            Over the years I've worked with many different languages,
-            technologies, and frameworks. I've put together a couple of charts
-            with the recent stack I've worked with and some others things I've
-            done in my time in the industry.
-          </p>
-          <p>
-            I think it's important to state that, I believe that every developer
-            is constantly learning and that's the skill that is most important.
-            There might be a rare case of a true master but an expert in a
-            certain language or technology isn't what a developer should be
-            striving towards. The ability to learn and apply those techniques or
-            ideas is the ideal skill to have. I am a a jack of many trades but I
-            am master of none.
+            I've worked with many different architectures, patterns, languages,
+            technologies, frameworks, etc it's tedious for me to explain and
+            boring to the reader. I've put together a couple of charts that
+            detail how I rate myself with some of the things I've worked with. I
+            am my worst critic!
           </p>
           <Message>
             <p>All skills are personally rated from 1 - 100</p>
           </Message>
         </Grid.Column>
-
         <Grid.Column>
           <Header as="h3">Skills</Header>
         </Grid.Column>

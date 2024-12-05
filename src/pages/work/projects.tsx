@@ -173,9 +173,7 @@ export function Projects() {
     <>
       <Message>
         <p>
-          I hope most understand timeline is a bit tricky here. Once you build,
-          you maintain so there is overlap. Some project names have been
-          redacted.
+          Project timelines do overlap as I worked on multiple at the same time.
         </p>
       </Message>
       <Grid columns={3} verticalAlign="middle" stretched>
