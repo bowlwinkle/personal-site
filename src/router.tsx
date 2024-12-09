@@ -17,15 +17,15 @@ const routeDefinitions = [
     icon: 'home',
   },
   {
-    to: '/skills',
-    label: 'Skills',
-    icon: 'sliders',
-  },
-  {
     to: '/work',
     label: 'Work',
     icon: 'wrench',
     enabled: true,
+  },
+  {
+    to: '/skills',
+    label: 'Skills',
+    icon: 'sliders',
   },
   {
     to: '/about',
