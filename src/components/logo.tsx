@@ -144,7 +144,7 @@ export function LogoSVG({ animate = false }: Logo, { ...rest }: Logo) {
   return <LG id="LGLogo" {...rest} />
 }
 
-export function LGSVG({ className }: { className: string }) {
+export function LGSVG({ className }: { className?: string }) {
   return (
     <svg
       width="63"

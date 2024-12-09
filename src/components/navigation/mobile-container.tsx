@@ -3,6 +3,7 @@ import { Media } from '../media'
 import { Key, ReactNode, useMemo, useState } from 'react'
 import { NavbarItem } from './sidebar'
 import { NavLink } from 'react-router-dom'
+import { LGSVG } from '../logo'
 
 type MobileContainerProps = {
   routes: NavbarItem[]
@@ -53,6 +54,11 @@ export function MobileContainer({ children, routes }: MobileContainerProps) {
               <Menu inverted pointing secondary size="large">
                 <Menu.Item onClick={() => toggleSidebar(true)}>
                   <Icon name="sidebar" />
+                </Menu.Item>
+                <Menu.Item position="right" className="logoPNG mobile">
+                  <NavLink to="/">
+                    <LGSVG />
+                  </NavLink>
                 </Menu.Item>
               </Menu>
             </Container>
