@@ -24,7 +24,7 @@ function HomeGrid({ children, ...props }: { children: ReactNode }) {
 
 export function Home() {
   return (
-    <>
+    <div className="appContainer">
       <Container className="home">
         <HomeGrid>
           <Grid.Row centered>
@@ -73,6 +73,6 @@ export function Home() {
         </HomeGrid>
       </Container>
       <div className="pointlessBackground3" />
-    </>
+    </div>
   )
 }

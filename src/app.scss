@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import './utilities/variables.scss';
 
+.appContainer {
+  z-index: 0;
+}
+
 #root.darkMode {
   background-color: $bgDarkMode;
   color: $textDarkMode;
@@ -26,6 +30,7 @@
 
 .pointlessBackground,
 .pointlessBackground2 {
+  z-index: 0;
   position: fixed;
   left: -40%;
   top: 35%;
@@ -231,7 +236,7 @@ body {
   mix-blend-mode: multiply;
   pointer-events: none;
   height: 100%;
-  opacity: 1;
+  opacity: 0.6;
 }
 
 .testScreen {
