@@ -176,7 +176,7 @@ export function LGSVG({ className }: { className?: string }) {
 export function LogoPNG(props: ImageProps) {
   return (
     <NavLink to={'/'}>
-      <Image src={LGPNG} {...props} lazy />
+      <Image id="logoPNG" src={LGPNG} {...props} lazy />
     </NavLink>
   )
 }

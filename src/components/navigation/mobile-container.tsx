@@ -12,6 +12,7 @@ type MobileContainerProps = {
 
 export function MobileContainer({ children, routes }: MobileContainerProps) {
   const [sideBarOpen, toggleSidebar] = useState(false)
+  const path = location.pathname.replace('/', '')
 
   const menuItems = useMemo(
     () =>
@@ -57,7 +58,7 @@ export function MobileContainer({ children, routes }: MobileContainerProps) {
                 </Menu.Item>
                 <Menu.Item position="right" className="logoPNG mobile">
                   <NavLink to="/">
-                    <LGSVG />
+                    <LGSVG className={path} />
                   </NavLink>
                 </Menu.Item>
               </Menu>
