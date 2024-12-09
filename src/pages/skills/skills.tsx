@@ -4,6 +4,7 @@ import TechnicalSkills from '../../components/radar-chart'
 import { SkillsOverTime } from '../../components/line-chart'
 import { pastTechData, Skill, technicalData } from '../../data/skills'
 import {
+  Divider,
   Grid,
   Header,
   List,
@@ -14,6 +15,7 @@ import {
 } from 'semantic-ui-react'
 import { useSearchParams } from 'react-router-dom'
 import { generateTabParams } from '../helpers'
+import { Media } from '../../components/media'
 
 const panes = [
   {
@@ -105,15 +107,64 @@ function Skills() {
           <Header as="h3">Skills</Header>
         </Grid.Column>
         <Grid.Column>
-          <Tab
-            className="skills"
-            defaultActiveIndex={String(queryParams.get(tabKey) || 0)}
-            menu={{ fluid: true, vertical: true, tabular: true }}
-            panes={panes}
-            onTabChange={(e, data) =>
-              setQueryParams(generateTabParams(tabKey, data.activeIndex))
-            }
-          />
+          <Media greaterThan="mobile">
+            <Tab
+              className="skills"
+              defaultActiveIndex={String(queryParams.get(tabKey) || 0)}
+              menu={{ fluid: true, vertical: true, tabular: true }}
+              panes={panes}
+              onTabChange={(e, data) =>
+                setQueryParams(generateTabParams(tabKey, data.activeIndex))
+              }
+            />
+          </Media>
+          <Media at="mobile">
+            <Grid className="skills skillsMobile">
+              <Grid.Row>
+                <Header as="h4">Current Technical Skills</Header>
+                <Divider />
+                <TechnicalSkills data={technicalData} />
+              </Grid.Row>
+              <Grid.Row>
+                <Divider />
+                <Header as="h4">Previous Technical Skills</Header>
+                <Message>
+                  <p>
+                    Rated how I viewed myself when actively using them. It's
+                    been a while since I've used these, but I pick things back
+                    up pretty quickly.
+                  </p>
+                </Message>
+                <TechnicalSkills data={pastTechData} />
+              </Grid.Row>
+              <Grid.Row>
+                <Divider />
+                <Header as="h4">Skills Over Time</Header>
+                <Message>
+                  <p>
+                    Not everything I've used professionally. Personal opinion on
+                    how proficient I am with a boiled down list of skills.
+                  </p>
+                </Message>
+                <SkillsOverTime />
+              </Grid.Row>
+              <Grid.Row>
+                <div>
+                  <Divider />
+                  <Header as="h4">Used Professionally</Header>
+                  <List>
+                    {Object.values(Skill).map((skill) => {
+                      return (
+                        <ListItem>
+                          <ListContent>{skill}</ListContent>
+                        </ListItem>
+                      )
+                    })}
+                  </List>
+                </div>
+              </Grid.Row>
+            </Grid>
+          </Media>
         </Grid.Column>
       </Grid>
     </>

@@ -10,7 +10,7 @@ import {
   YAxis,
 } from 'recharts'
 import { dataKeysOverTime, skillsOverTimeData } from '../data/skills'
-import { Divider, Label, Radio, CheckboxProps } from 'semantic-ui-react'
+import { Divider, Radio, CheckboxProps } from 'semantic-ui-react'
 
 const data = skillsOverTimeData()
 const dataKeys = dataKeysOverTime()
@@ -80,7 +80,6 @@ export function SkillsOverTime() {
 
   return (
     <div className="lineChart">
-      <Label>Toggle background</Label>
       <Divider />
       <Radio
         type="radio"

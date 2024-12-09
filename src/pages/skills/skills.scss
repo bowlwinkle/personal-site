@@ -11,7 +11,8 @@
 
   .lineChart,
   .radarChart {
-    width: auto;
+    // width: auto;
+    width: 100%;
     height: 750px;
   }
 
@@ -22,10 +23,17 @@
 
     .recharts-surface > .recharts-layer {
       .recharts-radar,
-     .recharts-radar-polygon {
+      .recharts-radar-polygon {
         stroke: $bgSkills;
         fill: $bgSkills;
       }
+    }
+  }
+
+  &.skillsMobile {
+    padding: 15px;
+    .divider {
+      width: 100%;
     }
   }
 }
