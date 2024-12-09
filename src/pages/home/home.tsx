@@ -72,7 +72,6 @@ export function Home() {
           </Grid.Row>
         </HomeGrid>
       </Container>
-      <div className="pointlessBackground3" />
     </div>
   )
 }

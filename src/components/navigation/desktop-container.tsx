@@ -69,8 +69,8 @@ export function DesktopContainer({
         </Segment>
       </div>
       <Container className="fadeIn">{children}</Container>
-      <div className={`pbg pointlessBackground ${path}`} />
-      <div className={`pbg pointlessBackground2 ${path}`} />
+      // <div className={`pbg pointlessBackground ${path}`} />
+      // <div className={`pbg pointlessBackground2 ${path}`} />
     </Media>
   )
 }
