@@ -3,27 +3,23 @@
 //   background-color: rgb(34, 34, 34);
 // }
 
-.ui.container
-
-.appContainer {
+.ui.container .home {
   z-index: 0;
-  .home {
-    padding-top: 10%;
+  padding-top: 10%;
 
-    p {
-      font-size: 1.33em;
+  p {
+    font-size: 1.33em;
+  }
+
+  .homeDetails {
+    margin: 0;
+
+    h3 {
+      margin: 2px;
     }
 
-    .homeDetails {
+    h5 {
       margin: 0;
-
-      h3 {
-        margin: 2px;
-      }
-
-      h5 {
-        margin: 0;
-      }
     }
   }
 }

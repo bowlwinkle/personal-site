@@ -64,7 +64,9 @@ export function MobileContainer({ children, routes }: MobileContainerProps) {
               </Menu>
             </Container>
           </Segment>
-          <Container className="mobileContainer fadeIn">{children}</Container>
+          <Container className="mobileContainer fadeIn">
+            <div className="pageContent">{children}</div>
+          </Container>
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     </Media>

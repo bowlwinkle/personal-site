@@ -68,9 +68,9 @@ export function DesktopContainer({
           </Menu>
         </Segment>
       </div>
-      <Container className="fadeIn">{children}</Container>
-      // <div className={`pbg pointlessBackground ${path}`} />
-      // <div className={`pbg pointlessBackground2 ${path}`} />
+      <Container className="fadeIn">
+        <div className="pageContent">{children}</div>
+      </Container>
     </Media>
   )
 }
