@@ -1,7 +1,5 @@
 # Personal Site
 
-Creating a personal site for myself and gives me an excuse to try out Semantic UI and Pulumi.
-
 ## Commands
 
 ```shell
