@@ -94,7 +94,7 @@ function Skills() {
         <Grid.Column>
           <p>
             I've worked with many different architectures, patterns, languages,
-            technologies, frameworks, etc it's tedious for me to explain and
+            technologies, frameworks, etc. It's tedious for me to explain and
             boring to the reader. I've put together a couple of charts that
             detail how I rate myself with some of the things I've worked with. I
             am my worst critic!
