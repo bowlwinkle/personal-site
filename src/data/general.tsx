@@ -24,18 +24,14 @@ export function AboutContent() {
         <NavLink to="/skills">skills</NavLink>, and a little bit about me!
       </p>
       <p>
-        I'm currently unemployed due to the fact that I moved out of the city of
-        Portland during COVID to be next to family. I was given the choice to
-        either move back to Portland or resign and leave the company. I chose to
-        resign and leave the company. On June 24th, 2023, my daughter was born
-        and I chose to take a little hiatus to spend some time with her before I
-        land a new position. It was fun and rewarding, but the time has come to
-        get back to work.
+        During the summer of 2023, my daughter was born! I finally see what
+        every parent has told me before... yada yada yada, <b>"you'll see"</b>.  I see and love her so much!
       </p>
       <p>
-        I am preferably looking for a remote position, but so far the hunt has
-        been challenging, therefore I am open to relocate. If you're reading
-        this and have an opportunity, please don't hesitate to reach out!
+        My family and I are gearing up for our next big adventure—yes, we're
+        moving again (can you believe it?)! A new opportunity has come our way,
+        and we're seizing it with excitement and determination. Central Oregon,
+        here we come!
       </p>
       <p>
         Born in southern Oregon, attended Oregon Institute of Technology,

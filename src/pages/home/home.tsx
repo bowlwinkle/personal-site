@@ -47,8 +47,11 @@ export function Home() {
               </Grid.Row>
               <Grid.Row>
                 <p>
-                  I am actively looking for a new opportunity so please feel
-                  free to reach out!
+                  I'm thrilled to share that I've joined the incredible team at
+                  Les Schwab HQ! This marks an exciting new chapter in my
+                  professional journey, as well as a meaningful personal
+                  milestone as my family embarks on a new adventure in beautiful
+                  Central Oregon.
                 </p>
               </Grid.Row>
               <Grid.Row>
