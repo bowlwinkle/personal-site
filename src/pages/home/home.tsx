@@ -40,18 +40,18 @@ export function Home() {
               </Grid.Row>
               <Grid.Row>
                 <p>
-                  From automation testing & tools for wireless chips to full
-                  stack application, I've had some amazing opportunities while
-                  meeting great people along the way.
+                  From automation to product delivery, I've gained valuable
+                  experience and had the privilege of connecting with incredible
+                  individuals along the way!
                 </p>
               </Grid.Row>
               <Grid.Row>
                 <p>
-                  I'm thrilled to share that I've joined the incredible team at
-                  Les Schwab HQ! This marks an exciting new chapter in my
-                  professional journey, as well as a meaningful personal
-                  milestone as my family embarks on a new adventure in beautiful
-                  Central Oregon.
+                  I'm excited to share that I've joined the outstanding team at
+                  Les Schwab HQ! This marks not only a thrilling new chapter in
+                  my professional journey but also a meaningful personal
+                  milestone, as my family embarks on an exciting new adventure
+                  in the stunning landscapes of Central Oregon.
                 </p>
               </Grid.Row>
               <Grid.Row>

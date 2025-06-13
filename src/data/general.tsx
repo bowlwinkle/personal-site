@@ -25,7 +25,8 @@ export function AboutContent() {
       </p>
       <p>
         During the summer of 2023, my daughter was born! I finally see what
-        every parent has told me before... yada yada yada, <b>"you'll see"</b>.  I see and love her so much!
+        every parent has told me before... yada yada yada, <b>"you'll see"</b>.
+        I see and love her so much!
       </p>
       <p>
         My family and I are gearing up for our next big adventure—yes, we're
