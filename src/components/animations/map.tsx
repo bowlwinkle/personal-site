@@ -10,29 +10,40 @@ const MED_DURATION = 650
 const LG_DURATION = 1000
 
 export function Map({ primaryColor = '#242539' }: { primaryColor?: string }) {
-  const currentTheme = useSelector((state: RootState) => state.theme.currentTheme)
-  
+  const currentTheme = useSelector(
+    (state: RootState) => state.theme.currentTheme
+  )
+
   // Get theme-aware colors
   const getThemeColor = () => {
     switch (currentTheme) {
-      case 'dark': return '#6272a4'
-      case 'dracula': return '#bd93f9'
-      case 'monokai': return '#66d9ef'
-      case 'github': return '#238636'
-      case 'discord': return '#5865f2'
-      case 'notion': return '#2eaadc'
-      case 'solarized': return '#268bd2'
-      case 'nord': return '#5e81ac'
-      default: return primaryColor
+      case 'dark':
+        return '#6272a4'
+      case 'dracula':
+        return '#bd93f9'
+      case 'monokai':
+        return '#66d9ef'
+      case 'github':
+        return '#238636'
+      case 'discord':
+        return '#5865f2'
+      case 'notion':
+        return '#2eaadc'
+      case 'solarized':
+        return '#268bd2'
+      case 'nord':
+        return '#5e81ac'
+      default:
+        return primaryColor
     }
   }
-  
+
   const themeColor = getThemeColor()
 
   useEffect(() => {
     // Reset mountains when theme changes
     anime.set('.ui .container svg #mountain', { opacity: 0 })
-    
+
     const timeline = anime.timeline({
       easing: 'easeInOutSine',
       delay: anime.stagger(DELAY),
@@ -113,7 +124,7 @@ export function Map({ primaryColor = '#242539' }: { primaryColor?: string }) {
         strokeWidth="10"
         fill="transparent"
       />
-      
+
       {/* Animated dotted paths - start hidden and draw progressively */}
       <g>
         <path

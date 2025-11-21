@@ -1,7 +1,12 @@
 // Theme mixin for comprehensive UI component styling
 @mixin theme-components($bg, $text, $accent) {
   // All borders and dividers
-  .ui.divider, hr, .ui.segment, .ui.message, .ui.menu, .ui.table {
+  .ui.divider,
+  hr,
+  .ui.segment,
+  .ui.message,
+  .ui.menu,
+  .ui.table {
     border-color: rgba($text, 0.2) !important;
   }
 
@@ -13,21 +18,28 @@
   }
 
   // All containers should use main background
-  .fresnel-container, .container, .ui.container, .ui.segment, .ui.message {
+  .fresnel-container,
+  .container,
+  .ui.container,
+  .ui.segment,
+  .ui.message {
     background-color: $bg !important;
     color: $text;
   }
 
   // Inputs and form elements
-  .ui.input input, .ui.search input, .ui.form input, .ui.form textarea {
+  .ui.input input,
+  .ui.search input,
+  .ui.form input,
+  .ui.form textarea {
     background: lighten($bg, 3%);
     color: $text;
     border-color: rgba($text, 0.3);
-    
+
     &:focus {
       border-color: rgba($accent, 0.6);
     }
-    
+
     &::placeholder {
       color: rgba($text, 0.6);
     }
@@ -38,16 +50,16 @@
     background: lighten($bg, 8%);
     color: $text;
     border-color: rgba($text, 0.3);
-    
+
     &:hover {
       background: lighten($bg, 12%);
     }
-    
+
     &.primary {
       background: $accent;
       color: $bg;
     }
-    
+
     &:disabled {
       background: rgba($text, 0.1);
       color: rgba($text, 0.4);
@@ -59,7 +71,7 @@
     background: lighten($bg, 10%);
     color: $text;
     border-color: rgba($text, 0.3);
-    
+
     &.basic {
       background: transparent;
       border-color: rgba($text, 0.4);
@@ -81,7 +93,8 @@
   }
 
   // Statistics
-  .ui.statistic .value, .ui.statistic .label {
+  .ui.statistic .value,
+  .ui.statistic .label {
     color: $text;
   }
 
@@ -89,11 +102,11 @@
   .ui.search .results {
     background: lighten($bg, 5%);
     border-color: rgba($text, 0.3);
-    
+
     .result {
       color: $text;
       border-color: rgba($text, 0.1);
-      
+
       &:hover {
         background: rgba($accent, 0.1);
       }
@@ -103,14 +116,14 @@
   // Menus - use main background
   .ui.menu {
     background: $bg;
-    
+
     .item {
       color: $text;
-      
+
       &:hover {
         background: rgba($text, 0.1);
       }
-      
+
       &.active {
         background: rgba($accent, 0.2);
         color: $text;
@@ -119,7 +132,8 @@
   }
 
   // Modals and popups - use main background
-  .ui.modal, .ui.popup {
+  .ui.modal,
+  .ui.popup {
     background: $bg;
     color: $text;
     border-color: rgba($text, 0.2);
@@ -128,7 +142,7 @@
   // Progress bars
   .ui.progress {
     background: rgba($text, 0.1);
-    
+
     .bar {
       background: $accent;
     }
@@ -148,14 +162,19 @@
   }
 
   // All text elements
-  p, span, div, li, td, th {
+  p,
+  span,
+  div,
+  li,
+  td,
+  th {
     color: $text;
   }
 
   // Links
   a {
     color: $accent;
-    
+
     &:hover {
       color: lighten($accent, 10%);
     }

@@ -5,8 +5,6 @@ import { Menu, Container, Segment } from 'semantic-ui-react'
 import { NavbarItem } from './sidebar'
 import { NavLink, useLocation } from 'react-router-dom'
 import { LGSVG } from '../logo'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../store/store'
 import { ThemeSelector } from '../theme-selector'
 
 type DesktopContainerProps = {
@@ -18,7 +16,6 @@ export function DesktopContainer({
   routes,
   children,
 }: DesktopContainerProps): ReactElement {
-  const currentTheme = useSelector((state: RootState) => state.theme.currentTheme)
   const location = useLocation()
   const path = location.pathname.replace('/', '')
 

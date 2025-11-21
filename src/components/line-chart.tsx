@@ -63,29 +63,94 @@ shuffleArray(colors)
 
 export function SkillsOverTime() {
   const [toggle, setToggle] = useState(false)
-  const currentTheme = useSelector((state: RootState) => state.theme.currentTheme)
+  const currentTheme = useSelector(
+    (state: RootState) => state.theme.currentTheme
+  )
 
   // Get theme-aware colors
   const getThemeColors = () => {
-
     // Use CSS custom properties or fallback colors based on theme
     switch (currentTheme) {
       case 'dark':
-        return ['#f8f8f2', '#bd93f9', '#50fa7b', '#ffb86c', '#ff5555', '#8be9fd', '#f1fa8c']
+        return [
+          '#f8f8f2',
+          '#bd93f9',
+          '#50fa7b',
+          '#ffb86c',
+          '#ff5555',
+          '#8be9fd',
+          '#f1fa8c',
+        ]
       case 'dracula':
-        return ['#f8f8f2', '#bd93f9', '#50fa7b', '#ffb86c', '#ff5555', '#8be9fd', '#f1fa8c']
+        return [
+          '#f8f8f2',
+          '#bd93f9',
+          '#50fa7b',
+          '#ffb86c',
+          '#ff5555',
+          '#8be9fd',
+          '#f1fa8c',
+        ]
       case 'monokai':
-        return ['#f8f8f2', '#66d9ef', '#a6e22e', '#fd971f', '#f92672', '#ae81ff', '#e6db74']
+        return [
+          '#f8f8f2',
+          '#66d9ef',
+          '#a6e22e',
+          '#fd971f',
+          '#f92672',
+          '#ae81ff',
+          '#e6db74',
+        ]
       case 'github':
-        return ['#c9d1d9', '#238636', '#da3633', '#f85149', '#58a6ff', '#f2cc60', '#bc8cff']
+        return [
+          '#c9d1d9',
+          '#238636',
+          '#da3633',
+          '#f85149',
+          '#58a6ff',
+          '#f2cc60',
+          '#bc8cff',
+        ]
       case 'discord':
-        return ['#dcddde', '#5865f2', '#57f287', '#ed4245', '#faa61a', '#eb459e', '#00d4aa']
+        return [
+          '#dcddde',
+          '#5865f2',
+          '#57f287',
+          '#ed4245',
+          '#faa61a',
+          '#eb459e',
+          '#00d4aa',
+        ]
       case 'notion':
-        return ['#e9e9e7', '#2eaadc', '#9065b0', '#d44c47', '#448361', '#e16259', '#9b59b6']
+        return [
+          '#e9e9e7',
+          '#2eaadc',
+          '#9065b0',
+          '#d44c47',
+          '#448361',
+          '#e16259',
+          '#9b59b6',
+        ]
       case 'solarized':
-        return ['#839496', '#268bd2', '#859900', '#dc322f', '#b58900', '#d33682', '#2aa198']
+        return [
+          '#839496',
+          '#268bd2',
+          '#859900',
+          '#dc322f',
+          '#b58900',
+          '#d33682',
+          '#2aa198',
+        ]
       case 'nord':
-        return ['#d8dee9', '#5e81ac', '#a3be8c', '#bf616a', '#d08770', '#b48ead', '#88c0d0']
+        return [
+          '#d8dee9',
+          '#5e81ac',
+          '#a3be8c',
+          '#bf616a',
+          '#d08770',
+          '#b48ead',
+          '#88c0d0',
+        ]
       default:
         return colors // fallback to original colors
     }
