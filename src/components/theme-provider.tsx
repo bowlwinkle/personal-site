@@ -13,7 +13,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     const root = document.getElementById('root')
     if (root) {
       // Remove all theme classes
-      root.className = root.className.replace(/\b(light|dark|github|discord|notion)Mode\b/g, '').trim()
+      root.className = root.className.replace(/\b(light|dark|github|discord|notion|dracula|monokai|solarized|nord)Mode\b/g, '').trim()
       // Add current theme class
       root.classList.add(`${currentTheme}Mode`)
     }

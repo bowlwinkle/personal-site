@@ -13,12 +13,12 @@
     background: $lightBg;
     border-color: rgba($lightText, 0.2);
     color: $lightText;
-    
+
     .menu {
       background: $lightBg;
       border-color: rgba($lightText, 0.2);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      
+
       .item {
         color: $lightText;
         &:hover {
@@ -31,20 +31,20 @@
   .ui.table {
     background: $lightBg;
     border-color: rgba($lightText, 0.15);
-    
+
     thead th {
       background: rgba($lightText, 0.03);
       border-color: rgba($lightText, 0.1);
     }
-    
+
     tbody tr {
       border-color: rgba($lightText, 0.1);
-      
+
       &:hover {
         background: rgba($lightText, 0.02);
       }
     }
-    
+
     td {
       border-color: rgba($lightText, 0.1);
     }
@@ -77,11 +77,11 @@
     background: lighten($darkBg, 5%);
     border-color: rgba($darkText, 0.3);
     color: $darkText;
-    
+
     .menu {
       background: lighten($darkBg, 8%);
       border-color: rgba($darkText, 0.3);
-      
+
       .item {
         color: $darkText;
         &:hover {
@@ -94,20 +94,20 @@
   .ui.table {
     background: $darkBg;
     border-color: rgba($darkText, 0.2);
-    
+
     thead th {
       background: lighten($darkBg, 3%);
       border-color: rgba($darkText, 0.2);
     }
-    
+
     tbody tr {
       border-color: rgba($darkText, 0.15);
-      
+
       &:hover {
         background: lighten($darkBg, 2%);
       }
     }
-    
+
     td {
       border-color: rgba($darkText, 0.15);
     }
@@ -162,11 +162,11 @@
     background: lighten($githubBg, 5%);
     border-color: rgba($githubText, 0.3);
     color: $githubText;
-    
+
     .menu {
       background: lighten($githubBg, 8%);
       border-color: rgba($githubText, 0.3);
-      
+
       .item {
         color: $githubText;
         &:hover {
@@ -178,11 +178,11 @@
 
   .ui.table {
     background: $githubBg;
-    
+
     thead th {
       background: lighten($githubBg, 3%);
     }
-    
+
     tbody tr:hover {
       background: lighten($githubBg, 2%);
     }
@@ -233,11 +233,11 @@
     background: lighten($discordBg, 5%);
     border-color: rgba($discordText, 0.3);
     color: $discordText;
-    
+
     .menu {
       background: lighten($discordBg, 8%);
       border-color: rgba($discordText, 0.3);
-      
+
       .item {
         color: $discordText;
         &:hover {
@@ -249,11 +249,11 @@
 
   .ui.table {
     background: $discordBg;
-    
+
     thead th {
       background: lighten($discordBg, 3%);
     }
-    
+
     tbody tr:hover {
       background: lighten($discordBg, 2%);
     }
@@ -304,11 +304,11 @@
     background: lighten($notionBg, 5%);
     border-color: rgba($notionText, 0.3);
     color: $notionText;
-    
+
     .menu {
       background: lighten($notionBg, 8%);
       border-color: rgba($notionText, 0.3);
-      
+
       .item {
         color: $notionText;
         &:hover {
@@ -334,11 +334,11 @@
 
   .ui.table {
     background: $notionBg;
-    
+
     thead th {
       background: lighten($notionBg, 3%);
     }
-    
+
     tbody tr:hover {
       background: lighten($notionBg, 2%);
     }
@@ -375,11 +375,11 @@
     background: lighten($draculaBg, 5%);
     border-color: rgba($draculaText, 0.3);
     color: $draculaText;
-    
+
     .menu {
       background: lighten($draculaBg, 8%);
       border-color: rgba($draculaText, 0.3);
-      
+
       .item {
         color: $draculaText;
         &:hover {
@@ -405,11 +405,11 @@
 
   .ui.table {
     background: $draculaBg;
-    
+
     thead th {
       background: lighten($draculaBg, 3%);
     }
-    
+
     tbody tr:hover {
       background: lighten($draculaBg, 2%);
     }
@@ -446,11 +446,11 @@
     background: lighten($monokaBg, 5%);
     border-color: rgba($monokaText, 0.3);
     color: $monokaText;
-    
+
     .menu {
       background: lighten($monokaBg, 8%);
       border-color: rgba($monokaText, 0.3);
-      
+
       .item {
         color: $monokaText;
         &:hover {
@@ -476,11 +476,11 @@
 
   .ui.table {
     background: $monokaBg;
-    
+
     thead th {
       background: lighten($monokaBg, 3%);
     }
-    
+
     tbody tr:hover {
       background: lighten($monokaBg, 2%);
     }
@@ -517,11 +517,11 @@
     background: lighten($solarizedBg, 8%);
     border-color: rgba($solarizedText, 0.4);
     color: $solarizedText;
-    
+
     .menu {
       background: lighten($solarizedBg, 12%);
       border-color: rgba($solarizedText, 0.4);
-      
+
       .item {
         color: $solarizedText;
         &:hover {
@@ -547,11 +547,11 @@
 
   .ui.table {
     background: $solarizedBg;
-    
+
     thead th {
       background: lighten($solarizedBg, 5%);
     }
-    
+
     tbody tr:hover {
       background: lighten($solarizedBg, 3%);
     }
@@ -588,11 +588,11 @@
     background: lighten($nordBg, 5%);
     border-color: rgba($nordText, 0.3);
     color: $nordText;
-    
+
     .menu {
       background: lighten($nordBg, 8%);
       border-color: rgba($nordText, 0.3);
-      
+
       .item {
         color: $nordText;
         &:hover {
@@ -618,11 +618,11 @@
 
   .ui.table {
     background: $nordBg;
-    
+
     thead th {
       background: lighten($nordBg, 3%);
     }
-    
+
     tbody tr:hover {
       background: lighten($nordBg, 2%);
     }
@@ -637,116 +637,7 @@
   color: $secondaryColor;
 }
 
-.pointlessBackground,
-.pointlessBackground2 {
-  position: fixed;
-  left: -40%;
-  top: 35%;
-  width: 200%;
-  height: 55%;
-  transform: rotate(-15deg);
-  opacity: 0.1;
-  z-index: -1;
-  border-radius: 25%;
-  filter: blur(5px);
-}
 
-// Light theme backgrounds
-#root.lightMode {
-  .pointlessBackground, .pointlessBackground2 {
-    background-color: $lightBgHome;
-    &.skills { background-color: $lightBgSkills; }
-    &.work { background-color: $lightBgWork; }
-    &.about { background-color: $lightBgAbout; }
-  }
-}
-
-// Dark theme backgrounds
-#root.darkMode {
-  .pointlessBackground, .pointlessBackground2 {
-    background-color: $darkBgHome;
-    &.skills { background-color: $darkBgSkills; }
-    &.work { background-color: $darkBgWork; }
-    &.about { background-color: $darkBgAbout; }
-  }
-}
-
-// GitHub theme backgrounds
-#root.githubMode {
-  .pointlessBackground, .pointlessBackground2 {
-    background-color: $githubBgHome;
-    &.skills { background-color: $githubBgSkills; }
-    &.work { background-color: $githubBgWork; }
-    &.about { background-color: $githubBgAbout; }
-  }
-}
-
-// Discord theme backgrounds
-#root.discordMode {
-  .pointlessBackground, .pointlessBackground2 {
-    background-color: $discordBgHome;
-    &.skills { background-color: $discordBgSkills; }
-    &.work { background-color: $discordBgWork; }
-    &.about { background-color: $discordBgAbout; }
-  }
-}
-
-// Notion theme backgrounds
-#root.notionMode {
-  .pointlessBackground, .pointlessBackground2 {
-    background-color: $notionBgHome;
-    &.skills { background-color: $notionBgSkills; }
-    &.work { background-color: $notionBgWork; }
-    &.about { background-color: $notionBgAbout; }
-  }
-}
-
-// Dracula theme backgrounds
-#root.draculaMode {
-  .pointlessBackground, .pointlessBackground2 {
-    background-color: $draculaBgHome;
-    &.skills { background-color: $draculaBgSkills; }
-    &.work { background-color: $draculaBgWork; }
-    &.about { background-color: $draculaBgAbout; }
-  }
-}
-
-// Monokai theme backgrounds
-#root.monokaMode {
-  .pointlessBackground, .pointlessBackground2 {
-    background-color: $monokaBgHome;
-    &.skills { background-color: $monokaBgSkills; }
-    &.work { background-color: $monokaBgWork; }
-    &.about { background-color: $monokaBgAbout; }
-  }
-}
-
-// Solarized theme backgrounds
-#root.solarizedMode {
-  .pointlessBackground, .pointlessBackground2 {
-    background-color: $solarizedBgHome;
-    &.skills { background-color: $solarizedBgSkills; }
-    &.work { background-color: $solarizedBgWork; }
-    &.about { background-color: $solarizedBgAbout; }
-  }
-}
-
-// Nord theme backgrounds
-#root.nordMode {
-  .pointlessBackground, .pointlessBackground2 {
-    background-color: $nordBgHome;
-    &.skills { background-color: $nordBgSkills; }
-    &.work { background-color: $nordBgWork; }
-    &.about { background-color: $nordBgAbout; }
-  }
-}
-
-.pointlessBackground2 {
-  top: 48%;
-  height: 25%;
-  opacity: 0.15;
-  filter: blur(40px);
-}
 
 .pointlessBackground3 {
   position: absolute;
@@ -948,10 +839,19 @@
 
 // Theme selector styling
 .ui.dropdown.selection {
-  min-width: 100px;
+  min-width: 140px;
+  padding: 8px 12px;
 
   .text {
     font-size: 14px;
+  }
+
+  .menu {
+    min-width: 140px;
+
+    .item {
+      padding: 10px 12px;
+    }
   }
 }
 
