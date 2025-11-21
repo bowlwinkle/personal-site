@@ -10,7 +10,7 @@ import {
   YAxis,
 } from 'recharts'
 import { dataKeysOverTime, skillsOverTimeData } from '../data/skills'
-import { Divider, Label, Radio, CheckboxProps } from 'semantic-ui-react'
+import { Divider, Radio, CheckboxProps } from 'semantic-ui-react'
 import { useSelector } from 'react-redux'
 import { RootState } from '../store/store'
 
@@ -67,8 +67,6 @@ export function SkillsOverTime() {
 
   // Get theme-aware colors
   const getThemeColors = () => {
-    const root = document.documentElement
-    const style = getComputedStyle(root)
 
     // Use CSS custom properties or fallback colors based on theme
     switch (currentTheme) {
