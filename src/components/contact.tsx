@@ -10,11 +10,6 @@ export function ContactInfo() {
         </a>
       </ListItem>
       <ListItem className="contactLink">
-        <a href="www.lucas-gansberg.com">
-          <Icon name="user circle" />
-        </a>
-      </ListItem>
-      <ListItem className="contactLink">
         <a href="https://www.linkedin.com/in/lucas-gansberg/">
           <Popup
             trigger={<ListIcon name="linkedin" />}
