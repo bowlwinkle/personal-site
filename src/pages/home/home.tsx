@@ -55,7 +55,7 @@ export function Home() {
                 <Grid.Row>
                   <p>
                     Take a look around and see what I have been up to. Maybe our
-                   paths will cross.
+                    paths will cross.
                   </p>
                 </Grid.Row>
                 <Grid.Row>

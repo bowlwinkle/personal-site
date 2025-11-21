@@ -25,7 +25,7 @@
 
     .recharts-surface > .recharts-layer {
       .recharts-radar,
-     .recharts-radar-polygon {
+      .recharts-radar-polygon {
         stroke: $lightBgSkills;
         fill: $lightBgSkills;
       }
@@ -39,7 +39,8 @@
     color: $lightBgSkills;
   }
   .radarChart .recharts-surface > .recharts-layer {
-    .recharts-radar, .recharts-radar-polygon {
+    .recharts-radar,
+    .recharts-radar-polygon {
       stroke: $lightBgSkills;
       fill: $lightBgSkills;
     }
@@ -51,7 +52,8 @@
     color: $darkBgSkills;
   }
   .radarChart .recharts-surface > .recharts-layer {
-    .recharts-radar, .recharts-radar-polygon {
+    .recharts-radar,
+    .recharts-radar-polygon {
       stroke: $darkBgSkills;
       fill: $darkBgSkills;
     }
@@ -63,7 +65,8 @@
     color: $githubBgSkills;
   }
   .radarChart .recharts-surface > .recharts-layer {
-    .recharts-radar, .recharts-radar-polygon {
+    .recharts-radar,
+    .recharts-radar-polygon {
       stroke: $githubBgSkills;
       fill: $githubBgSkills;
     }
@@ -75,7 +78,8 @@
     color: $discordBgSkills;
   }
   .radarChart .recharts-surface > .recharts-layer {
-    .recharts-radar, .recharts-radar-polygon {
+    .recharts-radar,
+    .recharts-radar-polygon {
       stroke: $discordBgSkills;
       fill: $discordBgSkills;
     }
@@ -87,7 +91,8 @@
     color: $notionBgSkills;
   }
   .radarChart .recharts-surface > .recharts-layer {
-    .recharts-radar, .recharts-radar-polygon {
+    .recharts-radar,
+    .recharts-radar-polygon {
       stroke: $notionBgSkills;
       fill: $notionBgSkills;
     }
@@ -107,7 +112,8 @@
     color: $draculaBgSkills;
   }
   .radarChart .recharts-surface > .recharts-layer {
-    .recharts-radar, .recharts-radar-polygon {
+    .recharts-radar,
+    .recharts-radar-polygon {
       stroke: $draculaBgSkills;
       fill: $draculaBgSkills;
     }
@@ -119,7 +125,8 @@
     color: $monokaBgSkills;
   }
   .radarChart .recharts-surface > .recharts-layer {
-    .recharts-radar, .recharts-radar-polygon {
+    .recharts-radar,
+    .recharts-radar-polygon {
       stroke: $monokaBgSkills;
       fill: $monokaBgSkills;
     }
@@ -131,7 +138,8 @@
     color: $solarizedBgSkills;
   }
   .radarChart .recharts-surface > .recharts-layer {
-    .recharts-radar, .recharts-radar-polygon {
+    .recharts-radar,
+    .recharts-radar-polygon {
       stroke: $solarizedBgSkills;
       fill: $solarizedBgSkills;
     }
@@ -143,7 +151,8 @@
     color: $nordBgSkills;
   }
   .radarChart .recharts-surface > .recharts-layer {
-    .recharts-radar, .recharts-radar-polygon {
+    .recharts-radar,
+    .recharts-radar-polygon {
       stroke: $nordBgSkills;
       fill: $nordBgSkills;
     }

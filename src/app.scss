@@ -131,7 +131,13 @@
     }
   }
 
-  h1, h2, h3, h4, h5, h6, .contactLink a {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .contactLink a {
     color: $darkText;
   }
 }
@@ -202,7 +208,13 @@
     }
   }
 
-  h1, h2, h3, h4, h5, h6, .contactLink a {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .contactLink a {
     color: $githubText;
   }
 }
@@ -273,7 +285,13 @@
     }
   }
 
-  h1, h2, h3, h4, h5, h6, .contactLink a {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .contactLink a {
     color: $discordText;
   }
 }
@@ -344,7 +362,13 @@
     }
   }
 
-  h1, h2, h3, h4, h5, h6, .contactLink a {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .contactLink a {
     color: $notionText;
   }
 }
@@ -415,7 +439,13 @@
     }
   }
 
-  h1, h2, h3, h4, h5, h6, .contactLink a {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .contactLink a {
     color: $draculaText;
   }
 }
@@ -486,7 +516,13 @@
     }
   }
 
-  h1, h2, h3, h4, h5, h6, .contactLink a {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .contactLink a {
     color: $monokaText;
   }
 }
@@ -557,7 +593,13 @@
     }
   }
 
-  h1, h2, h3, h4, h5, h6, .contactLink a {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .contactLink a {
     color: $solarizedText;
   }
 }
@@ -628,7 +670,13 @@
     }
   }
 
-  h1, h2, h3, h4, h5, h6, .contactLink a {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .contactLink a {
     color: $nordText;
   }
 }
@@ -637,14 +685,12 @@
   color: $secondaryColor;
 }
 
-
-
-
-
 #root {
   height: 100%;
   width: 100vw;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
   h1,
   h2,
@@ -665,7 +711,10 @@
   .ui .tabular .menu,
   .ui .segment,
   .ui .message {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease;
   }
 
   .notFound {
@@ -710,57 +759,138 @@
 
 // Logo colors for each theme
 #root.lightMode .desktopContainer .logoPNG {
-  .skills #face, .skills #face2 { fill: $lightBgSkills; }
-  .work #face, .work #face2 { fill: $lightBgWork; }
-  .about #face, .about #face2 { fill: $lightBgAbout; }
+  .skills #face,
+  .skills #face2 {
+    fill: $lightBgSkills;
+  }
+  .work #face,
+  .work #face2 {
+    fill: $lightBgWork;
+  }
+  .about #face,
+  .about #face2 {
+    fill: $lightBgAbout;
+  }
 }
 
 #root.darkMode .desktopContainer .logoPNG {
-  .skills #face, .skills #face2 { fill: $darkBgSkills; }
-  .work #face, .work #face2 { fill: $darkBgWork; }
-  .about #face, .about #face2 { fill: $darkBgAbout; }
+  .skills #face,
+  .skills #face2 {
+    fill: $darkBgSkills;
+  }
+  .work #face,
+  .work #face2 {
+    fill: $darkBgWork;
+  }
+  .about #face,
+  .about #face2 {
+    fill: $darkBgAbout;
+  }
 }
 
 #root.githubMode .desktopContainer .logoPNG {
-  .skills #face, .skills #face2 { fill: $githubBgSkills; }
-  .work #face, .work #face2 { fill: $githubBgWork; }
-  .about #face, .about #face2 { fill: $githubBgAbout; }
+  .skills #face,
+  .skills #face2 {
+    fill: $githubBgSkills;
+  }
+  .work #face,
+  .work #face2 {
+    fill: $githubBgWork;
+  }
+  .about #face,
+  .about #face2 {
+    fill: $githubBgAbout;
+  }
 }
 
 #root.discordMode .desktopContainer .logoPNG {
-  .skills #face, .skills #face2 { fill: $discordBgSkills; }
-  .work #face, .work #face2 { fill: $discordBgWork; }
-  .about #face, .about #face2 { fill: $discordBgAbout; }
+  .skills #face,
+  .skills #face2 {
+    fill: $discordBgSkills;
+  }
+  .work #face,
+  .work #face2 {
+    fill: $discordBgWork;
+  }
+  .about #face,
+  .about #face2 {
+    fill: $discordBgAbout;
+  }
 }
 
 #root.notionMode .desktopContainer .logoPNG {
-  .skills #face, .skills #face2 { fill: $notionBgSkills; }
-  .work #face, .work #face2 { fill: $notionBgWork; }
-  .about #face, .about #face2 { fill: $notionBgAbout; }
+  .skills #face,
+  .skills #face2 {
+    fill: $notionBgSkills;
+  }
+  .work #face,
+  .work #face2 {
+    fill: $notionBgWork;
+  }
+  .about #face,
+  .about #face2 {
+    fill: $notionBgAbout;
+  }
 }
 
 #root.draculaMode .desktopContainer .logoPNG {
-  .skills #face, .skills #face2 { fill: $draculaBgSkills; }
-  .work #face, .work #face2 { fill: $draculaBgWork; }
-  .about #face, .about #face2 { fill: $draculaBgAbout; }
+  .skills #face,
+  .skills #face2 {
+    fill: $draculaBgSkills;
+  }
+  .work #face,
+  .work #face2 {
+    fill: $draculaBgWork;
+  }
+  .about #face,
+  .about #face2 {
+    fill: $draculaBgAbout;
+  }
 }
 
 #root.monokaMode .desktopContainer .logoPNG {
-  .skills #face, .skills #face2 { fill: $monokaBgSkills; }
-  .work #face, .work #face2 { fill: $monokaBgWork; }
-  .about #face, .about #face2 { fill: $monokaBgAbout; }
+  .skills #face,
+  .skills #face2 {
+    fill: $monokaBgSkills;
+  }
+  .work #face,
+  .work #face2 {
+    fill: $monokaBgWork;
+  }
+  .about #face,
+  .about #face2 {
+    fill: $monokaBgAbout;
+  }
 }
 
 #root.solarizedMode .desktopContainer .logoPNG {
-  .skills #face, .skills #face2 { fill: $solarizedBgSkills; }
-  .work #face, .work #face2 { fill: $solarizedBgWork; }
-  .about #face, .about #face2 { fill: $solarizedBgAbout; }
+  .skills #face,
+  .skills #face2 {
+    fill: $solarizedBgSkills;
+  }
+  .work #face,
+  .work #face2 {
+    fill: $solarizedBgWork;
+  }
+  .about #face,
+  .about #face2 {
+    fill: $solarizedBgAbout;
+  }
 }
 
 #root.nordMode .desktopContainer .logoPNG {
-  .skills #face, .skills #face2 { fill: $nordBgSkills; }
-  .work #face, .work #face2 { fill: $nordBgWork; }
-  .about #face, .about #face2 { fill: $nordBgAbout; }
+  .skills #face,
+  .skills #face2 {
+    fill: $nordBgSkills;
+  }
+  .work #face,
+  .work #face2 {
+    fill: $nordBgWork;
+  }
+  .about #face,
+  .about #face2 {
+    fill: $nordBgAbout;
+  }
 }
 
 .mobileContainer {

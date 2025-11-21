@@ -16,7 +16,9 @@ const themeOptions = [
 ]
 
 export function ThemeSelector() {
-  const currentTheme = useSelector((state: RootState) => state.theme.currentTheme)
+  const currentTheme = useSelector(
+    (state: RootState) => state.theme.currentTheme
+  )
   const dispatch = useDispatch()
 
   return (

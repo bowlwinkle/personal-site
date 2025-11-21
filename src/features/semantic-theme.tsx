@@ -12,7 +12,9 @@ import { RootState } from '../store/store'
 function createThemedComponent(Component) {
   // @ts-expect-error - This is a higher order component for theming
   return (props) => {
-    const currentTheme = useSelector((state: RootState) => state.theme.currentTheme)
+    const currentTheme = useSelector(
+      (state: RootState) => state.theme.currentTheme
+    )
     const isDark = currentTheme !== 'light'
     return <Component {...props} inverted={isDark} />
   }
