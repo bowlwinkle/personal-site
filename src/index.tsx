@@ -9,16 +9,19 @@ import { router } from './router'
 import Spinner from './components/spinner'
 import { Provider } from 'react-redux'
 import { store } from './store/store'
+import { ThemeProvider } from './components/theme-provider'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <StrictMode>
     <Provider store={store}>
-      <RouterProvider
-        router={router}
-        fallbackElement={<Spinner />}
-        future={{ v7_startTransition: true }}
-      />
+      <ThemeProvider>
+        <RouterProvider
+          router={router}
+          fallbackElement={<Spinner />}
+          future={{ v7_startTransition: true }}
+        />
+      </ThemeProvider>
     </Provider>
     <div className="inkOverlay" />
   </StrictMode>

@@ -3,6 +3,7 @@ import { NavbarItem as NavbarItem } from './sidebar'
 import { NavLink } from 'react-router-dom'
 import { List, ListItem } from 'semantic-ui-react'
 import { LogoSVG } from '../logo'
+import { ThemeSelector } from '../theme-selector'
 
 type TopNavProps = {
   items: NavbarItem[]
@@ -34,6 +35,9 @@ export function TopNav({ items }: TopNavProps) {
       <LogoSVG width="75" height="75" />
       <List divided horizontal>
         {navItems}
+        <ListItem className="navItem">
+          <ThemeSelector />
+        </ListItem>
       </List>
     </nav>
   )

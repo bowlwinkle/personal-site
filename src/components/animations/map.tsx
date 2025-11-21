@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import anime from 'animejs'
 
 const LOAD_DELAY = 500
-const DELAY: number = 250
+const DELAY = 250
 const SM_DURATION = 250
 const MED_DURATION = 650
 const LG_DURATION = 1000

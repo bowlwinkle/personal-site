@@ -3,10 +3,46 @@
 .ui .buildLabels,
 .ui .workLabels {
   .label {
-    border-color: $bgWork;
+    border-color: $lightBgWork;
   }
 }
 
 #work-timeline {
   font-family: 'Josefin sans';
+}
+
+// Theme-specific work colors
+#root.lightMode .ui .buildLabels,
+#root.lightMode .ui .workLabels {
+  .label {
+    border-color: $lightBgWork;
+  }
+}
+
+#root.darkMode .ui .buildLabels,
+#root.darkMode .ui .workLabels {
+  .label {
+    border-color: $darkBgWork;
+  }
+}
+
+#root.githubMode .ui .buildLabels,
+#root.githubMode .ui .workLabels {
+  .label {
+    border-color: $githubBgWork;
+  }
+}
+
+#root.discordMode .ui .buildLabels,
+#root.discordMode .ui .workLabels {
+  .label {
+    border-color: $discordBgWork;
+  }
+}
+
+#root.notionMode .ui .buildLabels,
+#root.notionMode .ui .workLabels {
+  .label {
+    border-color: $notionBgWork;
+  }
 }

@@ -3,7 +3,7 @@ import { Media } from '../media'
 import { Key, ReactNode, useMemo, useState } from 'react'
 import { NavbarItem } from './sidebar'
 import { NavLink } from 'react-router-dom'
-import { LGSVG } from '../logo'
+import { ThemeSelector } from '../theme-selector'
 
 type MobileContainerProps = {
   routes: NavbarItem[]
@@ -42,6 +42,9 @@ export function MobileContainer({ children, routes }: MobileContainerProps) {
           visible={sideBarOpen}
         >
           {menuItems}
+          <Menu.Item>
+            <ThemeSelector />
+          </Menu.Item>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sideBarOpen}>

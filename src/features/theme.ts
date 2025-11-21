@@ -1,31 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-export interface AppState {
-  darkMode: boolean
+export type ThemeName = 'light' | 'dark' | 'github' | 'discord' | 'notion'
+
+export interface ThemeState {
+  currentTheme: ThemeName
 }
 
-const initialState: AppState = {
-  darkMode: false,
+const initialState: ThemeState = {
+  currentTheme: 'light',
 }
 
 export const themeSlice = createSlice({
   name: 'theme',
   initialState,
   reducers: {
-    toggle: (state) => {
-      state.darkMode = !state.darkMode
+    setTheme: (state, action: PayloadAction<ThemeName>) => {
+      state.currentTheme = action.payload
     },
     reset: (state) => {
-      state.darkMode = initialState.darkMode
-    },
-    setTheme: (state, action: PayloadAction<boolean>) => {
-      state.darkMode = action.payload
+      state.currentTheme = initialState.currentTheme
     },
   },
 })
 
-// Action creators are generated for each case reducer function
-export const { toggle, reset } = themeSlice.actions
-
+export const { setTheme, reset } = themeSlice.actions
 export default themeSlice.reducer
