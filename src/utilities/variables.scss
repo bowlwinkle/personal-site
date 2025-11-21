@@ -41,6 +41,38 @@ $notionBgSkills: #9065b0;
 $notionBgWork: #d44c47;
 $notionBgAbout: #448361;
 
+// Dracula Theme
+$draculaBg: #282a36;
+$draculaText: #f8f8f2;
+$draculaBgHome: #bd93f9;
+$draculaBgSkills: #50fa7b;
+$draculaBgWork: #ff5555;
+$draculaBgAbout: #ffb86c;
+
+// Monokai Theme
+$monokaBg: #272822;
+$monokaText: #f8f8f2;
+$monokaBgHome: #66d9ef;
+$monokaBgSkills: #a6e22e;
+$monokaBgWork: #f92672;
+$monokaBgAbout: #fd971f;
+
+// Solarized Theme
+$solarizedBg: #002b36;
+$solarizedText: #839496;
+$solarizedBgHome: #268bd2;
+$solarizedBgSkills: #859900;
+$solarizedBgWork: #dc322f;
+$solarizedBgAbout: #b58900;
+
+// Nord Theme
+$nordBg: #2e3440;
+$nordText: #d8dee9;
+$nordBgHome: #5e81ac;
+$nordBgSkills: #a3be8c;
+$nordBgWork: #bf616a;
+$nordBgAbout: #d08770;
+
 body {
   --lightBg: #{$lightBg};
   --lightText: #{$lightText};
@@ -52,4 +84,12 @@ body {
   --discordText: #{$discordText};
   --notionBg: #{$notionBg};
   --notionText: #{$notionText};
+  --draculaBg: #{$draculaBg};
+  --draculaText: #{$draculaText};
+  --monokaBg: #{$monokaBg};
+  --monokaText: #{$monokaText};
+  --solarizedBg: #{$solarizedBg};
+  --solarizedText: #{$solarizedText};
+  --nordBg: #{$nordBg};
+  --nordText: #{$nordText};
 }

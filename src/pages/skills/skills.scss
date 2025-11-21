@@ -101,3 +101,51 @@
     }
   }
 }
+
+#root.draculaMode .skills {
+  .ui.message {
+    color: $draculaBgSkills;
+  }
+  .radarChart .recharts-surface > .recharts-layer {
+    .recharts-radar, .recharts-radar-polygon {
+      stroke: $draculaBgSkills;
+      fill: $draculaBgSkills;
+    }
+  }
+}
+
+#root.monokaMode .skills {
+  .ui.message {
+    color: $monokaBgSkills;
+  }
+  .radarChart .recharts-surface > .recharts-layer {
+    .recharts-radar, .recharts-radar-polygon {
+      stroke: $monokaBgSkills;
+      fill: $monokaBgSkills;
+    }
+  }
+}
+
+#root.solarizedMode .skills {
+  .ui.message {
+    color: $solarizedBgSkills;
+  }
+  .radarChart .recharts-surface > .recharts-layer {
+    .recharts-radar, .recharts-radar-polygon {
+      stroke: $solarizedBgSkills;
+      fill: $solarizedBgSkills;
+    }
+  }
+}
+
+#root.nordMode .skills {
+  .ui.message {
+    color: $nordBgSkills;
+  }
+  .radarChart .recharts-surface > .recharts-layer {
+    .recharts-radar, .recharts-radar-polygon {
+      stroke: $nordBgSkills;
+      fill: $nordBgSkills;
+    }
+  }
+}

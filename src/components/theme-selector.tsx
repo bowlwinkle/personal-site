@@ -9,6 +9,10 @@ const themeOptions = [
   { key: 'github', text: 'GitHub', value: 'github' as ThemeName },
   { key: 'discord', text: 'Discord', value: 'discord' as ThemeName },
   { key: 'notion', text: 'Notion', value: 'notion' as ThemeName },
+  { key: 'dracula', text: 'Dracula', value: 'dracula' as ThemeName },
+  { key: 'monokai', text: 'Monokai', value: 'monokai' as ThemeName },
+  { key: 'solarized', text: 'Solarized', value: 'solarized' as ThemeName },
+  { key: 'nord', text: 'Nord', value: 'nord' as ThemeName },
 ]
 
 export function ThemeSelector() {

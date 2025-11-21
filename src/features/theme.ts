@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-export type ThemeName = 'light' | 'dark' | 'github' | 'discord' | 'notion'
+export type ThemeName = 'light' | 'dark' | 'github' | 'discord' | 'notion' | 'dracula' | 'monokai' | 'solarized' | 'nord'
 
 export interface ThemeState {
   currentTheme: ThemeName

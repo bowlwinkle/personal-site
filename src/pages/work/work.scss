@@ -46,3 +46,31 @@
     border-color: $notionBgWork;
   }
 }
+
+#root.draculaMode .ui .buildLabels,
+#root.draculaMode .ui .workLabels {
+  .label {
+    border-color: $draculaBgWork;
+  }
+}
+
+#root.monokaMode .ui .buildLabels,
+#root.monokaMode .ui .workLabels {
+  .label {
+    border-color: $monokaBgWork;
+  }
+}
+
+#root.solarizedMode .ui .buildLabels,
+#root.solarizedMode .ui .workLabels {
+  .label {
+    border-color: $solarizedBgWork;
+  }
+}
+
+#root.nordMode .ui .buildLabels,
+#root.nordMode .ui .workLabels {
+  .label {
+    border-color: $nordBgWork;
+  }
+}

@@ -6,6 +6,37 @@
 #root.lightMode {
   background-color: $lightBg;
   color: $lightText;
+
+  .ui.dropdown {
+    background: $lightBg;
+    border-color: rgba($lightText, 0.2);
+    color: $lightText;
+    
+    .menu {
+      background: $lightBg;
+      border-color: rgba($lightText, 0.2);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      
+      .item {
+        color: $lightText;
+        &:hover {
+          background: rgba($lightText, 0.05);
+        }
+      }
+    }
+  }
+
+  .ui.table {
+    background: $lightBg;
+    
+    thead th {
+      background: rgba($lightText, 0.03);
+    }
+    
+    tbody tr:hover {
+      background: rgba($lightText, 0.02);
+    }
+  }
 }
 
 // Dark Theme
@@ -27,6 +58,36 @@
 
   .ui.fluid.tabular.menu .active.item {
     background: rgba($darkText, 0.15);
+  }
+
+  .ui.dropdown {
+    background: lighten($darkBg, 5%);
+    border-color: rgba($darkText, 0.3);
+    color: $darkText;
+    
+    .menu {
+      background: lighten($darkBg, 8%);
+      border-color: rgba($darkText, 0.3);
+      
+      .item {
+        color: $darkText;
+        &:hover {
+          background: rgba($darkText, 0.1);
+        }
+      }
+    }
+  }
+
+  .ui.table {
+    background: $darkBg;
+    
+    thead th {
+      background: lighten($darkBg, 3%);
+    }
+    
+    tbody tr:hover {
+      background: lighten($darkBg, 2%);
+    }
   }
 
   .home svg {
@@ -70,7 +131,37 @@
   }
 
   .ui.fluid.tabular.menu .active.item {
-    background: rgba($githubText, 0.15);
+    background: rgba($githubBgHome, 0.2);
+  }
+
+  .ui.dropdown {
+    background: lighten($githubBg, 5%);
+    border-color: rgba($githubText, 0.3);
+    color: $githubText;
+    
+    .menu {
+      background: lighten($githubBg, 8%);
+      border-color: rgba($githubText, 0.3);
+      
+      .item {
+        color: $githubText;
+        &:hover {
+          background: rgba($githubBgHome, 0.1);
+        }
+      }
+    }
+  }
+
+  .ui.table {
+    background: $githubBg;
+    
+    thead th {
+      background: lighten($githubBg, 3%);
+    }
+    
+    tbody tr:hover {
+      background: lighten($githubBg, 2%);
+    }
   }
 
   .home svg {
@@ -80,10 +171,10 @@
   .item {
     color: $githubText;
     &.active {
-      border-color: $githubText;
+      border-color: $githubBgHome;
     }
     &:hover {
-      color: $githubText;
+      color: $githubBgHome;
     }
   }
 
@@ -110,7 +201,37 @@
   }
 
   .ui.fluid.tabular.menu .active.item {
-    background: rgba($discordText, 0.15);
+    background: rgba($discordBgHome, 0.2);
+  }
+
+  .ui.dropdown {
+    background: lighten($discordBg, 5%);
+    border-color: rgba($discordText, 0.3);
+    color: $discordText;
+    
+    .menu {
+      background: lighten($discordBg, 8%);
+      border-color: rgba($discordText, 0.3);
+      
+      .item {
+        color: $discordText;
+        &:hover {
+          background: rgba($discordBgHome, 0.1);
+        }
+      }
+    }
+  }
+
+  .ui.table {
+    background: $discordBg;
+    
+    thead th {
+      background: lighten($discordBg, 3%);
+    }
+    
+    tbody tr:hover {
+      background: lighten($discordBg, 2%);
+    }
   }
 
   .home svg {
@@ -120,10 +241,10 @@
   .item {
     color: $discordText;
     &.active {
-      border-color: $discordText;
+      border-color: $discordBgHome;
     }
     &:hover {
-      color: $discordText;
+      color: $discordBgHome;
     }
   }
 
@@ -153,6 +274,24 @@
     background: rgba($notionText, 0.15);
   }
 
+  .ui.dropdown {
+    background: lighten($notionBg, 5%);
+    border-color: rgba($notionText, 0.3);
+    color: $notionText;
+    
+    .menu {
+      background: lighten($notionBg, 8%);
+      border-color: rgba($notionText, 0.3);
+      
+      .item {
+        color: $notionText;
+        &:hover {
+          background: rgba($notionText, 0.1);
+        }
+      }
+    }
+  }
+
   .home svg {
     filter: invert(0.9) sepia(0.05);
   }
@@ -167,8 +306,300 @@
     }
   }
 
+  .ui.table {
+    background: $notionBg;
+    
+    thead th {
+      background: lighten($notionBg, 3%);
+    }
+    
+    tbody tr:hover {
+      background: lighten($notionBg, 2%);
+    }
+  }
+
   h1, h2, h3, h4, h5, h6, .contactLink a {
     color: $notionText;
+  }
+}
+
+// Dracula Theme
+#root.draculaMode {
+  background-color: $draculaBg;
+  color: $draculaText;
+
+  .fresnel-container,
+  .container,
+  .segment,
+  .table,
+  .ui .tabular .menu,
+  .ui .segment,
+  .ui .message {
+    color: $draculaText;
+    background-color: $draculaBg;
+    border-color: rgba($draculaText, 0.2);
+  }
+
+  .ui.fluid.tabular.menu .active.item {
+    background: rgba($draculaBgHome, 0.2);
+  }
+
+  .ui.dropdown {
+    background: lighten($draculaBg, 5%);
+    border-color: rgba($draculaText, 0.3);
+    color: $draculaText;
+    
+    .menu {
+      background: lighten($draculaBg, 8%);
+      border-color: rgba($draculaText, 0.3);
+      
+      .item {
+        color: $draculaText;
+        &:hover {
+          background: rgba($draculaBgHome, 0.1);
+        }
+      }
+    }
+  }
+
+  .home svg {
+    filter: hue-rotate(270deg) saturate(1.2);
+  }
+
+  .item {
+    color: $draculaText;
+    &.active {
+      border-color: $draculaBgHome;
+    }
+    &:hover {
+      color: $draculaBgHome;
+    }
+  }
+
+  .ui.table {
+    background: $draculaBg;
+    
+    thead th {
+      background: lighten($draculaBg, 3%);
+    }
+    
+    tbody tr:hover {
+      background: lighten($draculaBg, 2%);
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6, .contactLink a {
+    color: $draculaText;
+  }
+}
+
+// Monokai Theme
+#root.monokaMode {
+  background-color: $monokaBg;
+  color: $monokaText;
+
+  .fresnel-container,
+  .container,
+  .segment,
+  .table,
+  .ui .tabular .menu,
+  .ui .segment,
+  .ui .message {
+    color: $monokaText;
+    background-color: $monokaBg;
+    border-color: rgba($monokaText, 0.2);
+  }
+
+  .ui.fluid.tabular.menu .active.item {
+    background: rgba($monokaBgHome, 0.2);
+  }
+
+  .ui.dropdown {
+    background: lighten($monokaBg, 5%);
+    border-color: rgba($monokaText, 0.3);
+    color: $monokaText;
+    
+    .menu {
+      background: lighten($monokaBg, 8%);
+      border-color: rgba($monokaText, 0.3);
+      
+      .item {
+        color: $monokaText;
+        &:hover {
+          background: rgba($monokaBgHome, 0.1);
+        }
+      }
+    }
+  }
+
+  .home svg {
+    filter: hue-rotate(180deg) saturate(1.1);
+  }
+
+  .item {
+    color: $monokaText;
+    &.active {
+      border-color: $monokaBgHome;
+    }
+    &:hover {
+      color: $monokaBgHome;
+    }
+  }
+
+  .ui.table {
+    background: $monokaBg;
+    
+    thead th {
+      background: lighten($monokaBg, 3%);
+    }
+    
+    tbody tr:hover {
+      background: lighten($monokaBg, 2%);
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6, .contactLink a {
+    color: $monokaText;
+  }
+}
+
+// Solarized Theme
+#root.solarizedMode {
+  background-color: $solarizedBg;
+  color: $solarizedText;
+
+  .fresnel-container,
+  .container,
+  .segment,
+  .table,
+  .ui .tabular .menu,
+  .ui .segment,
+  .ui .message {
+    color: $solarizedText;
+    background-color: $solarizedBg;
+    border-color: rgba($solarizedText, 0.3);
+  }
+
+  .ui.fluid.tabular.menu .active.item {
+    background: rgba($solarizedBgHome, 0.2);
+  }
+
+  .ui.dropdown {
+    background: lighten($solarizedBg, 8%);
+    border-color: rgba($solarizedText, 0.4);
+    color: $solarizedText;
+    
+    .menu {
+      background: lighten($solarizedBg, 12%);
+      border-color: rgba($solarizedText, 0.4);
+      
+      .item {
+        color: $solarizedText;
+        &:hover {
+          background: rgba($solarizedBgHome, 0.1);
+        }
+      }
+    }
+  }
+
+  .home svg {
+    filter: hue-rotate(200deg) saturate(0.8);
+  }
+
+  .item {
+    color: $solarizedText;
+    &.active {
+      border-color: $solarizedBgHome;
+    }
+    &:hover {
+      color: $solarizedBgHome;
+    }
+  }
+
+  .ui.table {
+    background: $solarizedBg;
+    
+    thead th {
+      background: lighten($solarizedBg, 5%);
+    }
+    
+    tbody tr:hover {
+      background: lighten($solarizedBg, 3%);
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6, .contactLink a {
+    color: $solarizedText;
+  }
+}
+
+// Nord Theme
+#root.nordMode {
+  background-color: $nordBg;
+  color: $nordText;
+
+  .fresnel-container,
+  .container,
+  .segment,
+  .table,
+  .ui .tabular .menu,
+  .ui .segment,
+  .ui .message {
+    color: $nordText;
+    background-color: $nordBg;
+    border-color: rgba($nordText, 0.2);
+  }
+
+  .ui.fluid.tabular.menu .active.item {
+    background: rgba($nordBgHome, 0.2);
+  }
+
+  .ui.dropdown {
+    background: lighten($nordBg, 5%);
+    border-color: rgba($nordText, 0.3);
+    color: $nordText;
+    
+    .menu {
+      background: lighten($nordBg, 8%);
+      border-color: rgba($nordText, 0.3);
+      
+      .item {
+        color: $nordText;
+        &:hover {
+          background: rgba($nordBgHome, 0.1);
+        }
+      }
+    }
+  }
+
+  .home svg {
+    filter: hue-rotate(210deg) saturate(0.9);
+  }
+
+  .item {
+    color: $nordText;
+    &.active {
+      border-color: $nordBgHome;
+    }
+    &:hover {
+      color: $nordBgHome;
+    }
+  }
+
+  .ui.table {
+    background: $nordBg;
+    
+    thead th {
+      background: lighten($nordBg, 3%);
+    }
+    
+    tbody tr:hover {
+      background: lighten($nordBg, 2%);
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6, .contactLink a {
+    color: $nordText;
   }
 }
 
@@ -237,6 +668,46 @@
     &.skills { background-color: $notionBgSkills; }
     &.work { background-color: $notionBgWork; }
     &.about { background-color: $notionBgAbout; }
+  }
+}
+
+// Dracula theme backgrounds
+#root.draculaMode {
+  .pointlessBackground, .pointlessBackground2 {
+    background-color: $draculaBgHome;
+    &.skills { background-color: $draculaBgSkills; }
+    &.work { background-color: $draculaBgWork; }
+    &.about { background-color: $draculaBgAbout; }
+  }
+}
+
+// Monokai theme backgrounds
+#root.monokaMode {
+  .pointlessBackground, .pointlessBackground2 {
+    background-color: $monokaBgHome;
+    &.skills { background-color: $monokaBgSkills; }
+    &.work { background-color: $monokaBgWork; }
+    &.about { background-color: $monokaBgAbout; }
+  }
+}
+
+// Solarized theme backgrounds
+#root.solarizedMode {
+  .pointlessBackground, .pointlessBackground2 {
+    background-color: $solarizedBgHome;
+    &.skills { background-color: $solarizedBgSkills; }
+    &.work { background-color: $solarizedBgWork; }
+    &.about { background-color: $solarizedBgAbout; }
+  }
+}
+
+// Nord theme backgrounds
+#root.nordMode {
+  .pointlessBackground, .pointlessBackground2 {
+    background-color: $nordBgHome;
+    &.skills { background-color: $nordBgSkills; }
+    &.work { background-color: $nordBgWork; }
+    &.about { background-color: $nordBgAbout; }
   }
 }
 
@@ -359,6 +830,30 @@
   .skills #face, .skills #face2 { fill: $notionBgSkills; }
   .work #face, .work #face2 { fill: $notionBgWork; }
   .about #face, .about #face2 { fill: $notionBgAbout; }
+}
+
+#root.draculaMode .desktopContainer .logoPNG {
+  .skills #face, .skills #face2 { fill: $draculaBgSkills; }
+  .work #face, .work #face2 { fill: $draculaBgWork; }
+  .about #face, .about #face2 { fill: $draculaBgAbout; }
+}
+
+#root.monokaMode .desktopContainer .logoPNG {
+  .skills #face, .skills #face2 { fill: $monokaBgSkills; }
+  .work #face, .work #face2 { fill: $monokaBgWork; }
+  .about #face, .about #face2 { fill: $monokaBgAbout; }
+}
+
+#root.solarizedMode .desktopContainer .logoPNG {
+  .skills #face, .skills #face2 { fill: $solarizedBgSkills; }
+  .work #face, .work #face2 { fill: $solarizedBgWork; }
+  .about #face, .about #face2 { fill: $solarizedBgAbout; }
+}
+
+#root.nordMode .desktopContainer .logoPNG {
+  .skills #face, .skills #face2 { fill: $nordBgSkills; }
+  .work #face, .work #face2 { fill: $nordBgWork; }
+  .about #face, .about #face2 { fill: $nordBgAbout; }
 }
 
 .mobileContainer {
