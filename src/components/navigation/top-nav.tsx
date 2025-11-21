@@ -21,7 +21,7 @@ export function TopNav({ items }: TopNavProps) {
   const navItems = useMemo(
     () =>
       items.map((item: NavbarItem) => (
-        <ListItem className="navItem">
+        <ListItem key={item.to as string} className="navItem">
           <NavLink className={activeCSSHandler} to={item.to}>
             {item.label}
           </NavLink>
@@ -35,7 +35,7 @@ export function TopNav({ items }: TopNavProps) {
       <LogoSVG width="75" height="75" />
       <List divided horizontal>
         {navItems}
-        <ListItem className="navItem">
+        <ListItem key="theme-selector" className="navItem">
           <ThemeSelector />
         </ListItem>
       </List>
