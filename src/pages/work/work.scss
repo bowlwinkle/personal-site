@@ -3,10 +3,74 @@
 .ui .buildLabels,
 .ui .workLabels {
   .label {
-    border-color: $bgWork;
+    border-color: $lightBgWork;
   }
 }
 
 #work-timeline {
   font-family: 'Josefin sans';
+}
+
+// Theme-specific work colors
+#root.lightMode .ui .buildLabels,
+#root.lightMode .ui .workLabels {
+  .label {
+    border-color: $lightBgWork;
+  }
+}
+
+#root.darkMode .ui .buildLabels,
+#root.darkMode .ui .workLabels {
+  .label {
+    border-color: $darkBgWork;
+  }
+}
+
+#root.githubMode .ui .buildLabels,
+#root.githubMode .ui .workLabels {
+  .label {
+    border-color: $githubBgWork;
+  }
+}
+
+#root.discordMode .ui .buildLabels,
+#root.discordMode .ui .workLabels {
+  .label {
+    border-color: $discordBgWork;
+  }
+}
+
+#root.notionMode .ui .buildLabels,
+#root.notionMode .ui .workLabels {
+  .label {
+    border-color: $notionBgWork;
+  }
+}
+
+#root.draculaMode .ui .buildLabels,
+#root.draculaMode .ui .workLabels {
+  .label {
+    border-color: $draculaBgWork;
+  }
+}
+
+#root.monokaMode .ui .buildLabels,
+#root.monokaMode .ui .workLabels {
+  .label {
+    border-color: $monokaBgWork;
+  }
+}
+
+#root.solarizedMode .ui .buildLabels,
+#root.solarizedMode .ui .workLabels {
+  .label {
+    border-color: $solarizedBgWork;
+  }
+}
+
+#root.nordMode .ui .buildLabels,
+#root.nordMode .ui .workLabels {
+  .label {
+    border-color: $nordBgWork;
+  }
 }

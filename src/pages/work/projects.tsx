@@ -127,7 +127,7 @@ export function Projects() {
   })
 
   // Search actions
-  const timeoutRef = React.useRef(setTimeout(() => {}, 0))
+  const timeoutRef = React.useRef(setTimeout(() => undefined, 0))
   const handleSearchChange = React.useCallback(
     (_: React.MouseEvent<HTMLElement, MouseEvent>, data: SearchProps) => {
       clearTimeout(timeoutRef.current)

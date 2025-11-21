@@ -24,55 +24,60 @@ function HomeGrid({ children, ...props }: { children: ReactNode }) {
 
 export function Home() {
   return (
-    <Container className="home">
-      <HomeGrid>
-        <Grid.Row centered>
-          <Grid.Column>
-            <Grid className="homeDetails">
-              <Grid.Row>
-                <Header as="h1">Lucas Gansberg</Header>
-              </Grid.Row>
-              <Grid.Row>
-                <div>
-                  <Header as="h3">FULL STACK SW Engineer</Header>
-                  <Header as="h5">13 years experience</Header>
-                </div>
-              </Grid.Row>
-              <Grid.Row>
-                <p>
-                  From automation to product delivery, I've gained valuable
-                  experience and had the privilege of connecting with incredible
-                  individuals along the way!
-                </p>
-              </Grid.Row>
-              <Grid.Row>
-                <p>
-                  I'm excited to share that I've joined the outstanding team at
-                  Les Schwab HQ! This marks not only a thrilling new chapter in
-                  my professional journey but also a meaningful personal
-                  milestone, as my family embarks on an exciting new adventure
-                  in the stunning landscapes of Central Oregon.
-                </p>
-              </Grid.Row>
-              <Grid.Row>
-                <ContactInfo />
-              </Grid.Row>
-            </Grid>
-          </Grid.Column>
-          <Grid.Column only="computer">
-            <div
-              style={{
-                margin: 'auto',
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-              }}
-            >
-              <Map />
-            </div>
-          </Grid.Column>
-        </Grid.Row>
-      </HomeGrid>
-    </Container>
+    <>
+      <Container className="home">
+        <HomeGrid>
+          <Grid.Row centered>
+            <Grid.Column>
+              <Grid className="homeDetails">
+                <Grid.Row>
+                  <Header as="h1">Lucas Gansberg</Header>
+                </Grid.Row>
+                <Grid.Row>
+                  <Header as="h3">FULL STACK DEVELOPER</Header>
+                </Grid.Row>
+                <Grid.Row>
+                  <p>I love to build and fix things</p>
+                </Grid.Row>
+                <Grid.Row>
+                  <p>
+                    I am in a new chapter of my life raising a beautiful
+                    daughter and trying to make it in a town I love.
+                  </p>
+                </Grid.Row>
+                <Grid.Row>
+                  <p>
+                    I am not sure where I'm going to end up, but I know it's
+                    going to be something I love. I am exploring the life I
+                    have, as I live it.
+                  </p>
+                </Grid.Row>
+                <Grid.Row>
+                  <p>
+                    Take a look around and see what I have been up to. Maybe our
+                   paths will cross.
+                  </p>
+                </Grid.Row>
+                <Grid.Row>
+                  <ContactInfo />
+                </Grid.Row>
+              </Grid>
+            </Grid.Column>
+            <Grid.Column only="computer">
+              <div
+                style={{
+                  margin: 'auto',
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+              >
+                <Map />
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+        </HomeGrid>
+      </Container>
+    </>
   )
 }

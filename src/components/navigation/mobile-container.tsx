@@ -3,7 +3,7 @@ import { Media } from '../media'
 import { Key, ReactNode, useMemo, useState } from 'react'
 import { NavbarItem } from './sidebar'
 import { NavLink } from 'react-router-dom'
-import { LGSVG } from '../logo'
+import { ThemeSelector } from '../theme-selector'
 
 type MobileContainerProps = {
   routes: NavbarItem[]
@@ -12,7 +12,6 @@ type MobileContainerProps = {
 
 export function MobileContainer({ children, routes }: MobileContainerProps) {
   const [sideBarOpen, toggleSidebar] = useState(false)
-  const path = location.pathname.replace('/', '')
 
   const menuItems = useMemo(
     () =>
@@ -42,6 +41,9 @@ export function MobileContainer({ children, routes }: MobileContainerProps) {
           visible={sideBarOpen}
         >
           {menuItems}
+          <Menu.Item>
+            <ThemeSelector />
+          </Menu.Item>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sideBarOpen}>
@@ -55,11 +57,6 @@ export function MobileContainer({ children, routes }: MobileContainerProps) {
               <Menu inverted pointing secondary size="large">
                 <Menu.Item onClick={() => toggleSidebar(true)}>
                   <Icon name="sidebar" />
-                </Menu.Item>
-                <Menu.Item position="right" className="logoPNG mobile">
-                  <NavLink to="/">
-                    <LGSVG className={path} />
-                  </NavLink>
                 </Menu.Item>
               </Menu>
             </Container>

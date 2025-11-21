@@ -1,0 +1,169 @@
+// Theme mixin for comprehensive UI component styling
+@mixin theme-components($bg, $text, $accent) {
+  // All borders and dividers
+  .ui.divider, hr, .ui.segment, .ui.message, .ui.menu, .ui.table {
+    border-color: rgba($text, 0.2) !important;
+  }
+
+  // HR tags specifically
+  hr {
+    background-color: rgba($text, 0.2);
+    border: none;
+    height: 1px;
+  }
+
+  // All containers should use main background
+  .fresnel-container, .container, .ui.container, .ui.segment, .ui.message {
+    background-color: $bg !important;
+    color: $text;
+  }
+
+  // Inputs and form elements
+  .ui.input input, .ui.search input, .ui.form input, .ui.form textarea {
+    background: lighten($bg, 3%);
+    color: $text;
+    border-color: rgba($text, 0.3);
+    
+    &:focus {
+      border-color: rgba($accent, 0.6);
+    }
+    
+    &::placeholder {
+      color: rgba($text, 0.6);
+    }
+  }
+
+  // Buttons
+  .ui.button {
+    background: lighten($bg, 8%);
+    color: $text;
+    border-color: rgba($text, 0.3);
+    
+    &:hover {
+      background: lighten($bg, 12%);
+    }
+    
+    &.primary {
+      background: $accent;
+      color: $bg;
+    }
+    
+    &:disabled {
+      background: rgba($text, 0.1);
+      color: rgba($text, 0.4);
+    }
+  }
+
+  // Labels
+  .ui.label {
+    background: lighten($bg, 10%);
+    color: $text;
+    border-color: rgba($text, 0.3);
+    
+    &.basic {
+      background: transparent;
+      border-color: rgba($text, 0.4);
+    }
+  }
+
+  // Messages - slight variation for visibility
+  .ui.message {
+    background: lighten($bg, 2%);
+    color: $text;
+    border-color: rgba($text, 0.2);
+  }
+
+  // Segments - same as main background
+  .ui.segment {
+    background: $bg;
+    color: $text;
+    border-color: rgba($text, 0.2);
+  }
+
+  // Statistics
+  .ui.statistic .value, .ui.statistic .label {
+    color: $text;
+  }
+
+  // Search
+  .ui.search .results {
+    background: lighten($bg, 5%);
+    border-color: rgba($text, 0.3);
+    
+    .result {
+      color: $text;
+      border-color: rgba($text, 0.1);
+      
+      &:hover {
+        background: rgba($accent, 0.1);
+      }
+    }
+  }
+
+  // Menus - use main background
+  .ui.menu {
+    background: $bg;
+    
+    .item {
+      color: $text;
+      
+      &:hover {
+        background: rgba($text, 0.1);
+      }
+      
+      &.active {
+        background: rgba($accent, 0.2);
+        color: $text;
+      }
+    }
+  }
+
+  // Modals and popups - use main background
+  .ui.modal, .ui.popup {
+    background: $bg;
+    color: $text;
+    border-color: rgba($text, 0.2);
+  }
+
+  // Progress bars
+  .ui.progress {
+    background: rgba($text, 0.1);
+    
+    .bar {
+      background: $accent;
+    }
+  }
+
+  // Loaders
+  .ui.loader {
+    border-color: rgba($text, 0.2);
+    border-top-color: $accent;
+  }
+
+  // Cards - use main background
+  .ui.card {
+    background: $bg;
+    color: $text;
+    border-color: rgba($text, 0.2);
+  }
+
+  // All text elements
+  p, span, div, li, td, th {
+    color: $text;
+  }
+
+  // Links
+  a {
+    color: $accent;
+    
+    &:hover {
+      color: lighten($accent, 10%);
+    }
+  }
+
+  // SVG elements
+  svg {
+    fill: $text;
+    stroke: $text;
+  }
+}

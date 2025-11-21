@@ -2,11 +2,10 @@
 
 .skills {
   .ui.tab {
-    background: rgba($color: white, $alpha: 0.6);
+    background: rgba(255, 255, 255, 0.6);
   }
   .ui.message {
-    // color: #10a3a3;
-    color: $bgSkills;
+    color: $lightBgSkills;
   }
 
   .lineChart,
@@ -26,10 +25,71 @@
 
     .recharts-surface > .recharts-layer {
       .recharts-radar,
-      .recharts-radar-polygon {
-        stroke: $bgSkills;
-        fill: $bgSkills;
+     .recharts-radar-polygon {
+        stroke: $lightBgSkills;
+        fill: $lightBgSkills;
       }
+    }
+  }
+}
+
+// Theme-specific skills colors
+#root.lightMode .skills {
+  .ui.message {
+    color: $lightBgSkills;
+  }
+  .radarChart .recharts-surface > .recharts-layer {
+    .recharts-radar, .recharts-radar-polygon {
+      stroke: $lightBgSkills;
+      fill: $lightBgSkills;
+    }
+  }
+}
+
+#root.darkMode .skills {
+  .ui.message {
+    color: $darkBgSkills;
+  }
+  .radarChart .recharts-surface > .recharts-layer {
+    .recharts-radar, .recharts-radar-polygon {
+      stroke: $darkBgSkills;
+      fill: $darkBgSkills;
+    }
+  }
+}
+
+#root.githubMode .skills {
+  .ui.message {
+    color: $githubBgSkills;
+  }
+  .radarChart .recharts-surface > .recharts-layer {
+    .recharts-radar, .recharts-radar-polygon {
+      stroke: $githubBgSkills;
+      fill: $githubBgSkills;
+    }
+  }
+}
+
+#root.discordMode .skills {
+  .ui.message {
+    color: $discordBgSkills;
+  }
+  .radarChart .recharts-surface > .recharts-layer {
+    .recharts-radar, .recharts-radar-polygon {
+      stroke: $discordBgSkills;
+      fill: $discordBgSkills;
+    }
+  }
+}
+
+#root.notionMode .skills {
+  .ui.message {
+    color: $notionBgSkills;
+  }
+  .radarChart .recharts-surface > .recharts-layer {
+    .recharts-radar, .recharts-radar-polygon {
+      stroke: $notionBgSkills;
+      fill: $notionBgSkills;
     }
   }
 
@@ -38,6 +98,54 @@
     .divider {
       width: 100%;
       margin: 0;
+    }
+  }
+}
+
+#root.draculaMode .skills {
+  .ui.message {
+    color: $draculaBgSkills;
+  }
+  .radarChart .recharts-surface > .recharts-layer {
+    .recharts-radar, .recharts-radar-polygon {
+      stroke: $draculaBgSkills;
+      fill: $draculaBgSkills;
+    }
+  }
+}
+
+#root.monokaMode .skills {
+  .ui.message {
+    color: $monokaBgSkills;
+  }
+  .radarChart .recharts-surface > .recharts-layer {
+    .recharts-radar, .recharts-radar-polygon {
+      stroke: $monokaBgSkills;
+      fill: $monokaBgSkills;
+    }
+  }
+}
+
+#root.solarizedMode .skills {
+  .ui.message {
+    color: $solarizedBgSkills;
+  }
+  .radarChart .recharts-surface > .recharts-layer {
+    .recharts-radar, .recharts-radar-polygon {
+      stroke: $solarizedBgSkills;
+      fill: $solarizedBgSkills;
+    }
+  }
+}
+
+#root.nordMode .skills {
+  .ui.message {
+    color: $nordBgSkills;
+  }
+  .radarChart .recharts-surface > .recharts-layer {
+    .recharts-radar, .recharts-radar-polygon {
+      stroke: $nordBgSkills;
+      fill: $nordBgSkills;
     }
   }
 }

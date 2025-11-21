@@ -5,9 +5,9 @@ import { Menu, Container, Segment } from 'semantic-ui-react'
 import { NavbarItem } from './sidebar'
 import { NavLink, useLocation } from 'react-router-dom'
 import { LGSVG } from '../logo'
-// import { useDispatch, useSelector } from 'react-redux'
-// import { RootState } from '../../store/store'
-// import { toggle } from '../../features/theme'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store/store'
+import { ThemeSelector } from '../theme-selector'
 
 type DesktopContainerProps = {
   routes: NavbarItem[]
@@ -18,8 +18,7 @@ export function DesktopContainer({
   routes,
   children,
 }: DesktopContainerProps): ReactElement {
-  // const themeEnabled = useSelector((state: RootState) => state.theme.darkMode)
-  // const dispatch = useDispatch()
+  const currentTheme = useSelector((state: RootState) => state.theme.currentTheme)
   const location = useLocation()
   const path = location.pathname.replace('/', '')
 
@@ -57,13 +56,9 @@ export function DesktopContainer({
                 </NavLink>
               </Menu.Item>
               {menuItems}
-              {/* <Menu.Item position="right">
-                <Radio
-                  toggle
-                  checked={themeEnabled}
-                  onChange={() => dispatch(toggle())}
-                />
-              </Menu.Item> */}
+              <Menu.Item position="right">
+                <ThemeSelector />
+              </Menu.Item>
             </Container>
           </Menu>
         </Segment>
