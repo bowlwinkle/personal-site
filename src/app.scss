@@ -1,11 +1,13 @@
 // @import-normalize;
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import './utilities/variables.scss';
+@import './utilities/theme-mixins.scss';
 
 // Light Theme (Default)
 #root.lightMode {
   background-color: $lightBg;
   color: $lightText;
+  @include theme-components($lightBg, $lightText, $lightBgHome);
 
   .ui.dropdown {
     background: $lightBg;
@@ -28,13 +30,23 @@
 
   .ui.table {
     background: $lightBg;
+    border-color: rgba($lightText, 0.15);
     
     thead th {
       background: rgba($lightText, 0.03);
+      border-color: rgba($lightText, 0.1);
     }
     
-    tbody tr:hover {
-      background: rgba($lightText, 0.02);
+    tbody tr {
+      border-color: rgba($lightText, 0.1);
+      
+      &:hover {
+        background: rgba($lightText, 0.02);
+      }
+    }
+    
+    td {
+      border-color: rgba($lightText, 0.1);
     }
   }
 }
@@ -43,6 +55,7 @@
 #root.darkMode {
   background-color: $darkBg;
   color: $darkText;
+  @include theme-components($darkBg, $darkText, $darkBgHome);
 
   .fresnel-container,
   .container,
@@ -80,13 +93,23 @@
 
   .ui.table {
     background: $darkBg;
+    border-color: rgba($darkText, 0.2);
     
     thead th {
       background: lighten($darkBg, 3%);
+      border-color: rgba($darkText, 0.2);
     }
     
-    tbody tr:hover {
-      background: lighten($darkBg, 2%);
+    tbody tr {
+      border-color: rgba($darkText, 0.15);
+      
+      &:hover {
+        background: lighten($darkBg, 2%);
+      }
+    }
+    
+    td {
+      border-color: rgba($darkText, 0.15);
     }
   }
 
@@ -117,6 +140,7 @@
 #root.githubMode {
   background-color: $githubBg;
   color: $githubText;
+  @include theme-components($githubBg, $githubText, $githubBgHome);
 
   .fresnel-container,
   .container,
@@ -187,6 +211,7 @@
 #root.discordMode {
   background-color: $discordBg;
   color: $discordText;
+  @include theme-components($discordBg, $discordText, $discordBgHome);
 
   .fresnel-container,
   .container,
@@ -257,6 +282,7 @@
 #root.notionMode {
   background-color: $notionBg;
   color: $notionText;
+  @include theme-components($notionBg, $notionText, $notionBgHome);
 
   .fresnel-container,
   .container,
@@ -327,6 +353,7 @@
 #root.draculaMode {
   background-color: $draculaBg;
   color: $draculaText;
+  @include theme-components($draculaBg, $draculaText, $draculaBgHome);
 
   .fresnel-container,
   .container,
@@ -397,6 +424,7 @@
 #root.monokaMode {
   background-color: $monokaBg;
   color: $monokaText;
+  @include theme-components($monokaBg, $monokaText, $monokaBgHome);
 
   .fresnel-container,
   .container,
@@ -467,6 +495,7 @@
 #root.solarizedMode {
   background-color: $solarizedBg;
   color: $solarizedText;
+  @include theme-components($solarizedBg, $solarizedText, $solarizedBgHome);
 
   .fresnel-container,
   .container,
@@ -537,6 +566,7 @@
 #root.nordMode {
   background-color: $nordBg;
   color: $nordText;
+  @include theme-components($nordBg, $nordText, $nordBgHome);
 
   .fresnel-container,
   .container,
