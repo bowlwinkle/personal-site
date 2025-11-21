@@ -639,21 +639,7 @@
 
 
 
-.pointlessBackground3 {
-  position: absolute;
-  left: 0%;
-  height: 100%;
-  width: 100%;
-  bottom: -50%;
-  background-repeat: no-repeat;
-  background-image: url('./assets/falling-hex.svg');
-  opacity: 0.15;
 
-  @media screen and (min-width: 768px) {
-    position: fixed;
-    opacity: 0.3;
-  }
-}
 
 #root {
   height: 100%;
@@ -844,6 +830,10 @@
 
   .text {
     font-size: 14px;
+  }
+
+  .dropdown.icon {
+    display: none;
   }
 
   .menu {

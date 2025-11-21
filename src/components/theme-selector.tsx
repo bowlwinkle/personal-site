@@ -23,6 +23,7 @@ export function ThemeSelector() {
     <Dropdown
       selection
       compact
+      icon={null}
       options={themeOptions}
       value={currentTheme}
       onChange={(_, { value }) => dispatch(setTheme(value as ThemeName))}

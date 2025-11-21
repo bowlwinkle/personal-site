@@ -7,8 +7,13 @@ export interface ThemeState {
   currentTheme: ThemeName
 }
 
+const getInitialTheme = (): ThemeName => {
+  const savedTheme = localStorage.getItem('theme')
+  return (savedTheme as ThemeName) || 'light'
+}
+
 const initialState: ThemeState = {
-  currentTheme: 'light',
+  currentTheme: getInitialTheme(),
 }
 
 export const themeSlice = createSlice({
@@ -17,9 +22,11 @@ export const themeSlice = createSlice({
   reducers: {
     setTheme: (state, action: PayloadAction<ThemeName>) => {
       state.currentTheme = action.payload
+      localStorage.setItem('theme', action.payload)
     },
     reset: (state) => {
-      state.currentTheme = initialState.currentTheme
+      state.currentTheme = 'light'
+      localStorage.removeItem('theme')
     },
   },
 })
