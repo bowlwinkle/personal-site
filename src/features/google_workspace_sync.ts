@@ -12,6 +12,7 @@ export interface TaskItem {
   status: 'needsAction' | 'completed';
   updated: string;
   due?: string;
+  listId?: string;
 }
 
 export interface CalendarEvent {
@@ -36,10 +37,10 @@ const ALLOWED_OWNER_EMAIL = 'lucas.gansberg@gmail.com';
 const STORAGE_KEY_TOKEN = 'ag_sync_oauth_token';
 const STORAGE_KEY_PROFILE = 'ag_sync_user_profile';
 
-// Scopes required for pulling tasks, calendar events, and identifying the user (read-write for events)
+// Scopes required for pulling tasks, calendar events, and identifying the user (read-write for events/tasks)
 const REQUESTED_SCOPES = [
   'https://www.googleapis.com/auth/userinfo.email',
-  'https://www.googleapis.com/auth/tasks.readonly',
+  'https://www.googleapis.com/auth/tasks',
   'https://www.googleapis.com/auth/calendar.events'
 ].join(' ');
 
@@ -237,7 +238,8 @@ export class WorkspaceSyncEngine {
       notes: t.notes,
       status: t.status,
       updated: t.updated,
-      due: t.due
+      due: t.due,
+      listId: listId
     }));
   }
 
@@ -271,6 +273,32 @@ export class WorkspaceSyncEngine {
     } catch (error: any) {
       console.error('WorkspaceSyncEngine: error fetching Calendar', error);
       throw error;
+    }
+  }
+
+
+  /**
+   * Updates a task status directly on Google Tasks
+   */
+  public async updateTaskStatus(listId: string, taskId: string, completed: boolean): Promise<void> {
+    if (!this.authState.isAuthenticated || !this.authState.token) {
+      throw new Error('Unauthenticated API call attempt.');
+    }
+
+    const response = await fetch(`https://www.googleapis.com/tasks/v1/lists/${listId}/tasks/${taskId}`, {
+      method: 'PATCH',
+      headers: {
+        Authorization: `Bearer ${this.authState.token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        status: completed ? 'completed' : 'needsAction'
+      })
+    });
+
+    if (!response.ok) {
+      const errText = await response.text();
+      throw new Error(`Failed to update task status: ${errText || response.statusText}`);
     }
   }
 

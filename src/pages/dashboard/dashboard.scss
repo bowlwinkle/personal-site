@@ -27,7 +27,7 @@
     }
 
     &.contentSection {
-      min-height: 500px;
+      min-height: 550px;
       display: flex;
       flex-direction: column;
     }
@@ -51,76 +51,376 @@
     }
   }
 
-  /* Login / Error States */
-  .loginContent, .errorContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  /* 1. Analytics Grid & Cards */
+  .analyticsGrid {
+    margin-bottom: 2rem !important;
 
-    .loginIconContainer, .errorIconContainer {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
+    .analyticsCard {
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-    }
+      gap: 1rem;
+      padding: 1rem 1.25rem !important;
+      height: 100%;
 
-    .loginIconContainer {
-      background: rgba(33, 133, 208, 0.1);
-      .lockIcon {
-        color: #2185d0;
-      }
-    }
-
-    .errorIconContainer {
-      background: rgba(219, 40, 40, 0.1);
-      .unauthorizedIcon {
-        color: #db2828;
-      }
-    }
-
-    .loginHeader, .unauthorizedHeader {
-      margin: 0 0 1rem 0 !important;
-      font-size: 1.8rem !important;
-    }
-
-    .loginSubtext, .unauthorizedText {
-      font-size: 1.1rem;
-      opacity: 0.85;
-      line-height: 1.5;
-      margin-bottom: 1rem;
-    }
-
-    .unauthorizedSubtext {
-      font-size: 0.95rem;
-      color: #db2828;
-      background: rgba(219, 40, 40, 0.05);
-      border: 1px solid rgba(219, 40, 40, 0.15);
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      width: 100%;
-      margin-bottom: 1.5rem;
-    }
-
-    .loginActions, .errorActions {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      width: 100%;
-      margin-top: 1rem;
-
-      button, a {
-        width: 100%;
-        margin: 0 !important;
-        border-radius: 8px !important;
+      .cardIconContainer {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
         justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+
+        &.blue { background: rgba(33, 133, 208, 0.15); color: #2185d0; }
+        &.purple { background: rgba(163, 51, 200, 0.15); color: #a333c8; }
+        &.green { background: rgba(33, 186, 69, 0.15); color: #21ba45; }
+        &.yellow { background: rgba(251, 189, 8, 0.15); color: #fbbd08; }
+        &.red { background: rgba(219, 40, 40, 0.15); color: #db2828; }
+        &.grey { background: rgba(255, 255, 255, 0.08); color: inherit; }
+      }
+
+      .cardInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+
+        .cardLabel {
+          font-size: 0.8rem;
+          opacity: 0.65;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: 0.2rem;
+        }
+
+        .cardValue {
+          font-size: 1.35rem;
+          font-weight: 700;
+          letter-spacing: -0.5px;
+        }
+
+        .launcherLinks {
+          font-size: 0.9rem;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+
+          a {
+            color: #2185d0;
+            transition: all 0.2s ease;
+            &:hover {
+              color: lighten(#2185d0, 10%);
+              text-decoration: underline;
+            }
+          }
+
+          .divider {
+            opacity: 0.3;
+          }
+        }
       }
     }
   }
 
+  /* 2. 30-Day Calendar Heatmap */
+  .heatmapSection {
+    margin-bottom: 2rem !important;
+
+    .heatmapHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      h3 {
+        margin: 0 !important;
+      }
+
+      .legendText {
+        font-size: 0.85rem;
+        opacity: 0.8;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        .legendBox {
+          width: 14px;
+          height: 14px;
+          border-radius: 3px;
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 0.3rem;
+
+          &.level-0 { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.05); }
+          &.level-1 { background: rgba(100, 53, 201, 0.25); border: 1px solid rgba(100, 53, 201, 0.3); }
+          &.level-2 { background: rgba(100, 53, 201, 0.55); border: 1px solid rgba(100, 53, 201, 0.6); }
+          &.level-3 { background: rgba(219, 40, 40, 0.45); border: 1px solid rgba(219, 40, 40, 0.65); box-shadow: 0 0 8px rgba(219, 40, 40, 0.4); }
+        }
+      }
+    }
+
+    .heatmapGridContainer {
+      display: grid;
+      grid-template-columns: repeat(14, 1fr);
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+
+      .heatmapDayCell {
+        aspect-ratio: 1;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.25rem;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.2s ease;
+
+        &:hover {
+          transform: scale(1.08);
+          z-index: 10;
+        }
+
+        .cellDateNumber {
+          font-size: 1.15rem;
+          font-weight: 700;
+          line-height: 1.1;
+        }
+
+        .cellDayName {
+          font-size: 0.65rem;
+          opacity: 0.5;
+          text-transform: uppercase;
+        }
+
+        &.level-0 {
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        &.level-1 {
+          background: rgba(100, 53, 201, 0.25);
+          border: 1px solid rgba(100, 53, 201, 0.3);
+          color: #d1c4e9;
+        }
+
+        &.level-2 {
+          background: rgba(100, 53, 201, 0.55);
+          border: 1px solid rgba(100, 53, 201, 0.6);
+          color: #fff;
+          box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+        }
+
+        &.level-3 {
+          background: rgba(219, 40, 40, 0.45);
+          border: 1px solid rgba(219, 40, 40, 0.65);
+          color: #fff;
+          box-shadow: 0 0 8px rgba(219, 40, 40, 0.4);
+        }
+      }
+    }
+  }
+
+  /* 3. Search and Filters */
+  .searchFilterBar {
+    margin-bottom: 1rem;
+    
+    .glassInput input {
+      background: rgba(0, 0, 0, 0.15) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      color: inherit !important;
+      border-radius: 8px !important;
+      font-size: 0.95rem !important;
+
+      &:focus {
+        border-color: #2185d0 !important;
+        background: rgba(0, 0, 0, 0.25) !important;
+      }
+    }
+
+    &.calendarFilterRow {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      .calendarSearchInput {
+        width: 100%;
+      }
+
+      .timeFilterGroup {
+        display: flex;
+        justify-content: flex-end;
+        
+        .glassButtonGroup {
+          border: 1px solid rgba(255, 255, 255, 0.1) !important;
+          border-radius: 6px !important;
+          background: rgba(0, 0, 0, 0.1) !important;
+          overflow: hidden;
+
+          button {
+            color: inherit !important;
+            background: transparent !important;
+            border: none !important;
+            border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+            padding: 0.5em 1em !important;
+            font-size: 0.8rem !important;
+            transition: all 0.2s ease !important;
+
+            &:last-child {
+              border-right: none !important;
+            }
+
+            &.active {
+              background: rgba(255, 255, 255, 0.1) !important;
+              font-weight: 700;
+            }
+
+            &:hover:not(.active) {
+              background: rgba(255, 255, 255, 0.04) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* 4. Interactive Tasks */
+  .taskItemCard {
+    background: rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.03) !important;
+    border-radius: 10px !important;
+    padding: 0.8rem 1rem !important;
+    margin-bottom: 0.75rem !important;
+    transition: all 0.2s ease !important;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.2) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      transform: translateX(4px);
+    }
+
+    &.taskCompletedCard {
+      opacity: 0.65;
+    }
+
+    .taskCardContent {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      width: 100%;
+
+      .taskCheckContainer {
+        display: flex;
+        align-items: center;
+        height: 24px;
+        flex-shrink: 0;
+
+        .taskInteractiveCheckbox {
+          cursor: pointer;
+          opacity: 0.5;
+          transition: all 0.2s ease;
+          margin: 0 !important;
+
+          &:hover {
+            opacity: 1;
+            transform: scale(1.15);
+            color: #21ba45;
+          }
+
+          &.checked {
+            opacity: 1;
+            color: #21ba45;
+            text-shadow: 0 0 5px rgba(33, 186, 111, 0.4);
+          }
+        }
+      }
+
+      .taskDetailsArea {
+        flex: 1;
+        min-width: 0;
+      }
+    }
+  }
+
+  /* 5. Calendar Event Cards & Actions */
+  .eventItemCard {
+    background: rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.03) !important;
+    border-radius: 10px !important;
+    padding: 0.8rem 1rem !important;
+    margin-bottom: 0.75rem !important;
+    transition: all 0.2s ease !important;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.2) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      transform: translateX(4px);
+    }
+
+    &.bufferHighlight {
+      border-left: 3px solid #6435c9 !important;
+      background: rgba(100, 53, 201, 0.05) !important;
+      
+      &:hover {
+        background: rgba(100, 53, 201, 0.1) !important;
+      }
+    }
+
+    .eventItemContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .eventItemDetails {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .eventItemActions {
+      display: flex;
+      gap: 0.4rem;
+      flex-shrink: 0;
+      opacity: 0.25;
+      transition: all 0.2s ease;
+
+      .actionBtn {
+        opacity: 0.7;
+        margin: 0 !important;
+        padding: 0.5em !important;
+        border-radius: 6px !important;
+        transition: all 0.2s ease !important;
+
+        &:hover {
+          opacity: 1 !important;
+        }
+
+        &.editBtn:hover {
+          background: rgba(33, 133, 208, 0.15) !important;
+          color: #2185d0 !important;
+          box-shadow: 0 0 6px rgba(33, 133, 208, 0.25);
+        }
+
+        &.deleteBtn:hover {
+          background: rgba(219, 40, 40, 0.15) !important;
+          color: #db2828 !important;
+          box-shadow: 0 0 6px rgba(219, 40, 40, 0.25);
+        }
+      }
+    }
+
+    &:hover .eventItemActions {
+      opacity: 1;
+    }
+  }
+
+  /* Shared / Existing details */
   .headerLeft {
     display: flex;
     align-items: center;
@@ -211,12 +511,8 @@
 
       .sectionIcon {
         margin: 0 !important;
-        &.blueIcon {
-          color: #2185d0;
-        }
-        &.purpleIcon {
-          color: #b5cc18;
-        }
+        &.blueIcon { color: #2185d0; }
+        &.purpleIcon { color: #6435c9; }
       }
     }
 
@@ -256,176 +552,101 @@
     padding-right: 0.5rem;
 
     /* Custom Scrollbar */
-    &::-webkit-scrollbar {
-      width: 6px;
-    }
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
+    &::-webkit-scrollbar { width: 6px; }
+    &::-webkit-scrollbar-track { background: transparent; }
     &::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
     }
-    &::-webkit-scrollbar-thumb:hover {
-      background: rgba(255, 255, 255, 0.25);
-    }
+    &::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.25); }
   }
 
-  .taskItemCard {
-    background: rgba(0, 0, 0, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.03) !important;
-    border-radius: 10px !important;
-    padding: 1rem !important;
-    margin-bottom: 0.75rem !important;
-    transition: all 0.2s ease !important;
+  .taskTitleRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
 
-    &:hover {
-      background: rgba(0, 0, 0, 0.2) !important;
-      border-color: rgba(255, 255, 255, 0.08) !important;
-      transform: translateX(4px);
-    }
-
-    .taskTitleRow {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 0.5rem;
-
-      .taskTitle {
-        font-weight: 600;
-        font-size: 1.05rem;
-        word-break: break-word;
-
-        &.strikeThrough {
-          text-decoration: line-through;
-          opacity: 0.5;
-        }
-      }
-
-      .dueLabel {
-        background: rgba(255, 255, 255, 0.05) !important;
-        color: inherit !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        white-space: nowrap;
-
-        &.overdue {
-          background: rgba(219, 40, 40, 0.1) !important;
-          color: #db2828 !important;
-          border-color: rgba(219, 40, 40, 0.3) !important;
-          box-shadow: 0 0 5px rgba(219, 40, 40, 0.2);
-        }
-      }
-    }
-
-    .taskNotes {
-      font-size: 0.9rem;
-      opacity: 0.8;
-      margin: 0.5rem 0 !important;
-      white-space: pre-wrap;
+    .taskTitle {
+      font-weight: 600;
+      font-size: 1.05rem;
       word-break: break-word;
-    }
 
-    .taskFooter {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      margin-top: 0.5rem;
-
-      .updatedTime {
+      &.strikeThrough {
+        text-decoration: line-through;
         opacity: 0.5;
       }
     }
+
+    .dueLabel {
+      background: rgba(255, 255, 255, 0.05) !important;
+      color: inherit !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      white-space: nowrap;
+
+      &.overdue {
+        background: rgba(219, 40, 40, 0.1) !important;
+        color: #db2828 !important;
+        border-color: rgba(219, 40, 40, 0.3) !important;
+        box-shadow: 0 0 5px rgba(219, 40, 40, 0.2);
+      }
+    }
   }
 
-  .eventItemCard {
-    background: rgba(0, 0, 0, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.03) !important;
-    border-radius: 10px !important;
-    padding: 1rem !important;
-    margin-bottom: 0.75rem !important;
-    transition: all 0.2s ease !important;
+  .taskNotes {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0.5rem 0 !important;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
 
-    &:hover {
-      background: rgba(0, 0, 0, 0.2) !important;
-      border-color: rgba(255, 255, 255, 0.08) !important;
-      transform: translateX(4px);
+  .taskFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+
+    .updatedTime {
+      opacity: 0.5;
     }
+  }
 
-    &.bufferHighlight {
-      border-left: 3px solid #6435c9 !important;
-      background: rgba(100, 53, 201, 0.05) !important;
-      
-      &:hover {
-        background: rgba(100, 53, 201, 0.1) !important;
-      }
-    }
+  .eventHeaderRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
 
-    .eventItemContainer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      width: 100%;
-    }
-
-    .eventItemDetails {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .eventItemActions {
-      flex-shrink: 0;
-      opacity: 0.2;
-      transition: all 0.2s ease;
-
-      button {
-        &:hover {
-          background: rgba(219, 40, 40, 0.15) !important;
-          box-shadow: 0 0 8px rgba(219, 40, 40, 0.3) !important;
-        }
-      }
-    }
-
-    &:hover .eventItemActions {
-      opacity: 1;
-    }
-
-    .eventHeaderRow {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 0.5rem;
-
-      .eventSummary {
-        font-weight: 600;
-        font-size: 1.05rem;
-        word-break: break-word;
-      }
-
-      .bufferLabel {
-        box-shadow: 0 0 5px rgba(100, 53, 201, 0.3);
-      }
-    }
-
-    .eventTime {
-      font-size: 0.85rem;
-      opacity: 0.75;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .eventDescription {
-      font-size: 0.9rem;
-      opacity: 0.8;
-      margin: 0.5rem 0 0 0 !important;
-      white-space: pre-wrap;
+    .eventSummary {
+      font-weight: 600;
+      font-size: 1.05rem;
       word-break: break-word;
     }
+
+    .bufferLabel {
+      box-shadow: 0 0 5px rgba(100, 53, 201, 0.3);
+    }
+  }
+
+  .eventTime {
+    font-size: 0.85rem;
+    opacity: 0.75;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .eventDescription {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0.5rem 0 0 0 !important;
+    white-space: pre-wrap;
+    word-break: break-word;
   }
 
   .emptyState {
@@ -437,17 +658,12 @@
     text-align: center;
     opacity: 0.6;
 
-    .emptyIcon {
-      margin-bottom: 1rem !important;
-    }
-
-    .emptyText {
-      font-size: 1.1rem;
-    }
+    .emptyIcon { margin-bottom: 1rem !important; }
+    .emptyText { font-size: 1.1rem; }
   }
 }
 
-// Light theme specific adjustments
+/* Light Theme Adjustments */
 #root.lightMode .dashboardContainer {
   .glassPanel {
     background: rgba(0, 0, 0, 0.03) !important;
@@ -460,23 +676,40 @@
     }
   }
 
-  .headerRight {
-    .profileBadge {
-      background: rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(0, 0, 0, 0.08);
+  .analyticsGrid .analyticsCard {
+    .cardIconContainer {
+      &.grey { background: rgba(0, 0, 0, 0.04); }
     }
   }
 
-  .loginContent, .errorContent {
-    .loginIconContainer {
-      background: rgba(33, 133, 208, 0.08);
+  .heatmapSection {
+    .legendBox.legendBox.level-0 { background: rgba(0, 0, 0, 0.03); border-color: rgba(0, 0, 0, 0.03); }
+    
+    .heatmapGridContainer .heatmapDayCell {
+      &.level-0 { background: rgba(0, 0, 0, 0.02); border-color: rgba(0, 0, 0, 0.04); }
+      &.level-1 { background: rgba(100, 53, 201, 0.15); border-color: rgba(100, 53, 201, 0.2); color: #4527a0; }
+      &.level-2 { background: rgba(100, 53, 201, 0.4); border-color: rgba(100, 53, 201, 0.45); color: #fff; }
+      &.level-3 { background: rgba(219, 40, 40, 0.35); border-color: rgba(219, 40, 40, 0.45); color: #fff; }
     }
-    .errorIconContainer {
-      background: rgba(219, 40, 40, 0.08);
+  }
+
+  .searchFilterBar {
+    .glassInput input {
+      background: rgba(255, 255, 255, 0.8) !important;
+      border: 1px solid rgba(0, 0, 0, 0.1) !important;
+      &:focus {
+        background: #fff !important;
+      }
     }
-    .unauthorizedSubtext {
-      background: rgba(219, 40, 40, 0.03);
-      border: 1px solid rgba(219, 40, 40, 0.12);
+    &.calendarFilterRow .timeFilterGroup .glassButtonGroup {
+      background: rgba(0, 0, 0, 0.02) !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+      button {
+        border-right-color: rgba(0, 0, 0, 0.05) !important;
+        &.active {
+          background: rgba(0, 0, 0, 0.06) !important;
+        }
+      }
     }
   }
 
@@ -495,17 +728,81 @@
         background: rgba(100, 53, 201, 0.06) !important;
       }
     }
+
+    .eventItemActions .actionBtn {
+      &.editBtn:hover { background: rgba(33, 133, 208, 0.08) !important; }
+      &.deleteBtn:hover { background: rgba(219, 40, 40, 0.08) !important; }
+    }
+  }
+
+  .headerRight {
+    .profileBadge {
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
   }
   
-  .scrollableList::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.15);
-  }
-  .scrollableList::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.25);
+  .scrollableList::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.15); }
+  .scrollableList::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.25); }
+}
+
+/* 6. Responsive Styles (Breakpoints) */
+@media (max-width: 1199px) {
+  .dashboardContainer .heatmapSection .heatmapGridContainer {
+    grid-template-columns: repeat(7, 1fr); // 7 columns (weeks) on medium screens
   }
 }
 
-// Fade in animation
+@media (max-width: 767px) {
+  .dashboardContainer {
+    .glassPanel.headerPanel {
+      flex-direction: column;
+      align-items: flex-start;
+      .headerRight {
+        width: 100%;
+        justify-content: space-between;
+        .profileBadge {
+          width: 100%;
+          justify-content: center;
+          margin-bottom: 0.5rem;
+        }
+        button {
+          flex: 1;
+        }
+      }
+    }
+
+    .heatmapSection {
+      .heatmapHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        .legendText {
+          width: 100%;
+          justify-content: flex-start;
+        }
+      }
+      .heatmapGridContainer {
+        grid-template-columns: repeat(4, 1fr); // 4 columns on mobile
+      }
+    }
+
+    .searchFilterBar.calendarFilterRow {
+      .timeFilterGroup {
+        justify-content: center;
+        .glassButtonGroup {
+          width: 100%;
+          button {
+            flex: 1;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
