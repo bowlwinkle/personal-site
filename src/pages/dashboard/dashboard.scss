@@ -1,0 +1,518 @@
+@import '../../utilities/variables.scss';
+
+.dashboardContainer {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  padding: 0 1rem;
+  animation: fadeIn 0.5s ease-out;
+
+  .glassPanel {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2) !important;
+    padding: 1.5rem !important;
+    transition: all 0.3s ease;
+    color: inherit !important;
+
+    &.headerPanel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem !important;
+    }
+
+    &.contentSection {
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &.loaderPanel {
+      min-height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &.loginPanel, &.errorPanel {
+      max-width: 500px;
+      margin: 4rem auto !important;
+      padding: 3rem 2rem !important;
+    }
+
+    &.errorPanel {
+      border: 1px solid rgba(219, 40, 40, 0.3) !important;
+      box-shadow: 0 8px 32px 0 rgba(219, 40, 40, 0.15) !important;
+    }
+  }
+
+  /* Login / Error States */
+  .loginContent, .errorContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .loginIconContainer, .errorIconContainer {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .loginIconContainer {
+      background: rgba(33, 133, 208, 0.1);
+      .lockIcon {
+        color: #2185d0;
+      }
+    }
+
+    .errorIconContainer {
+      background: rgba(219, 40, 40, 0.1);
+      .unauthorizedIcon {
+        color: #db2828;
+      }
+    }
+
+    .loginHeader, .unauthorizedHeader {
+      margin: 0 0 1rem 0 !important;
+      font-size: 1.8rem !important;
+    }
+
+    .loginSubtext, .unauthorizedText {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .unauthorizedSubtext {
+      font-size: 0.95rem;
+      color: #db2828;
+      background: rgba(219, 40, 40, 0.05);
+      border: 1px solid rgba(219, 40, 40, 0.15);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+
+    .loginActions, .errorActions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+      margin-top: 1rem;
+
+      button, a {
+        width: 100%;
+        margin: 0 !important;
+        border-radius: 8px !important;
+        justify-content: center;
+      }
+    }
+  }
+
+  .headerLeft {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .dashboardLogoIcon {
+      color: #2185d0;
+      text-shadow: 0 0 10px rgba(33, 133, 208, 0.5);
+    }
+
+    .dashboardHeader {
+      margin: 0 !important;
+      font-size: 1.8rem !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.5px;
+    }
+
+    .dashboardSubheader {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  .headerRight {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .profileBadge {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(0, 0, 0, 0.15);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+
+      .avatarBorder {
+        border: 2px solid #2185d0;
+      }
+
+      .profileInfo {
+        display: flex;
+        flex-direction: column;
+
+        .profileName {
+          font-weight: 600;
+          font-size: 0.9rem;
+          line-height: 1.2;
+        }
+
+        .profileEmail {
+          font-size: 0.75rem;
+          opacity: 0.6;
+        }
+      }
+    }
+
+    .refreshBtn, .logoutBtn {
+      border-radius: 8px !important;
+      transition: all 0.2s ease !important;
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .titleArea {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      h2 {
+        margin: 0 !important;
+        font-size: 1.4rem !important;
+      }
+
+      .sectionIcon {
+        margin: 0 !important;
+        &.blueIcon {
+          color: #2185d0;
+        }
+        &.purpleIcon {
+          color: #b5cc18;
+        }
+      }
+    }
+
+    .taskTabButtons {
+      display: flex;
+      gap: 0.5rem;
+
+      .tabBtn {
+        background: rgba(255, 255, 255, 0.05) !important;
+        color: inherit !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 20px !important;
+        transition: all 0.2s ease !important;
+
+        &.active {
+          background: #2185d0 !important;
+          color: #fff !important;
+          border-color: #2185d0 !important;
+          box-shadow: 0 0 10px rgba(33, 133, 208, 0.4);
+        }
+
+        &:hover:not(.active) {
+          background: rgba(255, 255, 255, 0.1) !important;
+        }
+      }
+    }
+  }
+
+  .panelDivider {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin: 1rem 0 1.5rem 0 !important;
+  }
+
+  .scrollableList {
+    overflow-y: auto;
+    max-height: 480px;
+    padding-right: 0.5rem;
+
+    /* Custom Scrollbar */
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+  }
+
+  .taskItemCard {
+    background: rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.03) !important;
+    border-radius: 10px !important;
+    padding: 1rem !important;
+    margin-bottom: 0.75rem !important;
+    transition: all 0.2s ease !important;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.2) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      transform: translateX(4px);
+    }
+
+    .taskTitleRow {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+
+      .taskTitle {
+        font-weight: 600;
+        font-size: 1.05rem;
+        word-break: break-word;
+
+        &.strikeThrough {
+          text-decoration: line-through;
+          opacity: 0.5;
+        }
+      }
+
+      .dueLabel {
+        background: rgba(255, 255, 255, 0.05) !important;
+        color: inherit !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        white-space: nowrap;
+
+        &.overdue {
+          background: rgba(219, 40, 40, 0.1) !important;
+          color: #db2828 !important;
+          border-color: rgba(219, 40, 40, 0.3) !important;
+          box-shadow: 0 0 5px rgba(219, 40, 40, 0.2);
+        }
+      }
+    }
+
+    .taskNotes {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin: 0.5rem 0 !important;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .taskFooter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+
+      .updatedTime {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .eventItemCard {
+    background: rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.03) !important;
+    border-radius: 10px !important;
+    padding: 1rem !important;
+    margin-bottom: 0.75rem !important;
+    transition: all 0.2s ease !important;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.2) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      transform: translateX(4px);
+    }
+
+    &.bufferHighlight {
+      border-left: 3px solid #6435c9 !important;
+      background: rgba(100, 53, 201, 0.05) !important;
+      
+      &:hover {
+        background: rgba(100, 53, 201, 0.1) !important;
+      }
+    }
+
+    .eventItemContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .eventItemDetails {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .eventItemActions {
+      flex-shrink: 0;
+      opacity: 0.2;
+      transition: all 0.2s ease;
+
+      button {
+        &:hover {
+          background: rgba(219, 40, 40, 0.15) !important;
+          box-shadow: 0 0 8px rgba(219, 40, 40, 0.3) !important;
+        }
+      }
+    }
+
+    &:hover .eventItemActions {
+      opacity: 1;
+    }
+
+    .eventHeaderRow {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+
+      .eventSummary {
+        font-weight: 600;
+        font-size: 1.05rem;
+        word-break: break-word;
+      }
+
+      .bufferLabel {
+        box-shadow: 0 0 5px rgba(100, 53, 201, 0.3);
+      }
+    }
+
+    .eventTime {
+      font-size: 0.85rem;
+      opacity: 0.75;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .eventDescription {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin: 0.5rem 0 0 0 !important;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  }
+
+  .emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1rem;
+    text-align: center;
+    opacity: 0.6;
+
+    .emptyIcon {
+      margin-bottom: 1rem !important;
+    }
+
+    .emptyText {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// Light theme specific adjustments
+#root.lightMode .dashboardContainer {
+  .glassPanel {
+    background: rgba(0, 0, 0, 0.03) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05) !important;
+
+    &.errorPanel {
+      border: 1px solid rgba(219, 40, 40, 0.25) !important;
+      box-shadow: 0 8px 32px 0 rgba(219, 40, 40, 0.08) !important;
+    }
+  }
+
+  .headerRight {
+    .profileBadge {
+      background: rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  .loginContent, .errorContent {
+    .loginIconContainer {
+      background: rgba(33, 133, 208, 0.08);
+    }
+    .errorIconContainer {
+      background: rgba(219, 40, 40, 0.08);
+    }
+    .unauthorizedSubtext {
+      background: rgba(219, 40, 40, 0.03);
+      border: 1px solid rgba(219, 40, 40, 0.12);
+    }
+  }
+
+  .taskItemCard, .eventItemCard {
+    background: rgba(0, 0, 0, 0.02) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.04) !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+    }
+
+    &.bufferHighlight {
+      background: rgba(100, 53, 201, 0.03) !important;
+      &:hover {
+        background: rgba(100, 53, 201, 0.06) !important;
+      }
+    }
+  }
+  
+  .scrollableList::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+  }
+  .scrollableList::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.25);
+  }
+}
+
+// Fade in animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

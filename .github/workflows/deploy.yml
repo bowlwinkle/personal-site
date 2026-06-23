@@ -44,6 +44,8 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build-github-pages
+        env:
+          REACT_APP_GOOGLE_CLIENT_ID: ${{ secrets.REACT_APP_GOOGLE_CLIENT_ID }}
       - name: Remove deps
         run: rm -rf node_modules/
       - name: Remove src

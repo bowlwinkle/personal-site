@@ -9,6 +9,7 @@ import { NavbarItem } from './components/navigation/sidebar'
 import { config } from './config'
 import { WorkHistory } from './pages/work/work'
 import { NotFound } from './components/404'
+import { DashboardPage } from './pages/dashboard/dashboard'
 
 const routeDefinitions = [
   {
@@ -87,6 +88,15 @@ const childrenRoutes = (prefix = '') => [
       <>
         <title>LG - Playground</title>
         <Playground />
+      </>
+    ),
+  },
+  {
+    path: `${prefix}/dashboard`,
+    element: (
+      <>
+        <title>LG - Dashboard</title>
+        <DashboardPage />
       </>
     ),
   },
