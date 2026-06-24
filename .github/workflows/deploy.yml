@@ -34,8 +34,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - name: Install Node
         uses: actions/setup-node@v4
         with:
@@ -48,6 +46,7 @@ jobs:
         run: yarn build-github-pages
         env:
           REACT_APP_GOOGLE_CLIENT_ID: ${{ secrets.REACT_APP_GOOGLE_CLIENT_ID }}
+          CI: false
       - name: Remove deps
         run: rm -rf node_modules/
       - name: Remove src
