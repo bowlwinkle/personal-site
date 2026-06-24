@@ -11,6 +11,9 @@
 # production
 /build
 
+# env files
+.env*
+
 # icons - not sure if I need any of these
 
 ./src/assets/icons

@@ -1,0 +1,1143 @@
+@import '../../utilities/variables.scss';
+
+.dashboardContainer {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  padding: 0 1rem;
+  animation: fadeIn 0.5s ease-out;
+
+  .glassPanel {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2) !important;
+    padding: 1.5rem !important;
+    transition: all 0.3s ease;
+    color: inherit !important;
+
+    &.headerPanel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem !important;
+    }
+
+    &.contentSection {
+      min-height: 550px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &.loaderPanel {
+      min-height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &.loginPanel, &.errorPanel {
+      max-width: 500px;
+      margin: 4rem auto !important;
+      padding: 3rem 2rem !important;
+    }
+
+    &.errorPanel {
+      border: 1px solid rgba(219, 40, 40, 0.3) !important;
+      box-shadow: 0 8px 32px 0 rgba(219, 40, 40, 0.15) !important;
+    }
+  }
+
+  .tabBtn {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: inherit !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    transition: all 0.2s ease !important;
+
+    &.active {
+      background: #2185d0 !important;
+      color: #fff !important;
+      border-color: #2185d0 !important;
+      box-shadow: 0 0 10px rgba(33, 133, 208, 0.4);
+    }
+
+    &:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+
+  /* 1. Analytics Grid & Cards */
+  .analyticsGrid {
+    margin-bottom: 2rem !important;
+
+    .analyticsCard {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem !important;
+      height: 100%;
+
+      .cardIconContainer {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+
+        &.blue { background: rgba(33, 133, 208, 0.15); color: #2185d0; }
+        &.purple { background: rgba(163, 51, 200, 0.15); color: #a333c8; }
+        &.green { background: rgba(33, 186, 69, 0.15); color: #21ba45; }
+        &.yellow { background: rgba(251, 189, 8, 0.15); color: #fbbd08; }
+        &.red { background: rgba(219, 40, 40, 0.15); color: #db2828; }
+        &.grey { background: rgba(255, 255, 255, 0.08); color: inherit; }
+      }
+
+      .cardInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+
+        .cardLabel {
+          font-size: 0.8rem;
+          opacity: 0.65;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: 0.2rem;
+        }
+
+        .cardValue {
+          font-size: 1.35rem;
+          font-weight: 700;
+          letter-spacing: -0.5px;
+        }
+
+        .launcherLinks {
+          font-size: 0.9rem;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+
+          a {
+            color: #2185d0;
+            transition: all 0.2s ease;
+            &:hover {
+              color: lighten(#2185d0, 10%);
+              text-decoration: underline;
+            }
+          }
+
+          .divider {
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+  }
+
+  /* 2. 30-Day Calendar Heatmap */
+  .heatmapSection {
+    margin-bottom: 2rem !important;
+
+    .heatmapHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      h3 {
+        margin: 0 !important;
+      }
+
+      .legendText {
+        font-size: 0.85rem;
+        opacity: 0.8;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        .legendBox {
+          width: 14px;
+          height: 14px;
+          border-radius: 3px;
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 0.3rem;
+
+          &.level-0 { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.05); }
+          &.level-1 { background: rgba(100, 53, 201, 0.25); border: 1px solid rgba(100, 53, 201, 0.3); }
+          &.level-2 { background: rgba(100, 53, 201, 0.55); border: 1px solid rgba(100, 53, 201, 0.6); }
+          &.level-3 { background: rgba(219, 40, 40, 0.45); border: 1px solid rgba(219, 40, 40, 0.65); box-shadow: 0 0 8px rgba(219, 40, 40, 0.4); }
+        }
+      }
+    }
+
+    .heatmapGridContainer {
+      display: grid;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+      transition: all 0.3s ease;
+
+      &.cols-14 {
+        grid-template-columns: repeat(14, 1fr);
+      }
+
+      &.cols-21 {
+        grid-template-columns: repeat(21, 1fr);
+        gap: 0.3rem;
+        
+        .heatmapDayCell {
+          padding: 0.15rem;
+          border-radius: 6px;
+          
+          .cellDateNumber {
+            font-size: 0.95rem;
+          }
+          
+          .cellDayName {
+            display: none;
+          }
+        }
+      }
+
+      &.cols-28 {
+        grid-template-columns: repeat(28, 1fr);
+        gap: 0.25rem;
+        
+        .heatmapDayCell {
+          padding: 0.1rem;
+          border-radius: 5px;
+          
+          .cellDateNumber {
+            font-size: 0.8rem;
+          }
+          
+          .cellDayName {
+            display: none;
+          }
+        }
+      }
+
+      .heatmapDayCell {
+        aspect-ratio: 1;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.25rem;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.2s ease;
+
+        &:hover {
+          transform: scale(1.08);
+          z-index: 10;
+        }
+
+        .cellDateNumber {
+          font-size: 1.15rem;
+          font-weight: 700;
+          line-height: 1.1;
+        }
+
+        .cellDayName {
+          font-size: 0.65rem;
+          opacity: 0.5;
+          text-transform: uppercase;
+        }
+
+        &.level-0 {
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        &.level-1 {
+          background: rgba(100, 53, 201, 0.25);
+          border: 1px solid rgba(100, 53, 201, 0.3);
+          color: #d1c4e9;
+        }
+
+        &.level-2 {
+          background: rgba(100, 53, 201, 0.55);
+          border: 1px solid rgba(100, 53, 201, 0.6);
+          color: #fff;
+          box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+        }
+
+        &.level-3 {
+          background: rgba(219, 40, 40, 0.45);
+          border: 1px solid rgba(219, 40, 40, 0.65);
+          color: #fff;
+          box-shadow: 0 0 8px rgba(219, 40, 40, 0.4);
+        }
+      }
+    }
+  }
+
+  /* 3. Search and Filters */
+  .searchFilterBar {
+    margin-bottom: 1rem;
+    
+    .glassInput input {
+      background: rgba(0, 0, 0, 0.15) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      color: inherit !important;
+      border-radius: 8px !important;
+      font-size: 0.95rem !important;
+
+      &:focus {
+        border-color: #2185d0 !important;
+        background: rgba(0, 0, 0, 0.25) !important;
+      }
+    }
+
+    &.calendarFilterRow {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      .calendarSearchInput {
+        width: 100%;
+      }
+
+      .timeFilterGroup {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  /* 4. Interactive Tasks */
+  .taskItemCard {
+    background: rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.03) !important;
+    border-radius: 10px !important;
+    padding: 0.8rem 1rem !important;
+    margin-bottom: 0.75rem !important;
+    transition: all 0.2s ease !important;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.2) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      transform: translateX(4px);
+    }
+
+    &.taskCompletedCard {
+      opacity: 0.65;
+    }
+
+    .taskCardContent {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      width: 100%;
+
+      .taskCheckContainer {
+        display: flex;
+        align-items: center;
+        height: 24px;
+        flex-shrink: 0;
+
+        .taskInteractiveCheckbox {
+          cursor: pointer;
+          opacity: 0.5;
+          transition: all 0.2s ease;
+          margin: 0 !important;
+
+          &:hover {
+            opacity: 1;
+            transform: scale(1.15);
+            color: #21ba45;
+          }
+
+          &.checked {
+            opacity: 1;
+            color: #21ba45;
+            text-shadow: 0 0 5px rgba(33, 186, 111, 0.4);
+          }
+        }
+      }
+
+      .taskDetailsArea {
+        flex: 1;
+        min-width: 0;
+      }
+    }
+  }
+
+  /* 5. Calendar Event Cards & Actions */
+  .eventItemCard {
+    background: rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.03) !important;
+    border-radius: 10px !important;
+    padding: 0.8rem 1rem !important;
+    margin-bottom: 0.75rem !important;
+    transition: all 0.2s ease !important;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.2) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      transform: translateX(4px);
+    }
+
+    &.bufferHighlight {
+      border-left: 3px solid #6435c9 !important;
+      background: rgba(100, 53, 201, 0.05) !important;
+      
+      &:hover {
+        background: rgba(100, 53, 201, 0.1) !important;
+      }
+    }
+
+    .eventItemContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .eventItemDetails {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .eventItemActions {
+      display: flex;
+      gap: 0.4rem;
+      flex-shrink: 0;
+      opacity: 0.25;
+      transition: all 0.2s ease;
+
+      .actionBtn {
+        opacity: 0.7;
+        margin: 0 !important;
+        padding: 0.5em !important;
+        border-radius: 6px !important;
+        transition: all 0.2s ease !important;
+
+        &:hover {
+          opacity: 1 !important;
+        }
+
+        &.editBtn:hover {
+          background: rgba(33, 133, 208, 0.15) !important;
+          color: #2185d0 !important;
+          box-shadow: 0 0 6px rgba(33, 133, 208, 0.25);
+        }
+
+        &.deleteBtn:hover {
+          background: rgba(219, 40, 40, 0.15) !important;
+          color: #db2828 !important;
+          box-shadow: 0 0 6px rgba(219, 40, 40, 0.25);
+        }
+      }
+    }
+
+    &:hover .eventItemActions {
+      opacity: 1;
+    }
+  }
+
+  /* Shared / Existing details */
+  .headerLeft {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .dashboardLogoIcon {
+      color: #2185d0;
+      text-shadow: 0 0 10px rgba(33, 133, 208, 0.5);
+    }
+
+    .dashboardHeader {
+      margin: 0 !important;
+      font-size: 1.8rem !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.5px;
+    }
+
+    .dashboardSubheader {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  .headerRight {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .profileBadge {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(0, 0, 0, 0.15);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+
+      .avatarBorder {
+        border: 2px solid #2185d0;
+      }
+
+      .profileInfo {
+        display: flex;
+        flex-direction: column;
+
+        .profileName {
+          font-weight: 600;
+          font-size: 0.9rem;
+          line-height: 1.2;
+        }
+
+        .profileEmail {
+          font-size: 0.75rem;
+          opacity: 0.6;
+        }
+      }
+    }
+
+    .refreshBtn, .logoutBtn {
+      border-radius: 8px !important;
+      transition: all 0.2s ease !important;
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .titleArea {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      h2 {
+        margin: 0 !important;
+        font-size: 1.4rem !important;
+      }
+
+      .sectionIcon {
+        margin: 0 !important;
+        &.blueIcon { color: #2185d0; }
+        &.purpleIcon { color: #6435c9; }
+      }
+    }
+
+    .taskTabButtons {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+
+  .panelDivider {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin: 1rem 0 1.5rem 0 !important;
+  }
+
+  .scrollableList {
+    overflow-y: auto;
+    max-height: 480px;
+    padding-right: 0.5rem;
+
+    /* Custom Scrollbar */
+    &::-webkit-scrollbar { width: 6px; }
+    &::-webkit-scrollbar-track { background: transparent; }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.25); }
+  }
+
+  .taskTitleRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+
+    .taskTitle {
+      font-weight: 600;
+      font-size: 1.05rem;
+      word-break: break-word;
+
+      &.strikeThrough {
+        text-decoration: line-through;
+        opacity: 0.5;
+      }
+    }
+
+    .dueLabel {
+      background: rgba(255, 255, 255, 0.05) !important;
+      color: inherit !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      white-space: nowrap;
+
+      &.overdue {
+        background: rgba(219, 40, 40, 0.1) !important;
+        color: #db2828 !important;
+        border-color: rgba(219, 40, 40, 0.3) !important;
+        box-shadow: 0 0 5px rgba(219, 40, 40, 0.2);
+      }
+    }
+  }
+
+  .taskNotes {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0.5rem 0 !important;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .taskFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+
+    .updatedTime {
+      opacity: 0.5;
+    }
+  }
+
+  .eventHeaderRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+
+    .eventSummary {
+      font-weight: 600;
+      font-size: 1.05rem;
+      word-break: break-word;
+    }
+
+    .bufferLabel {
+      box-shadow: 0 0 5px rgba(100, 53, 201, 0.3);
+    }
+  }
+
+  .eventTime {
+    font-size: 0.85rem;
+    opacity: 0.75;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .eventDescription {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0.5rem 0 0 0 !important;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1rem;
+    text-align: center;
+    opacity: 0.6;
+
+    .emptyIcon { margin-bottom: 1rem !important; }
+    .emptyText { font-size: 1.1rem; }
+  }
+}
+
+/* Light Theme Adjustments */
+#root.lightMode .dashboardContainer {
+  .glassPanel {
+    background: rgba(0, 0, 0, 0.03) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05) !important;
+
+    &.errorPanel {
+      border: 1px solid rgba(219, 40, 40, 0.25) !important;
+      box-shadow: 0 8px 32px 0 rgba(219, 40, 40, 0.08) !important;
+    }
+  }
+
+  .analyticsGrid .analyticsCard {
+    .cardIconContainer {
+      &.grey { background: rgba(0, 0, 0, 0.04); }
+    }
+  }
+
+  .heatmapSection {
+    .legendBox.legendBox.level-0 { background: rgba(0, 0, 0, 0.03); border-color: rgba(0, 0, 0, 0.03); }
+    
+    .heatmapGridContainer .heatmapDayCell {
+      &.level-0 { background: rgba(0, 0, 0, 0.02); border-color: rgba(0, 0, 0, 0.04); }
+      &.level-1 { background: rgba(100, 53, 201, 0.15); border-color: rgba(100, 53, 201, 0.2); color: #4527a0; }
+      &.level-2 { background: rgba(100, 53, 201, 0.4); border-color: rgba(100, 53, 201, 0.45); color: #fff; }
+      &.level-3 { background: rgba(219, 40, 40, 0.35); border-color: rgba(219, 40, 40, 0.45); color: #fff; }
+    }
+  }
+
+  .tabBtn {
+    background: rgba(0, 0, 0, 0.04) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    color: rgba(0, 0, 0, 0.8) !important;
+
+    &:hover:not(.active) {
+      background: rgba(0, 0, 0, 0.08) !important;
+    }
+
+    &.active {
+      background: #2185d0 !important;
+      color: #fff !important;
+      border-color: #2185d0 !important;
+      box-shadow: 0 0 10px rgba(33, 133, 208, 0.2) !important;
+    }
+  }
+
+  .searchFilterBar {
+    .glassInput input {
+      background: rgba(255, 255, 255, 0.8) !important;
+      border: 1px solid rgba(0, 0, 0, 0.1) !important;
+      &:focus {
+        background: #fff !important;
+      }
+    }
+  }
+
+  .taskItemCard, .eventItemCard {
+    background: rgba(0, 0, 0, 0.02) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.04) !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+    }
+
+    &.bufferHighlight {
+      background: rgba(100, 53, 201, 0.03) !important;
+      &:hover {
+        background: rgba(100, 53, 201, 0.06) !important;
+      }
+    }
+
+    .eventItemActions .actionBtn {
+      &.editBtn:hover { background: rgba(33, 133, 208, 0.08) !important; }
+      &.deleteBtn:hover { background: rgba(219, 40, 40, 0.08) !important; }
+    }
+  }
+
+  .headerRight {
+    .profileBadge {
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+  }
+  
+  .scrollableList::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.15); }
+  .scrollableList::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.25); }
+}
+
+/* 6. Responsive Styles (Breakpoints) */
+@media (max-width: 1199px) {
+  .dashboardContainer .heatmapSection .heatmapGridContainer {
+    grid-template-columns: repeat(7, 1fr); // 7 columns (weeks) on medium screens
+  }
+}
+
+@media (max-width: 767px) {
+  .dashboardContainer {
+    .glassPanel.headerPanel {
+      flex-direction: column;
+      align-items: flex-start;
+      .headerRight {
+        width: 100%;
+        justify-content: space-between;
+        .profileBadge {
+          width: 100%;
+          justify-content: center;
+          margin-bottom: 0.5rem;
+        }
+        button {
+          flex: 1;
+        }
+      }
+    }
+
+    .heatmapSection {
+      .heatmapHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        .legendText {
+          width: 100%;
+          justify-content: flex-start;
+        }
+      }
+      .heatmapGridContainer {
+        grid-template-columns: repeat(4, 1fr); // 4 columns on mobile
+      }
+    }
+
+    .searchFilterBar.calendarFilterRow {
+      .timeFilterGroup {
+        justify-content: center;
+        width: 100%;
+        
+        div {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          button {
+            flex: 1;
+            text-align: center;
+            padding: 0.5em 0.25em !important;
+            font-size: 0.8rem !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 4. Sliding Day Details Drawer */
+.drawerOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.dayDrawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 500px;
+  max-width: 100%;
+  height: 100vh;
+  z-index: 1001;
+  background: rgba(20, 20, 25, 0.75) !important;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  color: #f1f1f5;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  .drawerHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    .headerMain {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .drawerTitle {
+        margin: 0 !important;
+        font-size: 1.5rem !important;
+        font-weight: 700 !important;
+        color: #fff !important;
+      }
+
+      .drawerCloseBtn {
+        color: rgba(255, 255, 255, 0.5) !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        transition: color 0.2s ease, background 0.2s ease !important;
+
+        &:hover {
+          color: #fff !important;
+          background: rgba(255, 255, 255, 0.1) !important;
+        }
+      }
+    }
+
+    .drawerDate {
+      font-size: 1.1rem;
+      color: #9e9eb4;
+      font-weight: 500;
+    }
+
+    .drawerMetrics {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+      
+      .ui.label {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        color: #d1c4e9 !important;
+        
+        &.blue {
+          color: #90caf9 !important;
+        }
+      }
+    }
+  }
+
+  .panelDivider {
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    margin: 1rem 0 1.5rem 0 !important;
+  }
+
+  .drawerContent {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .drawerSection {
+      margin-bottom: 2rem;
+
+      .sectionTitle {
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        margin-bottom: 1rem !important;
+        color: #fff !important;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        
+        i {
+          color: #a333c8 !important;
+        }
+      }
+
+      .noDataText {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.4);
+        font-style: italic;
+        padding-left: 0.5rem;
+      }
+
+      .itemList {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        .taskItemCard, .eventItemCard {
+          background: rgba(255, 255, 255, 0.03) !important;
+          border: 1px solid rgba(255, 255, 255, 0.05) !important;
+          border-radius: 12px !important;
+          padding: 1rem !important;
+          margin: 0 !important;
+          transition: all 0.2s ease !important;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+            transform: translateY(-2px);
+          }
+
+          &.taskCompletedCard {
+            opacity: 0.6;
+            background: rgba(255, 255, 255, 0.01) !important;
+          }
+
+          &.bufferHighlight {
+            border-left: 4px solid #a333c8 !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Click selection visual feedback on heatmap cells
+.dashboardContainer .heatmapSection .heatmapGridContainer {
+  .heatmapDayCell.selected {
+    outline: 2px solid #a333c8;
+    outline-offset: 1px;
+    box-shadow: 0 0 12px rgba(163, 51, 200, 0.5);
+    transform: scale(1.05);
+  }
+}
+
+/* 5. Monthly Calendar Cards View */
+.monthlyCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+  
+  .monthCard {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 12px !important;
+    padding: 1.25rem !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    display: flex;
+    flex-direction: column;
+    
+    .monthCardTitle {
+      font-size: 1.15rem !important;
+      font-weight: 700 !important;
+      color: #fff !important;
+    }
+
+    .weekdayHeaderRow {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      opacity: 0.4;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .monthDaysGrid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.4rem;
+      
+      .dayCellSpacer {
+        aspect-ratio: 1;
+      }
+      
+      .dayCellDisabled {
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.15);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.01);
+      }
+      
+      .monthDayCell {
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        position: relative;
+        
+        &:hover {
+          transform: scale(1.15);
+          z-index: 5;
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+
+        &.selected {
+          outline: 2px solid #a333c8;
+          outline-offset: 1px;
+          box-shadow: 0 0 8px rgba(163, 51, 200, 0.6);
+        }
+
+        &.level-0 {
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          color: rgba(255, 255, 255, 0.7);
+        }
+
+        &.level-1 {
+          background: rgba(100, 53, 201, 0.25);
+          border: 1px solid rgba(100, 53, 201, 0.3);
+          color: #d1c4e9;
+        }
+
+        &.level-2 {
+          background: rgba(100, 53, 201, 0.55);
+          border: 1px solid rgba(100, 53, 201, 0.6);
+          color: #fff;
+        }
+
+        &.level-3 {
+          background: rgba(219, 40, 40, 0.45);
+          border: 1px solid rgba(219, 40, 40, 0.65);
+          color: #fff;
+          box-shadow: 0 0 6px rgba(219, 40, 40, 0.4);
+        }
+      }
+    }
+  }
+}

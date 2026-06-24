@@ -16,4 +16,5 @@ export const config = {
     tablet: 768,
     computer: 1024,
   },
+  googleClientId: process.env.REACT_APP_GOOGLE_CLIENT_ID || '',
 }

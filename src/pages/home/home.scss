@@ -23,3 +23,122 @@
     }
   }
 }
+
+.homeAuthRow {
+  margin-top: 1.5rem !important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+
+  .authHomeLogin {
+    margin-top: 0.5rem;
+    button {
+      border-radius: 8px !important;
+      transition: all 0.2s ease !important;
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(221, 75, 57, 0.4);
+      }
+    }
+  }
+
+  .authHomePanel {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px !important;
+    padding: 1.25rem !important;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: inherit !important;
+
+    &.successPanel {
+      border-left: 4px solid #2185d0 !important;
+    }
+
+    &.errorPanel {
+      border-left: 4px solid #db2828 !important;
+      box-shadow: 0 4px 20px rgba(219, 40, 40, 0.15) !important;
+    }
+
+    .authHomeUser {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      .avatarBorder {
+        border: 2px solid #2185d0;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        
+        .welcomeText {
+          font-weight: 600;
+          font-size: 1.05rem;
+          line-height: 1.2;
+        }
+
+        .profileEmail {
+          font-size: 0.8rem;
+          opacity: 0.6;
+        }
+      }
+    }
+
+    .authHomeError {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+
+      .errorIcon {
+        color: #db2828;
+        margin-top: 0.2rem;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+
+        .errorTitle {
+          font-weight: 700;
+          font-size: 1.05rem;
+          color: #db2828;
+          line-height: 1.2;
+          margin-bottom: 0.25rem;
+        }
+
+        .errorDesc {
+          font-size: 0.85rem;
+          opacity: 0.8;
+          line-height: 1.4;
+        }
+      }
+    }
+
+    .authHomeActions {
+      display: flex;
+      gap: 0.5rem;
+
+      button, a {
+        border-radius: 6px !important;
+      }
+    }
+  }
+}
+
+// Light theme adjustment for home auth
+#root.lightMode {
+  .authHomePanel {
+    background: rgba(0, 0, 0, 0.02) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+  }
+}
+
