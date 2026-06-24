@@ -192,18 +192,37 @@ export class WorkspaceSyncEngine {
 
 
   /**
-   * Fetches the user's active milestones from Google Tasks
+   * Helper that injects the Authorization header, validates the response, 
+   * and automatically logs out if the token has expired (401 Unauthorized)
    */
-  public async fetchTasks(): Promise<TaskItem[]> {
+  private async authenticatedFetch(url: string, options: RequestInit = {}): Promise<Response> {
     if (!this.authState.isAuthenticated || !this.authState.token) {
       throw new Error('Unauthenticated API call attempt.');
     }
 
+    const headers = {
+      ...options.headers,
+      Authorization: `Bearer ${this.authState.token}`
+    };
+
+    const response = await fetch(url, { ...options, headers });
+
+    if (response.status === 401) {
+      this.logout();
+      this.updateState({ error: 'Your session has expired. Please sign in again.' });
+      throw new Error('Session expired. Please sign in again.');
+    }
+
+    return response;
+  }
+
+
+  /**
+   * Fetches the user's active milestones from Google Tasks
+   */
+  public async fetchTasks(): Promise<TaskItem[]> {
     try {
-      // 1. Fetch Task lists to locate our targeted 'Master Milestones' board
-      const listsResponse = await fetch('https://www.googleapis.com/tasks/v1/users/@me/lists', {
-        headers: { Authorization: `Bearer ${this.authState.token}` }
-      });
+      const listsResponse = await this.authenticatedFetch('https://www.googleapis.com/tasks/v1/users/@me/lists');
 
       if (!listsResponse.ok) throw new Error('Failed to retrieve Google Task lists');
       const listData = await listsResponse.json();
@@ -213,7 +232,6 @@ export class WorkspaceSyncEngine {
       );
 
       if (!targetList) {
-        // Fallback to primary if the custom milestones list isn't found
         return await this.fetchTasksFromList('@default');
       }
 
@@ -225,9 +243,7 @@ export class WorkspaceSyncEngine {
   }
 
   private async fetchTasksFromList(listId: string): Promise<TaskItem[]> {
-    const response = await fetch(`https://www.googleapis.com/tasks/v1/lists/${listId}/tasks?showCompleted=true&showHidden=true`, {
-      headers: { Authorization: `Bearer ${this.authState.token}` }
-    });
+    const response = await this.authenticatedFetch(`https://www.googleapis.com/tasks/v1/lists/${listId}/tasks?showCompleted=true&showHidden=true`);
 
     if (!response.ok) throw new Error('Failed to download Tasks from the target list');
     const data = await response.json();
@@ -248,17 +264,11 @@ export class WorkspaceSyncEngine {
    * Retrieves events from primary calendar, targeting upcoming milestones and travel buffers
    */
   public async fetchUpcomingEvents(maxResults = 30): Promise<CalendarEvent[]> {
-    if (!this.authState.isAuthenticated || !this.authState.token) {
-      throw new Error('Unauthenticated API call attempt.');
-    }
-
     try {
       const nowIso = new Date().toISOString();
       const url = `https://www.googleapis.com/calendar/v3/calendars/primary/events?timeMin=${nowIso}&singleEvents=true&orderBy=startTime&maxResults=${maxResults}`;
       
-      const response = await fetch(url, {
-        headers: { Authorization: `Bearer ${this.authState.token}` }
-      });
+      const response = await this.authenticatedFetch(url);
 
       if (!response.ok) throw new Error('Failed to retrieve Google Calendar events');
       const data = await response.json();
@@ -281,14 +291,9 @@ export class WorkspaceSyncEngine {
    * Updates a task status directly on Google Tasks
    */
   public async updateTaskStatus(listId: string, taskId: string, completed: boolean): Promise<void> {
-    if (!this.authState.isAuthenticated || !this.authState.token) {
-      throw new Error('Unauthenticated API call attempt.');
-    }
-
-    const response = await fetch(`https://www.googleapis.com/tasks/v1/lists/${listId}/tasks/${taskId}`, {
+    const response = await this.authenticatedFetch(`https://www.googleapis.com/tasks/v1/lists/${listId}/tasks/${taskId}`, {
       method: 'PATCH',
       headers: {
-        Authorization: `Bearer ${this.authState.token}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -307,19 +312,86 @@ export class WorkspaceSyncEngine {
    * Deletes a specific calendar event by ID
    */
   public async deleteCalendarEvent(eventId: string): Promise<void> {
-    if (!this.authState.isAuthenticated || !this.authState.token) {
-      throw new Error('Unauthenticated API call attempt.');
-    }
-
-    const response = await fetch(`https://www.googleapis.com/calendar/v3/calendars/primary/events/${eventId}`, {
-      method: 'DELETE',
-      headers: { Authorization: `Bearer ${this.authState.token}` }
+    const response = await this.authenticatedFetch(`https://www.googleapis.com/calendar/v3/calendars/primary/events/${eventId}`, {
+      method: 'DELETE'
     });
 
     if (!response.ok) {
       const errText = await response.text();
       throw new Error(`Failed to delete calendar event: ${errText || response.statusText}`);
     }
+  }
+
+
+  /**
+   * Creates a new task in Google Tasks
+   */
+  public async createTask(listId: string, title: string, notes?: string, due?: string): Promise<TaskItem> {
+    const body: any = { title };
+    if (notes) body.notes = notes;
+    if (due) {
+      const dueIso = new Date(due).toISOString();
+      body.due = dueIso;
+    }
+
+    const response = await this.authenticatedFetch(`https://www.googleapis.com/tasks/v1/lists/${listId}/tasks`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+
+    if (!response.ok) {
+      const errText = await response.text();
+      throw new Error(`Failed to create task: ${errText || response.statusText}`);
+    }
+
+    const data = await response.json();
+    return {
+      id: data.id,
+      title: data.title,
+      notes: data.notes,
+      status: data.status,
+      updated: data.updated,
+      due: data.due,
+      listId: listId
+    };
+  }
+
+
+  /**
+   * Creates a new calendar event in the primary calendar
+   */
+  public async createCalendarEvent(summary: string, startTime: string, endTime: string, description?: string): Promise<CalendarEvent> {
+    const body: any = {
+      summary,
+      start: startTime.includes('T') ? { dateTime: startTime } : { date: startTime },
+      end: endTime.includes('T') ? { dateTime: endTime } : { date: endTime }
+    };
+    if (description) body.description = description;
+
+    const response = await this.authenticatedFetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+
+    if (!response.ok) {
+      const errText = await response.text();
+      throw new Error(`Failed to create calendar event: ${errText || response.statusText}`);
+    }
+
+    const data = await response.json();
+    return {
+      id: data.id,
+      summary: data.summary || 'Untitled Event',
+      start: data.start,
+      end: data.end,
+      description: data.description
+    };
   }
 
 

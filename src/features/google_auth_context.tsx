@@ -10,6 +10,8 @@ interface GoogleAuthContextType {
   fetchUpcomingEvents: (maxResults?: number) => Promise<CalendarEvent[]>
   deleteCalendarEvent: (eventId: string) => Promise<void>
   updateTaskStatus: (listId: string, taskId: string, completed: boolean) => Promise<void>
+  createTask: (listId: string, title: string, notes?: string, due?: string) => Promise<TaskItem>
+  createCalendarEvent: (summary: string, startTime: string, endTime: string, description?: string) => Promise<CalendarEvent>
 }
 
 const GoogleAuthContext = createContext<GoogleAuthContextType | undefined>(undefined)
@@ -39,6 +41,10 @@ export const GoogleAuthProvider = ({ children }: { children: ReactNode }) => {
   const deleteCalendarEvent = (eventId: string) => engine.deleteCalendarEvent(eventId)
   const updateTaskStatus = (listId: string, taskId: string, completed: boolean) =>
     engine.updateTaskStatus(listId, taskId, completed)
+  const createTask = (listId: string, title: string, notes?: string, due?: string) =>
+    engine.createTask(listId, title, notes, due)
+  const createCalendarEvent = (summary: string, startTime: string, endTime: string, description?: string) =>
+    engine.createCalendarEvent(summary, startTime, endTime, description)
 
   return (
     <GoogleAuthContext.Provider
@@ -50,6 +56,8 @@ export const GoogleAuthProvider = ({ children }: { children: ReactNode }) => {
         fetchUpcomingEvents,
         deleteCalendarEvent,
         updateTaskStatus,
+        createTask,
+        createCalendarEvent,
       }}
     >
       {children}
